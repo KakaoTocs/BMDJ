@@ -137,7 +137,7 @@ final class HomeViewController: UIViewController, View {
     
     private lazy var memoCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = .init(top: 12 * AppService.shared.layoutScale, left: 20 * AppService.shared.layoutScale, bottom: 50 * AppService.shared.layoutScale, right: 20 * AppService.shared.layoutScale)
+        flowLayout.sectionInset = .init(top: 24 * AppService.shared.layoutScale, left: 20 * AppService.shared.layoutScale, bottom: 50 * AppService.shared.layoutScale, right: 20 * AppService.shared.layoutScale)
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 20 * AppService.shared.layoutScale
         flowLayout.scrollDirection = .horizontal
@@ -376,6 +376,11 @@ final class HomeViewController: UIViewController, View {
                 guard let `self` = self else { return }
                 if cellReactor.currentState.memoe.mood == .nomal,
                    let danji = reactor.currentState.activeDanji {
+                    if reactor.currentState.activeDanji?.color == .gray {
+                        let sendErrorAlert = UIAlertView(title: "단지가 없습니다!", message: "단지를 먼저 심어주세요.", delegate: self, cancelButtonTitle: "확인")
+                        sendErrorAlert.show()
+                        return
+                    }
                     let addMemoVC = AddMemoViewController()
                     addMemoVC.modalPresentationStyle = .overFullScreen
                     addMemoVC.reactor = .init(provider: reactor.provider, activeDanji: danji)
