@@ -137,7 +137,7 @@ final class HomeViewController: UIViewController, View {
     
     private lazy var memoCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = .init(top: 12 * AppService.shared.layoutScale, left: 20 * AppService.shared.layoutScale, bottom: 50 * AppService.shared.layoutScale, right: 20 * AppService.shared.layoutScale)
+        flowLayout.sectionInset = .init(top: 24 * AppService.shared.layoutScale, left: 20 * AppService.shared.layoutScale, bottom: 50 * AppService.shared.layoutScale, right: 20 * AppService.shared.layoutScale)
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 20 * AppService.shared.layoutScale
         flowLayout.scrollDirection = .horizontal
