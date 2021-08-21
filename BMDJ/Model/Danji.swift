@@ -130,7 +130,7 @@ struct Danji: Codable {
 extension Danji {
     static var empty: Danji {
         let time = Date().addingTimeInterval(86399).timeIntervalSince1970
-        return .init(id: UUID().uuidString, userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .empty, volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), dDayTimeStamp: Int(time))
+        return .init(id: "empty", userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .empty, volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), dDayTimeStamp: Int(time))
     }
     
     var dDayString: String {
