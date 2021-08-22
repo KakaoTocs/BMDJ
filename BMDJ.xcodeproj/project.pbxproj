@@ -548,6 +548,7 @@
 				65B3779E262AE513000D03E7 /* Sources */,
 				65B3779F262AE513000D03E7 /* Frameworks */,
 				65B377A0262AE513000D03E7 /* Resources */,
+				65B6D8BB26D2AE6D00F7110F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -635,6 +636,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65B6D8BB26D2AE6D00F7110F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\" -gsp \"${PROJECT_DIR}/BMDJ/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65B3779E262AE513000D03E7 /* Sources */ = {
