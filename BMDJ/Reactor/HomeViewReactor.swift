@@ -262,7 +262,7 @@ final class HomeViewReactor: Reactor {
     func reactorForMenu() -> MenuViewReactor {
         var danjis: [Danji] = []
         if let danjiReactors = currentState.danjiSections.first?.items {
-            danjis = danjiReactors.map { $0.currentState }
+            danjis = danjiReactors.map { $0.currentState }.filter { $0.color != .gray }
         }
         return MenuViewReactor(provider: provider, danjis: danjis, activeDanji: currentState.activeDanji)
     }
