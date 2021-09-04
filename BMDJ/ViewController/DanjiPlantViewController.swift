@@ -268,6 +268,8 @@ final class DanjiPlantViewController: UIViewController, View {
         super.viewDidLoad()
         
         setLayout()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
 
     // MARK: - Method
@@ -531,7 +533,7 @@ final class DanjiPlantViewController: UIViewController, View {
             .map { Reactor.Action.plant }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-    } 
+    }
     
     private func bindState(_ reactor: DanjiPlantViewReactor) {
         reactor.state.asObservable().map { $0.colorSections }
@@ -574,5 +576,10 @@ final class DanjiPlantViewController: UIViewController, View {
             })
             .disposed(by: disposeBag)
         
+    }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        let topOffset = infoView.frame.minY + nicknameLabel.frame.minY
+        scrollView.setContentOffset(.init(x: 0, y: topOffset), animated: true)
     }
 }
