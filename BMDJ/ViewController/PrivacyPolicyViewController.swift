@@ -42,6 +42,7 @@ final class PrivacyPolicyViewController: UIViewController, View {
         textView.font = .regularBody3
         textView.text = text
         textView.backgroundColor = .background2
+        textView.isEditable = false
         view.addSubview(textView)
         return textView
     }()
