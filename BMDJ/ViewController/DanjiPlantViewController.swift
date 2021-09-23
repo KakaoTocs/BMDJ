@@ -271,6 +271,12 @@ final class DanjiPlantViewController: UIViewController, View {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        colorCollectionView.selectItem(at: IndexPath(item: 4, section: 0), animated: false, scrollPosition: .top)
+    }
 
     // MARK: - Method
     func bind(reactor: DanjiPlantViewReactor) {
