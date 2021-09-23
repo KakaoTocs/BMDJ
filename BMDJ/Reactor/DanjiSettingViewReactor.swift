@@ -37,6 +37,9 @@ final class DanjiSettingViewReactor: Reactor {
             SettingSection(model: "서비스 약관", items: [
                 SettingTableCellReactor(state: .init(name: "개인정보 처리방침", value: nil, isSwitch: false))
             ]),
+            SettingSection(model: "라이센스 정보", items: [
+                SettingTableCellReactor(state: .init(name: "라이센스 목록", value: nil, isSwitch: false))
+            ]),
             SettingSection(model: "계정", items: [
                 SettingTableCellReactor(state: .init(name: "서비스 탈퇴", value: nil, isSwitch: false))
             ])
