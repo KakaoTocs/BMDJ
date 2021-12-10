@@ -42,12 +42,18 @@ final class MemoClient {
         .map { $0.data }
     }
     
-    func update() {
-        
+    func update(memo: Memo) -> Observable<Bool> {
+        return RxAlamofire.upload(multipartFormData: { formData in
+            if let text = memo.text.data(using: .utf8) {
+                formData.append(text, withName: "text")
+            }
+        }, urlRequest: MemoRouter.update(id: memo.id, text: memo.text))
+        .map { _ in true }
     }
-    
-    func delete() {
-        
+    func delete(memo: Memo) -> Observable<Bool> {
+        return RxAlamofire.request(MemoRouter.delete(id: memo.id))
+            .validate(statusCode: 200..<300)
+            .map { _ in true }
     }
     
 }

@@ -8,11 +8,20 @@
 import Foundation
 import ReactorKit
 
+protocol MemoCollectionCellDelegate: AnyObject {
+    func edit(memo: Memo)
+}
+
 final class MemoCollectionCellReactor: Reactor {
-    typealias Action = NoAction
     
-    let initialState: State
+    enum Action {
+        case edit
+    }
     
+    enum Mutation {
+        case edit
+    }
+
     struct State {
         let memoe: Memo
         let isGradient: Bool
@@ -23,7 +32,18 @@ final class MemoCollectionCellReactor: Reactor {
         }
     }
     
+    weak var delegate: MemoCollectionCellDelegate?
+    let initialState: State
+    
     init(memo: Memo, isGradient: Bool) {
         initialState = .init(memo: memo, isGradient: isGradient)
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .edit:
+            delegate?.edit(memo: currentState.memoe)
+            return .empty()
+        }
     }
 }

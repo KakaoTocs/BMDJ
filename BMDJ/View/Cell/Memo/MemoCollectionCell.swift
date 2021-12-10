@@ -31,6 +31,21 @@ final class MemoCollectionCell: UICollectionViewCell, View {
         return imageView
     }()
     
+    private lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .init(hex: 0x575757)
+        label.font = .regularBody2
+        contentView.addSubview(label)
+        return label
+    }()
+    
+    private lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.setImage(.icEdit, for: .normal)
+        contentView.addSubview(button)
+        return button
+    }()
+    
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -40,6 +55,13 @@ final class MemoCollectionCell: UICollectionViewCell, View {
         return label
     }()
     
+    private lazy var line: UIView = {
+        let view = UIView()
+        view.backgroundColor = .init(hex: 0xFFFFFF)
+        contentView.addSubview(view)
+        return view
+    }()
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -47,21 +69,6 @@ final class MemoCollectionCell: UICollectionViewCell, View {
         imageView.layer.cornerRadius = 4
         contentView.addSubview(imageView)
         return imageView
-    }()
-    
-    private lazy var dateLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = .init(hex: 0x575757)
-        contentView.addSubview(view)
-        return view
-    }()
-    
-    private lazy var dateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .init(hex: 0x575757)
-        label.font = .regularCaption
-        contentView.addSubview(label)
-        return label
     }()
     
     // MARK: - Property
@@ -114,37 +121,46 @@ final class MemoCollectionCell: UICollectionViewCell, View {
             $0.left.equalToSuperview().offset(24 * AppService.shared.layoutScale)
         }
         
+        dateLabel.snp.makeConstraints {
+            $0.width.equalTo(100 * AppService.shared.layoutScale)
+            $0.height.equalTo(19 * AppService.shared.layoutScale)
+            $0.leading.equalTo(moodImageView.snp.trailing).offset(16 * AppService.shared.layoutScale)
+            $0.centerY.equalTo(moodImageView.snp.centerY)
+        }
+        
+        editButton.snp.makeConstraints {
+            $0.width.height.equalTo(40 * AppService.shared.layoutScale)
+            $0.trailing.equalToSuperview().offset(-6 * AppService.shared.layoutScale)
+            $0.top.equalToSuperview().offset(10 * AppService.shared.layoutScale)
+        }
+        
         textLabel.snp.makeConstraints {
             $0.height.equalTo(48 * AppService.shared.layoutScale)
             $0.top.equalTo(moodImageView.snp.bottom).offset(16 * AppService.shared.layoutScale)
-            $0.left.equalTo(24 * AppService.shared.layoutScale)
-            $0.right.equalTo(-24 * AppService.shared.layoutScale)
-        }
-        
-        imageView.snp.makeConstraints {
-            $0.top.equalTo(textLabel.snp.bottom).offset(41 * AppService.shared.layoutScale)
             $0.left.equalToSuperview().offset(24 * AppService.shared.layoutScale)
             $0.right.equalToSuperview().offset(-24 * AppService.shared.layoutScale)
         }
         
-        dateLine.snp.makeConstraints {
-            $0.width.equalTo(1)
-            $0.height.equalTo(9 * AppService.shared.layoutScale)
-            $0.top.equalTo(imageView.snp.bottom).offset(35 * AppService.shared.layoutScale)
+        line.snp.makeConstraints {
+            $0.height.equalTo(1 * AppService.shared.layoutScale)
+            $0.top.equalTo(textLabel.snp.bottom).offset(16 * AppService.shared.layoutScale)
             $0.left.equalToSuperview().offset(24 * AppService.shared.layoutScale)
-            $0.bottom.equalToSuperview().offset(-28 * AppService.shared.layoutScale)
+            $0.right.equalToSuperview().offset(-24 * AppService.shared.layoutScale)
         }
         
-        dateLabel.snp.makeConstraints {
-            $0.width.equalTo(100 * AppService.shared.layoutScale)
-            $0.height.equalTo(15 * AppService.shared.layoutScale)
-            $0.left.equalTo(dateLine.snp.right).offset(8 * AppService.shared.layoutScale)
-            $0.centerY.equalTo(dateLine.snp.centerY)
+        imageView.snp.makeConstraints {
+            $0.top.equalTo(line.snp.bottom).offset(24 * AppService.shared.layoutScale)
+            $0.left.equalToSuperview().offset(24 * AppService.shared.layoutScale)
+            $0.right.equalToSuperview().offset(-24 * AppService.shared.layoutScale)
+            $0.bottom.equalToSuperview().offset(-32 * AppService.shared.layoutScale)
         }
     }
     
     private func bindAction(_ reactor: MemoCollectionCellReactor) {
-        
+        editButton.rx.tap
+            .map { _ in MemoCollectionCellReactor.Action.edit }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
     private func bindState(_ reactor: MemoCollectionCellReactor) {
@@ -172,6 +188,16 @@ final class MemoCollectionCell: UICollectionViewCell, View {
             .filter { $0.isGradient }
             .map { $0.memoe.moodGradient }
             .bind(to: gradientLayer.rx.colors)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.isGradient }
+            .map { $0 ? UIColor.white : .background2 }
+            .bind(to: line.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.isGradient }
+            .map { !$0 }
+            .bind(to: editButton.rx.isHidden)
             .disposed(by: disposeBag)
     }
 }

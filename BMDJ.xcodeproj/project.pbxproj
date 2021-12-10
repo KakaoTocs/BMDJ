@@ -12,6 +12,8 @@
 		65048A7F2656B73800B275D0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 65048A7E2656B73800B275D0 /* Lottie */; };
 		65048A822656B74800B275D0 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 65048A812656B74800B275D0 /* data.json */; };
 		65091C4126C97775000F698A /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65091C4026C97775000F698A /* UserDefaultService.swift */; };
+		650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B75892732F18D000D2B79 /* AlertViewController.swift */; };
+		650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B758B2732F19F000D2B79 /* AlertViewReactor.swift */; };
 		650D2A6026C4327200F9981E /* ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D2A5F26C4327200F9981E /* ImageImportButton.swift */; };
 		65110674269F44B0009AB050 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65110673269F44B0009AB050 /* Int.swift */; };
 		65139D2826B31AE000E32718 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65139D2726B31AE000E32718 /* AuthClient.swift */; };
@@ -22,6 +24,7 @@
 		65261A7C269359B5005E877C /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65261A7B269359B5005E877C /* MemoRepository.swift */; };
 		65261A7E2693616A005E877C /* MemoCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65261A7D2693616A005E877C /* MemoCreate.swift */; };
 		6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA1A2635219400D06F17 /* BMDJImage.swift */; };
+		653C1157273E3DA400DAA916 /* DanjiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A1DCF2655657700622D95 /* DanjiProvider.swift */; };
 		65429F8B2660CDA2000819BE /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429F8A2660CDA2000819BE /* NetworkResult.swift */; };
 		65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65440B5726B6757500186E7B /* PrivacyPolicyViewController.swift */; };
 		65440B5A26B67C1100186E7B /* PrivacyPolicyReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65440B5926B67C1100186E7B /* PrivacyPolicyReactor.swift */; };
@@ -40,6 +43,7 @@
 		6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656040992680F4FF00F9A725 /* SettingTItleHeader.swift */; };
 		6560409E2680F50D00F9A725 /* SettingTitleHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */; };
 		65620A06266E84E30041C780 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65620A05266E84E30041C780 /* MemoViewController.swift */; };
+		65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65724E51273ACFEC00C84E91 /* MemoEditViewReactor.swift */; };
 		65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65739EA2263E9661009AA160 /* Date+Utility.swift */; };
 		65739EA6263E96C0009AA160 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65739EA5263E96C0009AA160 /* Date.swift */; };
 		6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575A00B267E60DA0004ACEF /* DataBaseService.swift */; };
@@ -56,6 +60,8 @@
 		6580837F265C09980071EED7 /* DanjiBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6580837E265C09980071EED7 /* DanjiBase.swift */; };
 		6585A97E265D69CD008D6858 /* MemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A97D265D69CD008D6858 /* MemoRouter.swift */; };
 		6585A982265D69D7008D6858 /* MemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A981265D69D7008D6858 /* MemoClient.swift */; };
+		6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */; };
+		6586A635271EB6D700AEFC7C /* EditPopupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A634271EB6D700AEFC7C /* EditPopupViewReactor.swift */; };
 		6586FF42264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */; };
 		6586FF45264AD3B800BF4CD5 /* DanjiPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */; };
 		6586FF48264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */; };
@@ -95,11 +101,21 @@
 		65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA5536268A13940006FCDB /* LottieTestViewController.swift */; };
 		65CA5539268A14970006FCDB /* danji.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CA5538268A14970006FCDB /* danji.json */; };
 		65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */; };
+		65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */; };
 		65D7D29226849BDF00D69C7C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7D29126849BDF00D69C7C /* Array.swift */; };
 		65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D985312675F86C00D3F467 /* DanjiCreate.swift */; };
+		65DB9A6B26E3DC8500643D71 /* LicenseListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */; };
+		65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */; };
+		65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2140726E3D60C00136D18 /* LicenseListViewController.swift */; };
+		65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */; };
 		65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B3264839D300EB6315 /* AddMemoViewController.swift */; };
 		65EF92B726484AC200EB6315 /* AddMemoViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */; };
 		65F3018126C99330004FAA63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F3018026C99330004FAA63 /* GoogleService-Info.plist */; };
+		65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */; };
+		65FA36F3271AB9BD00131FAA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F2271AB9BD00131FAA /* CFNetwork.framework */; };
+		65FA36F5271AB9C400131FAA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F4271AB9C400131FAA /* WebKit.framework */; };
+		65FA36F7271AB9E800131FAA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F6271AB9D600131FAA /* libz.tbd */; };
+		65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36FB271ABDC900131FAA /* UserHabit.framework */; };
 		65FC091A26639359001E70FC /* BMDJWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC091926639359001E70FC /* BMDJWeatherView.swift */; };
 		65FD602326B070430049023F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 65FD602226B070430049023F /* GoogleSignIn */; };
 		65FF1E0D2658E49D00F65164 /* BMDJMoodSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E0C2658E49D00F65164 /* BMDJMoodSwitch.swift */; };
@@ -114,6 +130,8 @@
 		6503613926713279006CEBC1 /* MemoViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewReactor.swift; sourceTree = "<group>"; };
 		65048A812656B74800B275D0 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		65091C4026C97775000F698A /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
+		650B75892732F18D000D2B79 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		650B758B2732F19F000D2B79 /* AlertViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewReactor.swift; sourceTree = "<group>"; };
 		650D2A5F26C4327200F9981E /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImportButton.swift; sourceTree = "<group>"; };
 		65110673269F44B0009AB050 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		65139D2726B31AE000E32718 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
@@ -136,6 +154,7 @@
 		656040992680F4FF00F9A725 /* SettingTItleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTItleHeader.swift; sourceTree = "<group>"; };
 		6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleHeaderReactor.swift; sourceTree = "<group>"; };
 		65620A05266E84E30041C780 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		65724E51273ACFEC00C84E91 /* MemoEditViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEditViewReactor.swift; sourceTree = "<group>"; };
 		65739EA2263E9661009AA160 /* Date+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utility.swift"; sourceTree = "<group>"; };
 		65739EA5263E96C0009AA160 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		6575A00B267E60DA0004ACEF /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
@@ -150,6 +169,8 @@
 		6580837E265C09980071EED7 /* DanjiBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiBase.swift; sourceTree = "<group>"; };
 		6585A97D265D69CD008D6858 /* MemoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRouter.swift; sourceTree = "<group>"; };
 		6585A981265D69D7008D6858 /* MemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoClient.swift; sourceTree = "<group>"; };
+		6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopupViewController.swift; sourceTree = "<group>"; };
+		6586A634271EB6D700AEFC7C /* EditPopupViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditPopupViewReactor.swift; path = ../DanjiSortView/EditPopupViewReactor.swift; sourceTree = "<group>"; };
 		6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortViewReactor.swift; sourceTree = "<group>"; };
 		6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiPlantViewController.swift; sourceTree = "<group>"; };
 		6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiPlantViewReactor.swift; sourceTree = "<group>"; };
@@ -188,11 +209,23 @@
 		65CA5536268A13940006FCDB /* LottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestViewController.swift; sourceTree = "<group>"; };
 		65CA5538268A14970006FCDB /* danji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = danji.json; sourceTree = "<group>"; };
 		65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEditViewController.swift; sourceTree = "<group>"; };
 		65D7D29126849BDF00D69C7C /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		65D985312675F86C00D3F467 /* DanjiCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiCreate.swift; sourceTree = "<group>"; };
+		65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseListViewReactor.swift; sourceTree = "<group>"; };
+		65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewReactor.swift; sourceTree = "<group>"; };
+		65E2140726E3D60C00136D18 /* LicenseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
+		65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
 		65EF92B3264839D300EB6315 /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewReactor.swift; sourceTree = "<group>"; };
 		65F3018026C99330004FAA63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65FA36EC271AB98900131FAA /* UserHabit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserHabit.framework; path = ../../../../Downloads/UserHabit.framework; sourceTree = "<group>"; };
+		65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		65FA36F2271AB9BD00131FAA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		65FA36F4271AB9C400131FAA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		65FA36F6271AB9D600131FAA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		65FA36F8271ABA5700131FAA /* UserHabit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserHabit-Bridging-Header.h"; sourceTree = "<group>"; };
+		65FA36FB271ABDC900131FAA /* UserHabit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UserHabit.framework; sourceTree = "<group>"; };
 		65FC091926639359001E70FC /* BMDJWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJWeatherView.swift; sourceTree = "<group>"; };
 		65FD602026B05FDB0049023F /* BMDJ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BMDJ.entitlements; sourceTree = "<group>"; };
 		65FF1E0C2658E49D00F65164 /* BMDJMoodSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJMoodSwitch.swift; sourceTree = "<group>"; };
@@ -208,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B377D9262AE6C4000D03E7 /* RxKingfisher in Frameworks */,
+				65FA36F7271AB9E800131FAA /* libz.tbd in Frameworks */,
 				655AB69E26E2AC9000A7D9BC /* FirebaseAuth in Frameworks */,
 				65048A7F2656B73800B275D0 /* Lottie in Frameworks */,
 				655AB69C26E2AC9000A7D9BC /* FirebaseMessaging in Frameworks */,
@@ -220,9 +254,13 @@
 				65B377E1262AE781000D03E7 /* RxRealm in Frameworks */,
 				658CC9F9263D499B000286D3 /* RxDataSources in Frameworks */,
 				6575A010267E61E40004ACEF /* Realm in Frameworks */,
+				65FA36F5271AB9C400131FAA /* WebKit.framework in Frameworks */,
+				65FA36F3271AB9BD00131FAA /* CFNetwork.framework in Frameworks */,
 				655AB69A26E2AC9000A7D9BC /* FirebaseCrashlytics in Frameworks */,
 				659625E2262BF51D00277B80 /* ReactorKit in Frameworks */,
 				6575A012267E61E40004ACEF /* RealmSwift in Frameworks */,
+				65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */,
+				65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */,
 				65B377C9262AE687000D03E7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +268,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650B75862732F170000D2B79 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				650B75892732F18D000D2B79 /* AlertViewController.swift */,
+				650B758B2732F19F000D2B79 /* AlertViewReactor.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		650D2A5E26C4325900F9981E /* ImageImportButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +305,11 @@
 		653837912632F10B00F4D6EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65FA36F6271AB9D600131FAA /* libz.tbd */,
+				65FA36F4271AB9C400131FAA /* WebKit.framework */,
+				65FA36F2271AB9BD00131FAA /* CFNetwork.framework */,
+				65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */,
+				65FA36EC271AB98900131FAA /* UserHabit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -322,13 +374,57 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		659625E4262BF52500277B80 /* ViewController */ = {
+		6586A62B271EAF1100AEFC7C /* EditPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				6586A634271EB6D700AEFC7C /* EditPopupViewReactor.swift */,
+				6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */,
+			);
+			path = EditPopupView;
+			sourceTree = "<group>";
+		};
+		6586A630271EAF4C00AEFC7C /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
 				659625E8262BF60D00277B80 /* HomeViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		6586A631271EAF5300AEFC7C /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
 				6559820B264416720011D5BC /* MenuViewController.swift */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		6586A632271EAF5B00AEFC7C /* AddMemoView */ = {
+			isa = PBXGroup;
+			children = (
 				65EF92B3264839D300EB6315 /* AddMemoViewController.swift */,
+			);
+			path = AddMemoView;
+			sourceTree = "<group>";
+		};
+		6586A633271EAF6400AEFC7C /* DanjiSortView */ = {
+			isa = PBXGroup;
+			children = (
 				6519946D26498AE80067A29D /* DanjiSortViewController.swift */,
+			);
+			path = DanjiSortView;
+			sourceTree = "<group>";
+		};
+		659625E4262BF52500277B80 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				650B75862732F170000D2B79 /* Alert */,
+				65D2D49F2731A658007D9D8C /* MemoEdit */,
+				6586A633271EAF6400AEFC7C /* DanjiSortView */,
+				6586A632271EAF5B00AEFC7C /* AddMemoView */,
+				6586A631271EAF5300AEFC7C /* MenuView */,
+				6586A630271EAF4C00AEFC7C /* HomeView */,
+				6586A62B271EAF1100AEFC7C /* EditPopupView */,
 				6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */,
 				65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */,
 				65B02E8026511B3200A61D17 /* LoginViewController.swift */,
@@ -336,6 +432,8 @@
 				657CF7FE267F330200A4CD57 /* MemoListViewController.swift */,
 				65CA5536268A13940006FCDB /* LottieTestViewController.swift */,
 				65440B5726B6757500186E7B /* PrivacyPolicyViewController.swift */,
+				65E2140726E3D60C00136D18 /* LicenseListViewController.swift */,
+				65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -377,6 +475,8 @@
 				6503613926713279006CEBC1 /* MemoViewReactor.swift */,
 				657CF801267F369A00A4CD57 /* MemoListViewReactor.swift */,
 				65440B5926B67C1100186E7B /* PrivacyPolicyReactor.swift */,
+				65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */,
+				65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
@@ -448,10 +548,11 @@
 				659625F2262BF8DF00277B80 /* Model */,
 				659625E6262BF56A00277B80 /* View */,
 				659625E4262BF52500277B80 /* ViewController */,
-				65B377A5262AE513000D03E7 /* AppDelegate.swift */,
 				65B377AE262AE514000D03E7 /* Assets.xcassets */,
+				65B377A5262AE513000D03E7 /* AppDelegate.swift */,
 				65B377B0262AE514000D03E7 /* LaunchScreen.storyboard */,
 				65B377B3262AE514000D03E7 /* Info.plist */,
+				65FA36F8271ABA5700131FAA /* UserHabit-Bridging-Header.h */,
 			);
 			path = BMDJ;
 			sourceTree = "<group>";
@@ -459,6 +560,7 @@
 		65B377BA262AE598000D03E7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				65FA36FB271ABDC900131FAA /* UserHabit.framework */,
 				65CA5538268A14970006FCDB /* danji.json */,
 				65048A812656B74800B275D0 /* data.json */,
 				650219A726AB0D06000A1CF1 /* Rec.json */,
@@ -491,6 +593,15 @@
 				65139D2726B31AE000E32718 /* AuthClient.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		65D2D49F2731A658007D9D8C /* MemoEdit */ = {
+			isa = PBXGroup;
+			children = (
+				65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */,
+				65724E51273ACFEC00C84E91 /* MemoEditViewReactor.swift */,
+			);
+			path = MemoEdit;
 			sourceTree = "<group>";
 		};
 		65FF1E0B2658E48B00F65164 /* BMDJ */ = {
@@ -674,7 +785,9 @@
 				6577641A2637184A001947CF /* CGFloat.swift in Sources */,
 				65776412263713DB001947CF /* DanjiCollectionCell.swift in Sources */,
 				65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */,
+				65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */,
 				65B377C0262AE5B0000D03E7 /* BMDJColor.swift in Sources */,
+				650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */,
 				658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */,
 				65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */,
 				65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */,
@@ -693,19 +806,24 @@
 				65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */,
 				65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */,
 				65440B5A26B67C1100186E7B /* PrivacyPolicyReactor.swift in Sources */,
+				6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */,
+				6586A635271EB6D700AEFC7C /* EditPopupViewReactor.swift in Sources */,
 				65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */,
 				65261A7E2693616A005E877C /* MemoCreate.swift in Sources */,
 				6586FF45264AD3B800BF4CD5 /* DanjiPlantViewController.swift in Sources */,
 				65C152E2265978C500418EBE /* DanjiSortTableCellReactor.swift in Sources */,
 				65091C4126C97775000F698A /* UserDefaultService.swift in Sources */,
+				65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */,
 				655DC07D267DD5B9000A44A0 /* DanjiCellDelegateProxy.swift in Sources */,
 				6577641626371780001947CF /* AppService.swift in Sources */,
 				65139D2826B31AE000E32718 /* AuthClient.swift in Sources */,
 				65620A06266E84E30041C780 /* MemoViewController.swift in Sources */,
+				653C1157273E3DA400DAA916 /* DanjiProvider.swift in Sources */,
 				65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */,
 				6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */,
 				6575A016267E64990004ACEF /* File+Utility.swift in Sources */,
 				6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */,
+				65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */,
 				659625F4262BFA1300277B80 /* Danji.swift in Sources */,
 				6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */,
 				65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */,
@@ -716,8 +834,10 @@
 				65B893FD268A3362001BB6D9 /* ServiceProvider.swift in Sources */,
 				658CC9F5263D440F000286D3 /* DanjiCollectionCellReactor.swift in Sources */,
 				65FF1E122658F44E00F65164 /* ColorCollectionCell.swift in Sources */,
+				65DB9A6B26E3DC8500643D71 /* LicenseListViewReactor.swift in Sources */,
 				6585A97E265D69CD008D6858 /* MemoRouter.swift in Sources */,
 				65AC5D11269DE41E008FFFB7 /* UIImage.swift in Sources */,
+				65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */,
 				6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */,
 				65B02E8426511E9D00A61D17 /* DanjiLoginViewReactor.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
@@ -733,9 +853,11 @@
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
 				65FF1E0D2658E49D00F65164 /* BMDJMoodSwitch.swift in Sources */,
+				65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */,
 				6580837F265C09980071EED7 /* DanjiBase.swift in Sources */,
 				65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */,
 				659625EF262BF80700277B80 /* HomeViewReactor.swift in Sources */,
+				650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */,
 				6503613A26713279006CEBC1 /* MemoViewReactor.swift in Sources */,
 				6559820F264418140011D5BC /* MenuViewReactor.swift in Sources */,
 				65FF1E152658F45700F65164 /* ColorCollectionCellReactor.swift in Sources */,
@@ -887,6 +1009,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P7PUGAUP8K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BMDJ/Resource",
+				);
 				INFOPLIST_FILE = BMDJ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -895,10 +1021,11 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BMDJ/UserHabit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -913,6 +1040,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P7PUGAUP8K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BMDJ/Resource",
+				);
 				INFOPLIST_FILE = BMDJ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -921,10 +1052,11 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BMDJ/UserHabit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

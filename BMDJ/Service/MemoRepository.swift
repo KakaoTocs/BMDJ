@@ -17,6 +17,7 @@ enum MemoEvent {
     case update(Memo)
     case move(String, Int)
     case refresh
+    case delete(Memo)
 }
 
 final class MemoRepository: BaseService {
@@ -50,6 +51,44 @@ final class MemoRepository: BaseService {
                 .do(onNext: { memo in
                     self.event.onNext(.create(memo))
                 })
+            }
+    }
+    
+    func updateMemo(_ memo: Memo) -> Observable<Memo> {
+        return MemoClient.shared.update(memo: memo)
+            .flatMap { _ in
+                return self.fetchMemo()
+                    .flatMap { [weak self] memos -> Observable<Memo> in
+                        guard let `self` = self else { return .just(memo) }
+                        var newMemos = memos
+                        if let index = memos.firstIndex(of: memo) {
+                            newMemos[index] = memo
+                        }
+                        return self.saveMemos(newMemos)
+                            .map { _ in memo }
+                            .do(onNext: { _ in
+                                self.event.onNext(.update(memo))
+                            })
+                    }
+            }
+    }
+    
+    func deleteMemo(_ memo: Memo) -> Observable<Bool> {
+        return MemoClient.shared.delete(memo: memo)
+            .flatMap { _ in
+                self.fetchMemo()
+                    .flatMap { [weak self] memos -> Observable<Bool> in
+                        guard let `self` = self else { return .just(false) }
+                        var newMemos = memos
+                        if let index = memos.firstIndex(of: memo) {
+                            newMemos.remove(at: index)
+                        }
+                        return self.saveMemos(newMemos)
+                            .map { _ in true }
+                            .do(onNext: { _ in
+                                self.event.onNext(.delete(memo))
+                            })
+                    }
             }
     }
 }

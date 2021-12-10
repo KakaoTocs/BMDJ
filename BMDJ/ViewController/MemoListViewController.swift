@@ -125,8 +125,21 @@ final class MemoListViewController: UIViewController, View {
     }
     
     private func bindState(_ reactor: MemoListViewReactor) {
-        reactor.state.asObservable().map { $0.memoSections }
+        reactor.state.map { $0.memoSections }
             .bind(to: collectionView.rx.items(dataSource: memoDataSource))
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.edit }
+            .filter { $0 != nil }
+            .map { reactor.reactorForEditPopup($0!)}
+            .bind { reactor in
+                let editVC = EditPopupViewController()
+                editVC.reactor = reactor
+                editVC.modalPresentationStyle = .overFullScreen
+                DispatchQueue.main.async {
+                    self.present(editVC, animated: false, completion: nil)
+                }
+            }
             .disposed(by: disposeBag)
     }
 }

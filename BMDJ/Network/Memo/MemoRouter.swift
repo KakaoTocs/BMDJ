@@ -11,7 +11,7 @@ import Alamofire
 enum MemoRouter: URLRequestConvertible {
     case all(danjiID: String)
     case add(memoCreate: MemoCreate)
-    case update(id: String)
+    case update(id: String, text: String)
     case delete(id: String)
     
     private var baseURL: String {
@@ -41,8 +41,8 @@ enum MemoRouter: URLRequestConvertible {
             return "/memos?danjiId=\(id)"
         case .add:
             return "/memo"
-        case .update(let id):
-            return "memo/\(id)"
+        case .update(let id, _):
+            return "/memo/\(id)"
         case .delete(let id):
             return "/memo/\(id)"
         }
@@ -50,28 +50,6 @@ enum MemoRouter: URLRequestConvertible {
     
     var body: Data? {
         switch self {
-//        case .add(let memo):
-//            let params = [
-//                "mood": memo.mood.rawValue,
-//                "text": memo.text,
-//                "danjiId": memo.danjiId
-//            ]
-//            var strings: [String] = []
-//            for (key, value) in params {
-//                strings.append(key + "=\(value)")
-//            }
-//            guard let data = strings.map({ String($0) }).joined(separator: "&").data(using: .utf8) else {
-//                return nil
-//            }
-            /*
-            if let image = memo.image,
-               let imageData = image.pngData() {
-                data.append("\r\n--\(memo.uuid)\r\n".data(using: .utf8)!)
-                data.append("Content-Disposition: form-data; name=\"image\"; filename=\"image\"\r\n".data(using: .utf8)!)
-//                data.append(imageData)
-                data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
-            }*/
-//            return data
         default:
             return nil
         }

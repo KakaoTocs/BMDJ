@@ -118,6 +118,14 @@ final class DanjiSettingViewController: UIViewController, View {
         }
     }
     
+    private func showLicenseList() {
+        let vc = LicenseListViewController(reactor: .init())
+        vc.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(vc, animated: true)
+        }
+    }
+    
     private func withdrawal() {
         AuthClient.shared.withdrawal(token: "")
             .subscribe(onNext: { result in
@@ -164,6 +172,8 @@ extension DanjiSettingViewController: UITableViewDelegate {
         case 2 where indexPath.item == 0:
             showPrivacyPolicy()
         case 3:
+            showLicenseList()
+        case 4:
             withdrawal()
         default:
             return

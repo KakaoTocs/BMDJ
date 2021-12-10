@@ -211,11 +211,14 @@ final class LoginViewController: UIViewController, View {
             print("Google User ID: \(user?.userID ?? "nil")")
             if let idToken = user?.authentication.idToken,
                let accessToken = user?.authentication.accessToken {
+                let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+                Auth.auth().signIn(with: credential) { result, error in
+                    dump(result)
+                    print(error?.localizedDescription)
+                }
                 AuthClient.shared.google(token: idToken)
                     .subscribe(onNext: { token in
                         print("Google: \(token)")
-                        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-                        Auth.auth().signIn(with: credential)
                         self.loginSuccess(token: token)
                     })
                     .disposed(by: self.disposeBag)

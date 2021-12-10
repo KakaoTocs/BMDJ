@@ -8,6 +8,7 @@
 import UIKit
 
 import Firebase
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,8 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             window?.rootViewController = loginVC
         }
-        
+        #if DEBUG
+        UserHabit.sessionStart("dev_4289ca4293b33fdaaa7ab19af85c28b29f732dca", withAutoTracking: true)
+        #else
+        UserHabit.sessionStart("4289ca4293b33fdaaa7ab19af85c28b29f732dca", withAutoTracking: true)
+        #endif
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
     }
 }
 

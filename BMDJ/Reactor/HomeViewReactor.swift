@@ -31,6 +31,8 @@ final class HomeViewReactor: Reactor {
         case updateDanjiSectionItem(IndexPath, DanjiSection.Item)
         case insertMemoSectionItem(IndexPath, MemoSection.Item)
         case updateMemoSectionItem(IndexPath, MemoSection.Item)
+        case delete(Memo)
+        case update(Memo)
     }
     
     struct State {
@@ -158,10 +160,10 @@ final class HomeViewReactor: Reactor {
           let reactor = MemoCollectionCellReactor(memo: memo, isGradient: false)
           return .just(.insertMemoSectionItem(indexPath, reactor))
 
-        case let .update(memo):
-          guard let indexPath = self.memoIndexPath(forMemoID: memo.id, from: state) else { return .empty() }
-          let reactor = MemoCollectionCellReactor(memo: memo, isGradient: false)
-          return .just(.updateMemoSectionItem(indexPath, reactor))
+//        case let .update(memo):
+//          guard let indexPath = self.memoIndexPath(forMemoID: memo.id, from: state) else { return .empty() }
+//          let reactor = MemoCollectionCellReactor(memo: memo, isGradient: false)
+//          return .just(.updateMemoSectionItem(indexPath, reactor))
         case .move:
             return provider.memoRepository.fetchMemo()
                 .map { memos in
@@ -171,6 +173,10 @@ final class HomeViewReactor: Reactor {
                 }
         case .refresh:
             return .just(.removeEmpty)
+        case let .delete(memo):
+            return .just(.delete(memo))
+        case let .update(memo):
+            return .just(.update(memo))
         }
     }
     
@@ -232,6 +238,18 @@ final class HomeViewReactor: Reactor {
             }
         case let .fetchMemoSections(sections):
             state.memoSections = sections
+        case let .delete(memo):
+            if let index = state.memoSections.first?.items.firstIndex(where: { $0.currentState.memoe.id == memo.id }),
+               var section = state.memoSections.first {
+                section.items.remove(at: index)
+                state.memoSections = [.init(model: (), items: section.items)]
+            }
+        case let .update(memo):
+            if let index = state.memoSections.first?.items.firstIndex(where: { $0.currentState.memoe.id == memo.id }),
+               var section = state.memoSections.first {
+                section.items[index] = .init(memo: memo, isGradient: false)
+                state.memoSections = [.init(model: (), items: section.items)]
+            }
         default:
             break
         }
@@ -276,6 +294,6 @@ final class HomeViewReactor: Reactor {
         if let memoReactors = currentState.memoSections.first?.items {
             memos = memoReactors.map { $0.initialState.memoe }
         }
-        return MemoListViewReactor(memos: memos)
+        return MemoListViewReactor(memos: memos, provider: provider)
     }
 }

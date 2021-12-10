@@ -30,6 +30,10 @@ struct Memo: Codable, Equatable {
         case danjiID = "danjiId"
     }
     
+    public static func ==(lhs: Memo, rhs: Memo) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     static func empty(danjiID: String) -> Memo {
         return .init(id: UUID().uuidString, danjiID: danjiID, mood: .nomal, imageURLString: "https://firebasestorage.googleapis.com/v0/b/bmdj-1627404676793.appspot.com/o/Mock%2FEmptyImage.png?alt=media&token=5265397c-d9e6-4d54-929f-321e0c5e9c92", text: "올려주신 메모가 없습니다.\n메모를 작성해 보세요 :)", createDate: Int(Date().timeIntervalSince1970 * 1000))
     }
