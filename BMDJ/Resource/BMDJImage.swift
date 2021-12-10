@@ -40,6 +40,8 @@ enum BMDJImage: String {
     case icBkImg = "icBkImg"
     case detailRight = "detailRight"
     
+    case icEdit = "moreIc"
+    
     // MARK: - Mood
     case happy = "happy"
     case sad = "sad"
@@ -249,5 +251,9 @@ extension UIImage {
     
     class var potYellow: UIImage? {
         return BMDJImage.potYellow.image
+    }
+    
+    class var icEdit: UIImage? {
+        return BMDJImage.icEdit.image
     }
 }

@@ -95,7 +95,6 @@ final class DanjiPlantViewController: UIViewController, View {
         collectionView.backgroundColor = .clear
         collectionView.register(ColorCollectionCell.self, forCellWithReuseIdentifier: ColorCollectionCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
         danjiView.addSubview(collectionView)
         return collectionView
     }()
@@ -223,7 +222,7 @@ final class DanjiPlantViewController: UIViewController, View {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 4
+        button.layer.cornerRadius = 4 * AppService.shared.layoutScale
         button.backgroundColor = .font5
         button.setTitle("저장하기", for: .normal)
         button.setTitleColor(.font2, for: .disabled)
@@ -482,12 +481,12 @@ final class DanjiPlantViewController: UIViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        colorCollectionView.rx.itemSelected
-            .subscribe(onNext: { indexPath in
-                print("Select: \(indexPath.item)")
-                self.colorCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
-            })
-            .disposed(by: disposeBag)
+//        colorCollectionView.rx.itemSelected
+//            .subscribe(onNext: { indexPath in
+//                print("Select: \(indexPath.item)")
+//                self.colorCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+//            })
+//            .disposed(by: disposeBag)
         
         nicknameTextField.rx.text
             .filterNil()
