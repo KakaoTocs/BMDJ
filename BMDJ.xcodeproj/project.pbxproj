@@ -318,6 +318,78 @@
 			path = Memo;
 			sourceTree = "<group>";
 		};
+		655C2E662768FBB3006542EA /* DanjiPlant */ = {
+			isa = PBXGroup;
+			children = (
+				6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */,
+				6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */,
+			);
+			path = DanjiPlant;
+			sourceTree = "<group>";
+		};
+		655C2E672768FBDC006542EA /* DanjiSetting */ = {
+			isa = PBXGroup;
+			children = (
+				65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */,
+				65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */,
+			);
+			path = DanjiSetting;
+			sourceTree = "<group>";
+		};
+		655C2E682768FBE8006542EA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				65B02E8026511B3200A61D17 /* LoginViewController.swift */,
+				65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		655C2E692768FC18006542EA /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				65620A05266E84E30041C780 /* MemoViewController.swift */,
+				6503613926713279006CEBC1 /* MemoViewReactor.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		655C2E6A2768FC22006542EA /* MemoList */ = {
+			isa = PBXGroup;
+			children = (
+				657CF7FE267F330200A4CD57 /* MemoListViewController.swift */,
+				657CF801267F369A00A4CD57 /* MemoListViewReactor.swift */,
+			);
+			path = MemoList;
+			sourceTree = "<group>";
+		};
+		655C2E6B2768FC30006542EA /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				65440B5726B6757500186E7B /* PrivacyPolicyViewController.swift */,
+				65440B5926B67C1100186E7B /* PrivacyPolicyReactor.swift */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		655C2E6C2768FC3D006542EA /* LicenseList */ = {
+			isa = PBXGroup;
+			children = (
+				65E2140726E3D60C00136D18 /* LicenseListViewController.swift */,
+				65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */,
+			);
+			path = LicenseList;
+			sourceTree = "<group>";
+		};
+		655C2E6D2768FC4F006542EA /* LicenseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */,
+				65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */,
+			);
+			path = LicenseDetail;
+			sourceTree = "<group>";
+		};
 		656040972680F4E700F9A725 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,66 +432,70 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		6586A62B271EAF1100AEFC7C /* EditPopupView */ = {
+		6586A62B271EAF1100AEFC7C /* EditPopup */ = {
 			isa = PBXGroup;
 			children = (
-				6586A634271EB6D700AEFC7C /* EditPopupViewReactor.swift */,
 				6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */,
+				6586A634271EB6D700AEFC7C /* EditPopupViewReactor.swift */,
 			);
-			path = EditPopupView;
+			path = EditPopup;
 			sourceTree = "<group>";
 		};
-		6586A630271EAF4C00AEFC7C /* HomeView */ = {
+		6586A630271EAF4C00AEFC7C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				659625E8262BF60D00277B80 /* HomeViewController.swift */,
+				659625EE262BF80700277B80 /* HomeViewReactor.swift */,
 			);
-			path = HomeView;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		6586A631271EAF5300AEFC7C /* MenuView */ = {
+		6586A631271EAF5300AEFC7C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				6559820B264416720011D5BC /* MenuViewController.swift */,
+				6559820E264418140011D5BC /* MenuViewReactor.swift */,
 			);
-			path = MenuView;
+			path = Menu;
 			sourceTree = "<group>";
 		};
-		6586A632271EAF5B00AEFC7C /* AddMemoView */ = {
+		6586A632271EAF5B00AEFC7C /* AddMemo */ = {
 			isa = PBXGroup;
 			children = (
 				65EF92B3264839D300EB6315 /* AddMemoViewController.swift */,
+				65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */,
 			);
-			path = AddMemoView;
+			path = AddMemo;
 			sourceTree = "<group>";
 		};
-		6586A633271EAF6400AEFC7C /* DanjiSortView */ = {
+		6586A633271EAF6400AEFC7C /* DanjiSort */ = {
 			isa = PBXGroup;
 			children = (
 				6519946D26498AE80067A29D /* DanjiSortViewController.swift */,
+				6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */,
 			);
-			path = DanjiSortView;
+			path = DanjiSort;
 			sourceTree = "<group>";
 		};
 		659625E4262BF52500277B80 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				655C2E682768FBE8006542EA /* Login */,
+				6586A630271EAF4C00AEFC7C /* Home */,
+				655C2E6D2768FC4F006542EA /* LicenseDetail */,
+				655C2E6C2768FC3D006542EA /* LicenseList */,
+				655C2E6B2768FC30006542EA /* PrivacyPolicy */,
+				655C2E6A2768FC22006542EA /* MemoList */,
+				655C2E692768FC18006542EA /* Memo */,
+				655C2E672768FBDC006542EA /* DanjiSetting */,
+				655C2E662768FBB3006542EA /* DanjiPlant */,
+				6586A632271EAF5B00AEFC7C /* AddMemo */,
+				6586A631271EAF5300AEFC7C /* Menu */,
 				650B75862732F170000D2B79 /* Alert */,
 				65D2D49F2731A658007D9D8C /* MemoEdit */,
-				6586A633271EAF6400AEFC7C /* DanjiSortView */,
-				6586A632271EAF5B00AEFC7C /* AddMemoView */,
-				6586A631271EAF5300AEFC7C /* MenuView */,
-				6586A630271EAF4C00AEFC7C /* HomeView */,
-				6586A62B271EAF1100AEFC7C /* EditPopupView */,
-				6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */,
-				65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */,
-				65B02E8026511B3200A61D17 /* LoginViewController.swift */,
-				65620A05266E84E30041C780 /* MemoViewController.swift */,
-				657CF7FE267F330200A4CD57 /* MemoListViewController.swift */,
+				6586A633271EAF6400AEFC7C /* DanjiSort */,
+				6586A62B271EAF1100AEFC7C /* EditPopup */,
 				65CA5536268A13940006FCDB /* LottieTestViewController.swift */,
-				65440B5726B6757500186E7B /* PrivacyPolicyViewController.swift */,
-				65E2140726E3D60C00136D18 /* LicenseListViewController.swift */,
-				65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -451,18 +527,6 @@
 		659625ED262BF7F300277B80 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
-				659625EE262BF80700277B80 /* HomeViewReactor.swift */,
-				6559820E264418140011D5BC /* MenuViewReactor.swift */,
-				65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */,
-				6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */,
-				6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */,
-				65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */,
-				65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */,
-				6503613926713279006CEBC1 /* MemoViewReactor.swift */,
-				657CF801267F369A00A4CD57 /* MemoListViewReactor.swift */,
-				65440B5926B67C1100186E7B /* PrivacyPolicyReactor.swift */,
-				65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */,
-				65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */,
 			);
 			path = Reactor;
 			sourceTree = "<group>";
