@@ -23,6 +23,7 @@
 		651BAC2F265A50450090D6A7 /* SettingTableCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651BAC2E265A50450090D6A7 /* SettingTableCellReactor.swift */; };
 		6520138E276A639C006F3DC1 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520138D276A639C006F3DC1 /* GuideViewController.swift */; };
 		65201390276A63AC006F3DC1 /* GuideViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520138F276A63AC006F3DC1 /* GuideViewReactor.swift */; };
+		65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65201392276A65B7006F3DC1 /* PagePointView.swift */; };
 		65261A7C269359B5005E877C /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65261A7B269359B5005E877C /* MemoRepository.swift */; };
 		65261A7E2693616A005E877C /* MemoCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65261A7D2693616A005E877C /* MemoCreate.swift */; };
 		6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA1A2635219400D06F17 /* BMDJImage.swift */; };
@@ -141,6 +142,7 @@
 		651BAC2E265A50450090D6A7 /* SettingTableCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCellReactor.swift; sourceTree = "<group>"; };
 		6520138D276A639C006F3DC1 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		6520138F276A63AC006F3DC1 /* GuideViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewReactor.swift; sourceTree = "<group>"; };
+		65201392276A65B7006F3DC1 /* PagePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePointView.swift; sourceTree = "<group>"; };
 		65261A7B269359B5005E877C /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		65261A7D2693616A005E877C /* MemoCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCreate.swift; sourceTree = "<group>"; };
 		6528EA1A2635219400D06F17 /* BMDJImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJImage.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 				6520138F276A63AC006F3DC1 /* GuideViewReactor.swift */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		65201391276A650E006F3DC1 /* PagePointView */ = {
+			isa = PBXGroup;
+			children = (
+				65201392276A65B7006F3DC1 /* PagePointView.swift */,
+			);
+			path = PagePointView;
 			sourceTree = "<group>";
 		};
 		653837912632F10B00F4D6EC /* Frameworks */ = {
@@ -517,6 +527,7 @@
 		659625E6262BF56A00277B80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				65201391276A650E006F3DC1 /* PagePointView */,
 				650D2A5E26C4325900F9981E /* ImageImportButton */,
 				656040972680F4E700F9A725 /* Header */,
 				65FF1E0B2658E48B00F65164 /* BMDJ */,
@@ -840,6 +851,7 @@
 				65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */,
 				65B377C0262AE5B0000D03E7 /* BMDJColor.swift in Sources */,
 				650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */,
+				65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */,
 				658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */,
 				65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */,
 				65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */,
