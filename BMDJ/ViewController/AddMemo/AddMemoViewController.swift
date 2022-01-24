@@ -36,7 +36,7 @@ final class AddMemoViewController: UIViewController, View {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .BoldBody1
+        label.font = .boldBody1
         label.textColor = .font1
         label.text = "나의 메모"
         contentView.addSubview(label)
@@ -76,7 +76,7 @@ final class AddMemoViewController: UIViewController, View {
     
     private lazy var moodLabel: UILabel = {
         let label = UILabel()
-        label.font = .BoldH2
+        label.font = .boldH2
         label.textColor = .font1
         label.text = "맑음"
         contentView.addSubview(label)
@@ -105,7 +105,7 @@ final class AddMemoViewController: UIViewController, View {
         button.layer.cornerRadius = 4
         button.backgroundColor = .primary
         button.setTitle("저장하기", for: .normal)
-        button.titleLabel?.font = .Bold16
+        button.titleLabel?.font = .bold16
         button.setTitleColor(.white, for: .normal)
         contentView.addSubview(button)
         return button

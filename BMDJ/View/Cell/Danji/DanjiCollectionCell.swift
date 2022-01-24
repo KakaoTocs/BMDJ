@@ -37,7 +37,7 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
     private lazy var dDayLabel: UILabel = {
         let label = UILabel()
         label.textColor = .font1
-        label.font = .BoldH1
+        label.font = .boldH1
         contentView.addSubview(label)
         return label
     }()
@@ -45,7 +45,7 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
     private lazy var nickNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .font1
-        label.font = .BoldH2
+        label.font = .boldH2
         contentView.addSubview(label)
         return label
     }()
