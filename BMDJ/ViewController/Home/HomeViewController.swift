@@ -117,7 +117,7 @@ final class HomeViewController: UIViewController, View {
     private lazy var memoTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .font1
-        label.font = .BoldBody1
+        label.font = .boldBody1
         label.text = "나의 메모"
         memoHeader.addSubview(label)
         return label

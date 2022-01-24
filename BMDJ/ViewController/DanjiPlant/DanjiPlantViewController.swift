@@ -183,7 +183,7 @@ final class DanjiPlantViewController: UIViewController, View {
     private lazy var moodLabel: UILabel = {
         let label = UILabel()
         label.text = "맑음"
-        label.font = .BoldH2
+        label.font = .boldH2
         label.textColor = .font1
         moodView.addSubview(label)
         return label
@@ -227,7 +227,7 @@ final class DanjiPlantViewController: UIViewController, View {
         button.setTitle("저장하기", for: .normal)
         button.setTitleColor(.font2, for: .disabled)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .BoldBody2
+        button.titleLabel?.font = .boldBody2
         button.isEnabled = false
         dDayView.addSubview(button)
         return button
