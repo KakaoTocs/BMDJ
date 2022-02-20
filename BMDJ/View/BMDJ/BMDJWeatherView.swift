@@ -40,12 +40,29 @@ final class BMDJWeatherView: UIView {
         return imageView
     }()
     
-    var isHappy: Bool = true{
+    private lazy var blueTopCloudImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .emptyTopCloud
+        addSubview(imageView)
+        return imageView
+    }()
+    
+    private lazy var blueBottomCloudImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .emptyBottomCloud
+        addSubview(imageView)
+        return imageView
+    }()
+    
+    var isHappy: Danji.Mood = .happy{
         didSet {
-            if isHappy {
+            switch isHappy {
+            case .happy:
                 onSun()
-            } else {
+            case .sad:
                 onSad()
+            case .nomal, .empty:
+                onEmpty()
             }
         }
     }
@@ -93,16 +110,23 @@ final class BMDJWeatherView: UIView {
             $0.top.equalToSuperview().offset(258 * AppService.shared.layoutScale)
             $0.right.equalToSuperview()
         }
+        
+        blueTopCloudImageView.snp.makeConstraints {
+            $0.width.equalTo(253 * AppService.shared.layoutScale)
+            $0.height.equalTo(249 * AppService.shared.layoutScale)
+            $0.top.equalToSuperview().offset(44 * AppService.shared.layoutScale)
+            $0.leading.equalToSuperview()
+        }
+        
+        blueBottomCloudImageView.snp.makeConstraints {
+            $0.width.equalTo(234 * AppService.shared.layoutScale)
+            $0.height.equalTo(174 * AppService.shared.layoutScale)
+            $0.top.equalTo(blueTopCloudImageView.snp.bottom).offset(-119 * AppService.shared.layoutScale)
+            $0.trailing.equalToSuperview()
+        }
     }
     
     // MARK: - Method
-    func set(isHappy: Bool) {
-        if isHappy {
-            onSun()
-        } else {
-            onSad()
-        }
-    }
     
     private func onSun() {
         sunImageView.isHidden = false
@@ -110,6 +134,9 @@ final class BMDJWeatherView: UIView {
         
         blackCloudImageView.isHidden = true
         rainImageView.isHidden = true
+        
+        blueTopCloudImageView.isHidden = true
+        blueBottomCloudImageView.isHidden = true
     }
     
     private func onSad() {
@@ -118,5 +145,19 @@ final class BMDJWeatherView: UIView {
         
         blackCloudImageView.isHidden = false
         rainImageView.isHidden = false
+        
+        blueTopCloudImageView.isHidden = true
+        blueBottomCloudImageView.isHidden = true
+    }
+    
+    private func onEmpty() {
+        sunImageView.isHidden = true
+        cloudImageView.isHidden = true
+        
+        blackCloudImageView.isHidden = true
+        rainImageView.isHidden = true
+        
+        blueTopCloudImageView.isHidden = false
+        blueBottomCloudImageView.isHidden = false
     }
 }

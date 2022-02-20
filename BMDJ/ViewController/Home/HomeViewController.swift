@@ -28,14 +28,14 @@ final class HomeViewController: UIViewController, View {
     
     private lazy var subView1: UIView = {
         let view = UIView()
-        view.backgroundColor = .background3Gradarion1
+        view.backgroundColor = .init(hex: 0xFFFBEF)
         backgroundView.addSubview(view)
         return view
     }()
     
     private lazy var subView2: UIView = {
         let view = UIView()
-        view.backgroundColor = .background3Gradarion2
+        view.backgroundColor = .init(hex: 0xE1E5FF)
         backgroundView.addSubview(view)
         return view
     }()
@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController, View {
     
     private lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.background3Gradarion1.cgColor, UIColor.background3Gradarion2.cgColor]
+        gradientLayer.colors = Danji.Mood.empty.gradient.map { $0.cgColor }//[UIColor.background3Gradarion1.cgColor, UIColor.background3Gradarion2.cgColor]
         return gradientLayer
     }()
     
@@ -101,8 +101,10 @@ final class HomeViewController: UIViewController, View {
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.backgroundColor = .clear
+        collectionView.register(DanjiEmptyCell.self, forCellWithReuseIdentifier: DanjiEmptyCell.identifier)
         collectionView.register(DanjiCollectionCell.self, forCellWithReuseIdentifier: DanjiCollectionCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
         
         contentsView.addSubview(collectionView)
         return collectionView
@@ -117,7 +119,7 @@ final class HomeViewController: UIViewController, View {
     private lazy var memoTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .font1
-        label.font = .BoldBody1
+        label.font = .boldBody1
         label.text = "나의 메모"
         memoHeader.addSubview(label)
         return label
@@ -175,10 +177,15 @@ final class HomeViewController: UIViewController, View {
     
     lazy var danjiDataSource = RxCollectionViewSectionedReloadDataSource<DanjiSection>(
         configureCell: { _, collectionView, indexPath, reactor in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanjiCollectionCell.identifier, for: indexPath) as! DanjiCollectionCell
-            reactor.provider = self.reactor?.provider
-            cell.reactor = reactor
-            return cell
+            if reactor.currentState.stockName == "000000" {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanjiEmptyCell.identifier, for: indexPath) as! DanjiEmptyCell
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanjiCollectionCell.identifier, for: indexPath) as! DanjiCollectionCell
+                reactor.provider = self.reactor?.provider
+                cell.reactor = reactor
+                return cell
+            }
     })
     
     let memoDataSource = RxCollectionViewSectionedReloadDataSource<MemoSection>(
@@ -194,17 +201,26 @@ final class HomeViewController: UIViewController, View {
         
         setLayout()
         self.reactor = reactor
-        DanjiClient.shared.all()
-            .subscribe(onNext: { danjis in
-                print(danjis.map { $0.id })
-            })
-            .disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    var isGuide = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isGuide == false,
+           AppService.shared.isShowGuide == false {
+            isGuide = true
+            AppService.shared.isShowGuide = true
+            let guideVC = GuideViewController(reactor: .init())
+            guideVC.modalPresentationStyle = .fullScreen
+            DispatchQueue.main.async {
+                self.present(guideVC, animated: true)
+            }
+        }
+    }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -351,6 +367,11 @@ final class HomeViewController: UIViewController, View {
             .map(reactor.reactorForMemoListView)
             .subscribe(onNext: { [weak self] memoListReactor in
                 guard let `self` = self else { return }
+                if memoListReactor.currentState.memoSections.first?.items.first?.currentState.memoe.danjiID == "empty" {
+                    let memoEmptyErrorAlert = UIAlertView(title: "메모가 없습니다!", message: "메모를 먼저 작성해주세요.", delegate: self, cancelButtonTitle: "확인")
+                    memoEmptyErrorAlert.show()
+                    return
+                }
                 let memoListVC = MemoListViewController(reactor: memoListReactor)
                 let naviVC = UINavigationController(rootViewController: memoListVC)
                 naviVC.isNavigationBarHidden = true
@@ -362,7 +383,7 @@ final class HomeViewController: UIViewController, View {
         danjiCollectionView.rx.modelSelected(type(of: self.danjiDataSource).Section.Item.self)
             .subscribe(onNext: { [weak self] cellReactor in
                 guard let `self` = self else { return }
-                if cellReactor.currentState.color == .gray {
+                if cellReactor.currentState.danji.color == .gray {
                     let viewController = DanjiPlantViewController()
                     viewController.reactor = .init(provider: reactor.provider)
                     viewController.modalPresentationStyle = .fullScreen
@@ -382,9 +403,10 @@ final class HomeViewController: UIViewController, View {
                         return
                     }
                     let addMemoVC = AddMemoViewController()
+                    addMemoVC.isPresentOnly = true
                     addMemoVC.modalPresentationStyle = .overFullScreen
                     addMemoVC.reactor = .init(provider: reactor.provider, activeDanji: danji)
-                    self.present(addMemoVC, animated: true)
+                    self.present(addMemoVC, animated: false)
                 } else {
                     let memoVC = MemoViewController(reactor: reactor.reactorForMemoView(cellReactor))
                     self.navigationController?.pushViewController(memoVC, animated: true)
@@ -427,18 +449,21 @@ final class HomeViewController: UIViewController, View {
         
         reactor.state.asObservable().map { $0.activeDanji }
             .filterNil()
+            .filter { $0.stock.name != "000000" }
             .map { $0.mood.gradient.map { $0.cgColor } }
             .bind(to: gradientLayer.rx.colors)
             .disposed(by: disposeBag)
         
         reactor.state.asObservable().map { $0.activeDanji }
             .filterNil()
+            .filter { $0.stock.name != "000000" }
             .map { $0.mood.gradient.first }
             .bind(to: subView1.rx.backgroundColor)
             .disposed(by: disposeBag)
         
         reactor.state.asObservable().map { $0.activeDanji }
             .filterNil()
+            .filter { $0.stock.name != "000000" }
             .map { $0.mood.gradient.last }
             .bind(to: subView2.rx.backgroundColor)
             .disposed(by: disposeBag)

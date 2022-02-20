@@ -42,7 +42,7 @@ final class DanjiPlantViewController: UIViewController, View {
     private lazy var barTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .regularBody2
-        label.text = "장독대 심기"
+        label.text = "단지 심기"
         topBar.addSubview(label)
         return label
     }()
@@ -63,7 +63,7 @@ final class DanjiPlantViewController: UIViewController, View {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .semiBoldH2
-        label.text = "내 장독대를 원하는 칼라로 Pick!"
+        label.text = "내 단지를 원하는 칼라로 Pick!"
         label.sizeToFit()
         danjiView.addSubview(label)
         return label
@@ -107,7 +107,7 @@ final class DanjiPlantViewController: UIViewController, View {
     
     private lazy var nicknameLabel: UILabel = {
         let label = UILabel()
-        label.text = "장독대 애칭"
+        label.text = "단지 애칭"
         label.font = .semiBoldBody2
         infoView.addSubview(label)
         return label
@@ -115,22 +115,23 @@ final class DanjiPlantViewController: UIViewController, View {
     
     private lazy var nicknameTextField: BMDJTextField = {
         let textField = BMDJTextField()
-        textField.placeholder = "나만의 장독대 애칭을 입력해주세요"
+        textField.placeholder = "나만의 단지 애칭을 입력해주세요"
         infoView.addSubview(textField)
         return textField
     }()
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "보유 주식명"
+        label.text = "보유 주식명 종목 검색"
         label.font = .semiBoldBody2
         infoView.addSubview(label)
         return label
     }()
     
-    private lazy var nameTextField: BMDJTextField = {
-        let textField = BMDJTextField()
-        textField.placeholder = "ex) 삼성전자"
+    private lazy var nameTextField: BMDJIconTextField = {
+        let textField = BMDJIconTextField()
+        textField.delegate = self
+        textField.placeholder = "주식명, 종목(주식)코드 검색"
         infoView.addSubview(textField)
         return textField
     }()
@@ -183,7 +184,7 @@ final class DanjiPlantViewController: UIViewController, View {
     private lazy var moodLabel: UILabel = {
         let label = UILabel()
         label.text = "맑음"
-        label.font = .BoldH2
+        label.font = .boldH2
         label.textColor = .font1
         moodView.addSubview(label)
         return label
@@ -227,7 +228,7 @@ final class DanjiPlantViewController: UIViewController, View {
         button.setTitle("저장하기", for: .normal)
         button.setTitleColor(.font2, for: .disabled)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .BoldBody2
+        button.titleLabel?.font = .boldBody2
         button.isEnabled = false
         dDayView.addSubview(button)
         return button
@@ -239,6 +240,7 @@ final class DanjiPlantViewController: UIViewController, View {
             cell.reactor = reactor
             if self.defaultSelectColorIsFirst,
                indexPath.item == self.defaultSelectColorIndex {
+                self.defaultSelectColorIsFirst = false
                 cell.isSelected = true
             }
             return cell
@@ -475,30 +477,15 @@ final class DanjiPlantViewController: UIViewController, View {
             .map { $0.currentState.color }
             .map { Reactor.Action.selectColor($0) }
             .do(onNext: { _ in
-                print("SSelect: ")
                 self.defaultSelectColorIsFirst = false
             })
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-//        colorCollectionView.rx.itemSelected
-//            .subscribe(onNext: { indexPath in
-//                print("Select: \(indexPath.item)")
-//                self.colorCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
-//            })
-//            .disposed(by: disposeBag)
-        
         nicknameTextField.rx.text
             .filterNil()
             .skip(1)
             .map(Reactor.Action.updateDanjiName)
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
-        nameTextField.rx.text
-            .filterNil()
-            .skip(1)
-            .map(Reactor.Action.updateStockName)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -586,5 +573,27 @@ final class DanjiPlantViewController: UIViewController, View {
     @objc private func keyboardWillShow(_ notification: Notification) {
         let topOffset = infoView.frame.minY + nicknameLabel.frame.minY
         scrollView.setContentOffset(.init(x: 0, y: topOffset), animated: true)
+    }
+}
+
+extension DanjiPlantViewController: BMDJIconTextFieldDelegate {
+    func didTap() {
+        let searchVC = StockSearchViewController(reactor: .init())
+        searchVC.delegate = self
+        DispatchQueue.main.async {
+            self.present(searchVC, animated: true)
+        }
+    }
+}
+
+extension DanjiPlantViewController: StockSearchViewDelegate {
+    func didSelected(stock: Stock) {
+        if let reactor = reactor {
+            Observable.just(stock.code)
+                .map(Reactor.Action.updateStockName)
+                .bind(to: reactor.action)
+                .disposed(by: disposeBag)
+            nameTextField.text = stock.name
+        }
     }
 }
