@@ -14,6 +14,7 @@ struct Danji: Codable {
         case happy = "HAPPY"
         case sad = "SAD"
         case nomal = "NOMAL"
+        case empty = "EMPTY"
         
         var descriptin: String {
             switch self {
@@ -23,6 +24,8 @@ struct Danji: Codable {
                 return "슬픔"
             case .nomal:
                 return "보통"
+            case .empty:
+                return "없음"
             }
         }
         
@@ -33,6 +36,8 @@ struct Danji: Codable {
             case .sad:
                 return .sad48
             case .nomal:
+                return .normal48
+            case .empty:
                 return .normal48
             }
         }
@@ -45,6 +50,8 @@ struct Danji: Codable {
                 return [.background4Gradarion1, .background4Gradarion2]
             case .nomal:
                 return [.white, .white]
+            case .empty:
+                return [.init(hex: 0xFFFBEF), .init(hex: 0xE1E5FF)]
             }
         }
     }
@@ -113,7 +120,7 @@ struct Danji: Codable {
     let userID: String
     let color: Color
     let name: String
-    let stock: Stock
+    let stock: StockInfo
     let volume: String
     var mood: Mood
     let createDate: Date
@@ -130,7 +137,7 @@ struct Danji: Codable {
 extension Danji {
     static var empty: Danji {
         let time = Date().addingTimeInterval(86399).timeIntervalSince1970
-        return .init(id: "empty", userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .empty, volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), dDayTimeStamp: Int(time))
+        return .init(id: "empty", userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .init(id: "000000", name: "000000"), volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), dDayTimeStamp: Int(time))
     }
     
     var dDayString: String {
