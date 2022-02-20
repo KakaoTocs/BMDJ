@@ -228,7 +228,7 @@ final class MenuViewController: UIViewController, View {
                 addMemoVC.modalPresentationStyle = .overFullScreen
                 addMemoVC.delegate = self
                 addMemoVC.reactor = reactor
-                self.present(addMemoVC, animated: true)
+                self.present(addMemoVC, animated: false)
             })
             .disposed(by: disposeBag)
         
