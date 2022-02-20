@@ -240,6 +240,7 @@ final class DanjiPlantViewController: UIViewController, View {
             cell.reactor = reactor
             if self.defaultSelectColorIsFirst,
                indexPath.item == self.defaultSelectColorIndex {
+                self.defaultSelectColorIsFirst = false
                 cell.isSelected = true
             }
             return cell
@@ -476,18 +477,10 @@ final class DanjiPlantViewController: UIViewController, View {
             .map { $0.currentState.color }
             .map { Reactor.Action.selectColor($0) }
             .do(onNext: { _ in
-                print("SSelect: ")
                 self.defaultSelectColorIsFirst = false
             })
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-//        colorCollectionView.rx.itemSelected
-//            .subscribe(onNext: { indexPath in
-//                print("Select: \(indexPath.item)")
-//                self.colorCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
-//            })
-//            .disposed(by: disposeBag)
         
         nicknameTextField.rx.text
             .filterNil()
@@ -495,13 +488,6 @@ final class DanjiPlantViewController: UIViewController, View {
             .map(Reactor.Action.updateDanjiName)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-//        nameTextField.rx.text
-//            .filterNil()
-//            .skip(1)
-//            .map(Reactor.Action.updateStockName)
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
         
         countField.rx.text
             .filterNil()
