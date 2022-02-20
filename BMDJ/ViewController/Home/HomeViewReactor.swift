@@ -71,7 +71,7 @@ final class HomeViewReactor: Reactor {
         case .activeDanjiIndex(let index):
             if let danji = currentState.danjiSections.first?.items[index].currentState {
                 return provider.memoRepository.fetchMemo()
-                    .map { $0.filter { $0.danjiID == danji.id }}
+                    .map { $0.filter { $0.danjiID == danji.danji.id }}
                     .map { memos in
                         let sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
                         var section: [MemoSection] = []
@@ -82,7 +82,7 @@ final class HomeViewReactor: Reactor {
                             section = [MemoSection(model: (), items: sectionItems)]
                         }
 //                        let section = MemoSection(model: (), items: sectionItems)
-                        return .activeDanjiIndex(index, danji, section)
+                        return .activeDanjiIndex(index, danji.danji, section)
                     }
             }
             return .just(.removeEmpty)
@@ -203,7 +203,7 @@ final class HomeViewReactor: Reactor {
             let index = (sections.first?.items.count ?? 0) > 0 ? 0 : nil
             if let section = sections.first,
                let activeIndex = state.activeIndex ?? index {
-                state.activeDanji = section.items[activeIndex].currentState
+                state.activeDanji = section.items[activeIndex].currentState.danji
                 state.activeIndex = activeIndex
             }
             if sections.first?.items.count ?? 0 > 1 {
@@ -211,17 +211,17 @@ final class HomeViewReactor: Reactor {
             }
         case let .insertDanjiSectionItem(indexPath, sectionItem):
             if let danji = state.danjiSections.first?.items.first,
-               danji.currentState.color == .gray {
+               danji.currentState.danji.color == .gray {
                 state.danjiSections = [DanjiSection(model: (), items: [sectionItem])]
             } else {
                 state.danjiSections.insert(sectionItem, at: indexPath)
             }
             if let section = state.danjiSections.first {
                 if let activeIndex = state.activeIndex {
-                    state.activeDanji = section.items[activeIndex].currentState
+                    state.activeDanji = section.items[activeIndex].currentState.danji
                 } else if state.activeDanji == nil {
                     state.activeIndex = indexPath.item
-                    state.activeDanji = sectionItem.currentState
+                    state.activeDanji = sectionItem.currentState.danji
                 }
             }
         case let .insertMemoSectionItem(indexPath, sectionItem):
@@ -234,7 +234,7 @@ final class HomeViewReactor: Reactor {
         case let .updateDanjiSectionItem(indexPath, sectionItem):
             state.danjiSections[indexPath] = sectionItem
             if indexPath.item == state.activeIndex {
-                state.activeDanji = sectionItem.currentState
+                state.activeDanji = sectionItem.currentState.danji
             }
         case let .fetchMemoSections(sections):
             state.memoSections = sections
@@ -259,7 +259,7 @@ final class HomeViewReactor: Reactor {
     
     private func danjiIndexPath(forDanjiID danjiID: String, from state: State) -> IndexPath? {
         let section = 0
-        let item = state.danjiSections[section].items.firstIndex { reactor in reactor.currentState.id == danjiID }
+        let item = state.danjiSections[section].items.firstIndex { reactor in reactor.currentState.danji.id == danjiID }
         if let item = item {
             return IndexPath(item: item, section: section)
         } else {
@@ -280,7 +280,7 @@ final class HomeViewReactor: Reactor {
     func reactorForMenu() -> MenuViewReactor {
         var danjis: [Danji] = []
         if let danjiReactors = currentState.danjiSections.first?.items {
-            danjis = danjiReactors.map { $0.currentState }.filter { $0.color != .gray }
+            danjis = danjiReactors.map { $0.currentState.danji }.filter { $0.color != .gray }
         }
         return MenuViewReactor(provider: provider, danjis: danjis, activeDanji: currentState.activeDanji)
     }
