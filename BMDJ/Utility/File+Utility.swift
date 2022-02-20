@@ -28,7 +28,7 @@ final class FileUtility {
             print(error.localizedDescription)
         }
     }
-//    objects<Element: Object>(_ type: Element.Type) -> Results<Element>
+    
     func readFileToObject<Element: Codable>(at url: URL, _ type: Element.Type) -> Element? {
         do {
             let data = try Data(contentsOf: url)
