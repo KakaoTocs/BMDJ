@@ -13,7 +13,7 @@ import SnapKit
 
 final class AddMemoViewController: UIViewController, View {
     
-    private let CONTENTVIEW_HEIGHT_RATIO: CGFloat = 1.521739
+    private let CONTENTVIEW_HEIGHT_RATIO: CGFloat = 1.68
     
     weak var delegate: MenuViewController?
     
@@ -113,6 +113,13 @@ final class AddMemoViewController: UIViewController, View {
     
     // MARK: - Property
     var disposeBag = DisposeBag()
+    var isPresentOnly: Bool = false {
+        didSet {
+            if isPresentOnly {
+                backgroundView.backgroundColor = .init(hex: 0x111111).withAlphaComponent(0.8)
+            }
+        }
+    }
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -126,8 +133,9 @@ final class AddMemoViewController: UIViewController, View {
     }
     
     // MARK: - LifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startAnimation()
     }
     
     override func viewDidLayoutSubviews() {
@@ -188,9 +196,7 @@ final class AddMemoViewController: UIViewController, View {
     }
     
     @objc func tap() {
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-        }
+        dismissAnimation()
     }
     
     private func setLayout() {
@@ -199,8 +205,9 @@ final class AddMemoViewController: UIViewController, View {
         }
         
         contentView.snp.makeConstraints {
-            $0.height.equalTo(contentView.snp.width).multipliedBy(CONTENTVIEW_HEIGHT_RATIO)
-            $0.left.bottom.right.equalToSuperview()
+            $0.height.equalTo(600 * AppService.shared.layoutScale)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(600 * AppService.shared.layoutScale)
         }
         
         titleLabel.snp.makeConstraints {
@@ -261,6 +268,33 @@ final class AddMemoViewController: UIViewController, View {
             $0.right.equalToSuperview().offset(-20 * AppService.shared.layoutScale)
             $0.bottom.equalToSuperview().offset(-24 * AppService.shared.layoutScale)
         }
+    }
+    
+    func startAnimation() {
+        contentView.snp.updateConstraints {
+            $0.bottom.equalToSuperview()
+        }
+        view.backgroundColor = UIColor(red: 17 / 255, green: 17 / 255, blue: 17 / 255, alpha: 0.8)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func dismissAnimation() {
+        contentView.snp.updateConstraints {
+            $0.bottom.equalToSuperview().offset(600 * AppService.shared.layoutScale)
+        }
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            DispatchQueue.main.async {
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
+
     }
 }
 
