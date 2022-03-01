@@ -7,8 +7,6 @@
 
 import UIKit
 
-import RealmSwift
-
 struct Danji: Codable {
     enum Mood: String, Codable {
         case happy = "HAPPY"

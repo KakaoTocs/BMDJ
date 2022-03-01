@@ -56,8 +56,6 @@
 		65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65739EA2263E9661009AA160 /* Date+Utility.swift */; };
 		65739EA6263E96C0009AA160 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65739EA5263E96C0009AA160 /* Date.swift */; };
 		6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575A00B267E60DA0004ACEF /* DataBaseService.swift */; };
-		6575A010267E61E40004ACEF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6575A00F267E61E40004ACEF /* Realm */; };
-		6575A012267E61E40004ACEF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6575A011267E61E40004ACEF /* RealmSwift */; };
 		6575A016267E64990004ACEF /* File+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575A015267E64990004ACEF /* File+Utility.swift */; };
 		65776412263713DB001947CF /* DanjiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65776411263713DB001947CF /* DanjiCollectionCell.swift */; };
 		6577641626371780001947CF /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577641526371780001947CF /* AppService.swift */; };
@@ -101,7 +99,6 @@
 		65B377C9262AE687000D03E7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65B377C8262AE687000D03E7 /* SnapKit */; };
 		65B377D9262AE6C4000D03E7 /* RxKingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 65B377D8262AE6C4000D03E7 /* RxKingfisher */; };
 		65B377DD262AE729000D03E7 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 65B377DC262AE729000D03E7 /* RxAlamofire */; };
-		65B377E1262AE781000D03E7 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = 65B377E0262AE781000D03E7 /* RxRealm */; };
 		65B893FD268A3362001BB6D9 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B893FC268A3362001BB6D9 /* ServiceProvider.swift */; };
 		65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B893FE268A3C18001BB6D9 /* BaseService.swift */; };
 		65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C152DC2659789400418EBE /* DanjiSortTableCell.swift */; };
@@ -279,15 +276,12 @@
 				65FD602326B070430049023F /* GoogleSignIn in Frameworks */,
 				655DC081267DFF1E000A44A0 /* RxOptional in Frameworks */,
 				65B377DD262AE729000D03E7 /* RxAlamofire in Frameworks */,
-				65B377E1262AE781000D03E7 /* RxRealm in Frameworks */,
 				658CC9F9263D499B000286D3 /* RxDataSources in Frameworks */,
 				653970E32799B8730006E2A9 /* FirebaseDatabase in Frameworks */,
-				6575A010267E61E40004ACEF /* Realm in Frameworks */,
 				65FA36F5271AB9C400131FAA /* WebKit.framework in Frameworks */,
 				65FA36F3271AB9BD00131FAA /* CFNetwork.framework in Frameworks */,
 				655AB69A26E2AC9000A7D9BC /* FirebaseCrashlytics in Frameworks */,
 				659625E2262BF51D00277B80 /* ReactorKit in Frameworks */,
-				6575A012267E61E40004ACEF /* RealmSwift in Frameworks */,
 				65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */,
 				65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */,
 				65B377C9262AE687000D03E7 /* SnapKit in Frameworks */,
@@ -828,13 +822,10 @@
 				65B377C8262AE687000D03E7 /* SnapKit */,
 				65B377D8262AE6C4000D03E7 /* RxKingfisher */,
 				65B377DC262AE729000D03E7 /* RxAlamofire */,
-				65B377E0262AE781000D03E7 /* RxRealm */,
 				659625E1262BF51D00277B80 /* ReactorKit */,
 				658CC9F8263D499B000286D3 /* RxDataSources */,
 				65048A7E2656B73800B275D0 /* Lottie */,
 				655DC080267DFF1E000A44A0 /* RxOptional */,
-				6575A00F267E61E40004ACEF /* Realm */,
-				6575A011267E61E40004ACEF /* RealmSwift */,
 				65FD602226B070430049023F /* GoogleSignIn */,
 				655AB69726E2AC9000A7D9BC /* FirebaseAnalytics */,
 				655AB69926E2AC9000A7D9BC /* FirebaseCrashlytics */,
@@ -875,12 +866,10 @@
 				65B377C7262AE687000D03E7 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				65B377D7262AE6C4000D03E7 /* XCRemoteSwiftPackageReference "RxKingfisher" */,
 				65B377DB262AE729000D03E7 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
-				65B377DF262AE781000D03E7 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				659625E0262BF51D00277B80 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				658CC9F7263D499B000286D3 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				65048A7D2656B73800B275D0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				655DC07F267DFF1E000A44A0 /* XCRemoteSwiftPackageReference "RxOptional" */,
-				6575A00E267E61E40004ACEF /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				65FD602126B070430049023F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				655AB69626E2AC9000A7D9BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
@@ -1279,14 +1268,6 @@
 				minimumVersion = 5.0.3;
 			};
 		};
-		6575A00E267E61E40004ACEF /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.8.0;
-			};
-		};
 		658CC9F7263D499B000286D3 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
@@ -1325,14 +1306,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.1.1;
-			};
-		};
-		65B377DF262AE781000D03E7 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
 			};
 		};
 		65FD602126B070430049023F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
@@ -1391,16 +1364,6 @@
 			package = 655DC07F267DFF1E000A44A0 /* XCRemoteSwiftPackageReference "RxOptional" */;
 			productName = RxOptional;
 		};
-		6575A00F267E61E40004ACEF /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6575A00E267E61E40004ACEF /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		6575A011267E61E40004ACEF /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6575A00E267E61E40004ACEF /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
 		658CC9F8263D499B000286D3 /* RxDataSources */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 658CC9F7263D499B000286D3 /* XCRemoteSwiftPackageReference "RxDataSources" */;
@@ -1425,11 +1388,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 65B377DB262AE729000D03E7 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
 			productName = RxAlamofire;
-		};
-		65B377E0262AE781000D03E7 /* RxRealm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 65B377DF262AE781000D03E7 /* XCRemoteSwiftPackageReference "RxRealm" */;
-			productName = RxRealm;
 		};
 		65FD602226B070430049023F /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
