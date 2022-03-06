@@ -37,7 +37,7 @@ final class AlertViewController: UIViewController, View {
         let button = UIButton()
         button.setTitle("확인", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .BoldBody2
+        button.titleLabel?.font = .boldBody2
         button.backgroundColor = .primary
         self.contentView.addSubview(button)
         return button
