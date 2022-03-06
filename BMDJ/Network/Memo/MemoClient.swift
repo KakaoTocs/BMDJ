@@ -30,8 +30,8 @@ final class MemoClient {
     
     func add(memoCreate: MemoCreate) -> Observable<Memo> {
         return RxAlamofire.upload(multipartFormData: { formData in
-            if let data = memoCreate.image?.jpegData(compressionQuality: 0.8) {
-                formData.append(data, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+            if let data = memoCreate.image?.pngData() {
+                formData.append(data, withName: "image", fileName: "image.png", mimeType: "image/png")
             }
             formData.append(memoCreate.mood.rawValue.data(using: .utf8)!, withName: "mood")
             formData.append(memoCreate.text.data(using: .utf8)!, withName: "text")

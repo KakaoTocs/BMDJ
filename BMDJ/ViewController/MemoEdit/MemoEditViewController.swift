@@ -86,7 +86,7 @@ final class MemoEditViewController: UIViewController, View {
         button.backgroundColor = .primary
         button.setTitle("수정 완료", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .boldBody2
+        button.titleLabel?.font = .BoldBody2
         self.view.addSubview(button)
         return button
     }()

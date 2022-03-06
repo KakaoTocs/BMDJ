@@ -24,7 +24,6 @@ enum BMDJImage: String {
     case ic24GrPot = "ic24GrPot"
     case ic24GrSetting = "ic24GrSetting"
     case ic24BkBack = "ic24BkBack"
-    case ic24GrSearch = "ic24GrSearch"
 
     case icSelectCheck = "icSelectCheck"
     
@@ -64,8 +63,6 @@ enum BMDJImage: String {
     case happySun = "happySun"
     case sadCloud = "sadCloud"
     case sadRain = "waterDropGroup"
-    case emptyTopCloud = "emptyTopCloud"
-    case emptyBottomCloud = "emptyBottomCloud"
     
     // MARK: - Pot
     case potBlue = "potSBlue"
@@ -73,10 +70,6 @@ enum BMDJImage: String {
     case potPurple = "potSPurple"
     case potRed = "potSRed"
     case potYellow = "potSYellow"
-    case potEmtpy = "potEmpty"
-    
-    // MARK: - Soil
-    case emptySoil = "emptySoil"
     
     var image: UIImage? {
         return UIImage(named: self.rawValue)
@@ -228,15 +221,6 @@ extension UIImage {
         return BMDJImage.sadRain.image
     }
     
-    class var emptyTopCloud: UIImage? {
-        return BMDJImage.emptyTopCloud.image
-    }
-    
-    class var emptyBottomCloud: UIImage? {
-        return BMDJImage.emptyBottomCloud.image
-    }
-    
-    // MARK: - Icon
     class var icBkImg: UIImage? {
         return BMDJImage.icBkImg.image
     }
@@ -269,19 +253,7 @@ extension UIImage {
         return BMDJImage.potYellow.image
     }
     
-    class var potEmpty: UIImage? {
-        return BMDJImage.potEmtpy.image
-    }
-    
     class var icEdit: UIImage? {
         return BMDJImage.icEdit.image
-    }
-    
-    class var search: UIImage? {
-        return BMDJImage.ic24GrSearch.image
-    }
-    
-    class var emptySoil: UIImage? {
-        return BMDJImage.emptySoil.image
     }
 }

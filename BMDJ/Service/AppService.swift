@@ -22,25 +22,12 @@ final class AppService {
         return versionAndBuild
     }
     var isLoggedIn: Bool
-    var isShowGuide: Bool = false {
-        didSet {
-            if isShowGuide {
-                setGuideHistory()
-            }
-        }
-    }
     
     private init() {
         self.layoutScale = UIScreen.main.bounds.width / 375
         self.isLoggedIn = UserDefaultService.shared.readToken() != nil
-        self.isShowGuide = fetchGuideHistory()
-    }
-    
-    private func fetchGuideHistory() -> Bool {
-        return UserDefaults.standard.bool(forKey: "AppService.GuideHistory")
-    }
-    
-    private func setGuideHistory() {
-        UserDefaults.standard.set(true, forKey: "AppService.GuideHistory")
+        
+        print(isLoggedIn)
+        
     }
 }

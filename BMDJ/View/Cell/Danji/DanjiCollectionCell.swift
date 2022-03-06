@@ -37,7 +37,7 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
     private lazy var dDayLabel: UILabel = {
         let label = UILabel()
         label.textColor = .font1
-        label.font = .boldH1
+        label.font = .BoldH1
         contentView.addSubview(label)
         return label
     }()
@@ -45,7 +45,7 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
     private lazy var nickNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .font1
-        label.font = .boldH2
+        label.font = .BoldH2
         contentView.addSubview(label)
         return label
     }()
@@ -125,51 +125,47 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
     }
     
     private func bindState(_ reactor: DanjiCollectionCellReactor) {
-        let state = reactor.currentState
-        dDayLabel.text = state.dDayString
-//        reactor.state.asObservable().map { $0.danji.dDayString }
-//            .bind(to: dDayLabel.rx.text)
+        reactor.state.asObservable().map { $0.dDayString }
+            .bind(to: dDayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.name }
+            .bind(to: nickNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.isHappy }
+            .bind(to: weatherView.rx.isHappy)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.stock.name }
+            .bind(to: stockNameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.volume }
+            .bind(to: stockCountLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.color }
+            .map { $0.image }
+            .bind(to: danjiImageView.rx.image)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.landImage }
+            .bind(to: landImageView.rx.image)
+            .disposed(by: disposeBag)
+        
+        reactor.state.asObservable().map { $0.mood }
+            .map { $0 == .happy ? .font1 : .white }
+            .bind(to: dDayLabel.rx.textColor, nickNameLabel.rx.textColor, stockNameLabel.rx.textColor, stockCountLabel.rx.textColor)
+            .disposed(by: disposeBag)
+        
+//        reactor.state.asObservable().map { $0.mood }
+//            .map { $0 == .happy ? UIColor(hex: 0x412C0D) : UIColor(hex: 0x0B0031) }
+//            .bind(to: landImageView.rx.tintColor)
 //            .disposed(by: disposeBag)
         
-        nickNameLabel.text = state.nickName
-//        reactor.state.asObservable().map { $0.danji.name }
-//            .bind(to: nickNameLabel.rx.text)
-//            .disposed(by: disposeBag)
-        
-        weatherView.isHappy = state.mood
-//        reactor.state.asObservable().map { $0.danji.mood }
-//            .bind(to: weatherView.rx.isHappy)
-//            .disposed(by: disposeBag)
-        
-        stockNameLabel.text = state.stockName
-//        reactor.state.asObservable().map { $0.name }
-//            .bind(to: stockNameLabel.rx.text)
-//            .disposed(by: disposeBag)
-        
-        stockCountLabel.text = state.volume
-//        reactor.state.asObservable().map { $0.danji.volume }
-//            .bind(to: stockCountLabel.rx.text)
-//            .disposed(by: disposeBag)
-        
-        danjiImageView.image = state.danjiImage
-//        reactor.state.asObservable().map { $0.danji.color }
-//            .map { $0.image }
-//            .bind(to: danjiImageView.rx.image)
-//            .disposed(by: disposeBag)
-        
-        landImageView.image = state.landImage
-//        reactor.state.asObservable().map { $0.danji.landImage }
-//            .bind(to: landImageView.rx.image)
-//            .disposed(by: disposeBag)
-        
-        dDayLabel.textColor = state.moodColor
-        nickNameLabel.textColor = state.moodColor
-        stockNameLabel.textColor = state.moodColor
-        stockCountLabel.textColor = state.moodColor
-//        reactor.state.asObservable().map { $0.danji.mood }
-//            .map { $0 == .happy ? .font1 : .white }
-//            .bind(to: dDayLabel.rx.textColor, nickNameLabel.rx.textColor, stockNameLabel.rx.textColor, stockCountLabel.rx.textColor)
-//            .disposed(by: disposeBag)
+//        reactor.state.asObservable().map { $0.mood }
+//            .map { $0 == .happy ? }
     }
     
     private func setLayout() {
@@ -211,6 +207,7 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
         danjiImageView.snp.makeConstraints {
             $0.width.equalTo(contentView.bounds.width * DANJI_WIDTH_SCALE)
             $0.height.equalTo(danjiImageView.snp.width).multipliedBy(DANJI_HEIGHT_RATIO)
+//            $0.top.equalTo(stockCountLabel.snp.bottom).offset(CGFloat(layoutValue: 32 * AppService.shared.layoutScale))
             $0.centerX.equalToSuperview()
         }
         
@@ -223,3 +220,19 @@ final class DanjiCollectionCell: UICollectionViewCell, View {
         }
     }
 }
+/*
+ 51.2+42.66666666
+ +24.74666666+3.413333333
+ +25.6+ 13.6533333333
+ +20.48+42.666666666
+ +20.48+ 3.41333333
+ +145.63540992+27.30666666
+ +42.66656-11.09333333
+ */
+// 452.8353032323
+
+//extension Reactive where Base: DanjiCollectionCell {
+//    var delegate: DelegateProxy<DanjiCollectionCell, DanjiCollectionCellDelegate> {
+//        return RxDanjiCellDelegateProxy.proxy(for: self.base)
+//    }
+//}

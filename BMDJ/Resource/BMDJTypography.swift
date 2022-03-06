@@ -105,22 +105,22 @@ extension UIFont {
     }
     
     // MARK: - Bold
-    class var boldBody1: UIFont {
+    class var BoldBody1: UIFont {
         return BMDJTypography.Bold.body1.uiFont
     }
     
-    class var boldH2: UIFont {
+    class var BoldH2: UIFont {
         return BMDJTypography.Bold.h2.uiFont
     }
     
-    class var boldH1: UIFont {
+    class var BoldH1: UIFont {
         return BMDJTypography.Bold.h1.uiFont
     }
     
-    class var boldBody2: UIFont {
+    class var BoldBody2: UIFont {
         return BMDJTypography.Bold.body2.uiFont
     }
-    class var bold16: UIFont {
+    class var Bold16: UIFont {
         return BMDJTypography.Bold.bold16.uiFont
     }
 }
