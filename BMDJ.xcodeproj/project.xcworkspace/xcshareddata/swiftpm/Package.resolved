@@ -209,24 +209,6 @@
         }
       },
       {
-        "package": "Realm",
-        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
-        "state": {
-          "branch": null,
-          "revision": "628c59a9048aae3b6bcf129ba56216dbe3dce808",
-          "version": "10.9.0"
-        }
-      },
-      {
-        "package": "RealmDatabase",
-        "repositoryURL": "https://github.com/realm/realm-core",
-        "state": {
-          "branch": null,
-          "revision": "95da0df7815d7cbaff14ed5e8b73fe4c2a992816",
-          "version": "11.0.4"
-        }
-      },
-      {
         "package": "RxAlamofire",
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxAlamofire.git",
         "state": {
@@ -260,15 +242,6 @@
           "branch": null,
           "revision": "52f467e628f4338a0b1f2deff60df8be1b9a6647",
           "version": "5.0.3"
-        }
-      },
-      {
-        "package": "RxRealm",
-        "repositoryURL": "https://github.com/RxSwiftCommunity/RxRealm.git",
-        "state": {
-          "branch": null,
-          "revision": "73b8d93bddb5b1c012ae96f1f3858d5c720dea1b",
-          "version": "5.0.2"
         }
       },
       {
