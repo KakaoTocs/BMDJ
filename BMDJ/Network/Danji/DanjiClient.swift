@@ -20,6 +20,23 @@ final class DanjiClient {
     
     private init() {}
     
+    func lowLevelAll() -> [Danji]? {
+        let semaphore = DispatchSemaphore(value: 0)
+        var result: [Danji]?
+        AF.request(DanjiRouter.all)
+            .responseData { [weak self] response in
+                if let data = response.data,
+                   let danjis = try? self?.decoder.decode(NetworkResult<[Danji]>.self, from: data) {
+                    result = danjis.data
+                } else {
+                    result = nil
+                }
+                semaphore.signal()
+            }
+        semaphore.wait()
+        return result
+    }
+    
     func all() -> Observable<[Danji]> {
         return RxAlamofire.request(DanjiRouter.all)
             .data()

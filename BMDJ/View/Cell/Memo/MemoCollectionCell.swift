@@ -173,8 +173,14 @@ final class MemoCollectionCell: UICollectionViewCell, View {
             .bind(to: textLabel.rx.text)
             .disposed(by: disposeBag)
         
-        reactor.state.asObservable().map { $0.memoe.imageURL }
+        reactor.state.compactMap { $0.memoe.imageURL }
             .bind(to: imageView.kf.rx.image())
+            .disposed(by: disposeBag)
+        
+        reactor.state.compactMap { $0.memoe.imageBase64 }
+            .compactMap { Data(base64Encoded: $0, options: .init(rawValue: 0)) }
+            .map { UIImage(data: $0) }
+            .bind(to: imageView.rx.image)
             .disposed(by: disposeBag)
         
         reactor.state.asObservable().map { $0.memoe.dateString }

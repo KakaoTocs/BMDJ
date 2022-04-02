@@ -55,7 +55,7 @@ final class MemoRepository: BaseService {
     }
     
     func updateMemo(_ memo: Memo) -> Observable<Memo> {
-        return MemoClient.shared.update(memo: memo)
+        return MemoClient.shared.update(id: memo.id, text: memo.text)
             .flatMap { _ in
                 return self.fetchMemo()
                     .flatMap { [weak self] memos -> Observable<Memo> in
@@ -74,7 +74,7 @@ final class MemoRepository: BaseService {
     }
     
     func deleteMemo(_ memo: Memo) -> Observable<Bool> {
-        return MemoClient.shared.delete(memo: memo)
+        return MemoClient.shared.delete(id: memo.id)
             .flatMap { _ in
                 self.fetchMemo()
                     .flatMap { [weak self] memos -> Observable<Bool> in

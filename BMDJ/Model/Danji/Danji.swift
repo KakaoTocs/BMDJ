@@ -114,34 +114,33 @@ struct Danji: Codable {
         }
     }
     
-    let id: String
+    var id: String
     let userID: String
     let color: Color
     let name: String
-    let stock: StockInfo
+    var stock: StockInfo
     let volume: String
     var mood: Mood
-    let createDate: Date
-    let endDate: Date
-    let dDayTimeStamp: Int
+    let createDate: Int
+    let endDate: Int
+    var updateDate: Int
+    let dDay: Int
     
     enum CodingKeys: String, CodingKey {
         case userID = "userId"
-        case dDayTimeStamp = "dDay"
-        case id, color, name, stock, volume, mood, createDate, endDate
+        case id, color, name, dDay, stock, volume, mood, createDate, endDate, updateDate
     }
 }
 
 extension Danji {
     static var empty: Danji {
-        let time = Date().addingTimeInterval(86399).timeIntervalSince1970
-        return .init(id: "empty", userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .init(id: "000000", name: "000000"), volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), dDayTimeStamp: Int(time))
+        return .init(id: "empty", userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .init(id: "000000", name: "000000"), volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), updateDate: .init(), dDay: 1)
     }
     
     var dDayString: String {
         get {
-            let timeInterval = dDayTimeStamp - Int(Date().timeIntervalSince1970)
-            let dDayResult = Int(timeInterval / 86400)
+            let timeInterval = endDate - Int(Date().timeIntervalSince1970 * 1000)
+            let dDayResult = Int(timeInterval / 1000 / 86400)
             if dDayResult > 0 {
                 return "D-\(dDayResult)"
             } else if dDayResult == 0 {

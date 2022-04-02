@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let serviceProvider = ServiceProvider()
+        let serviceProvider = ServiceProvider.shared
         let reactor = HomeViewReactor(provider: serviceProvider)
         let homeVC = HomeViewController(reactor: reactor)
         let naviVC = UINavigationController(rootViewController: homeVC)

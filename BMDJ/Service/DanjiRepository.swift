@@ -14,7 +14,7 @@ import RxOptional
 enum DanjiEvent {
     case add(Danji)
     case create(Danji)
-    case update(Danji)
+    case update(String, Danji)
     case move(String, Int)
     case refresh
 }
@@ -66,7 +66,7 @@ final class DanjiRepository: BaseService {
                         return .just(.empty)
                     }
                     .do(onNext: { danji in
-                        self.event.onNext(.update(danji))
+                        self.event.onNext(.update(id, danji))
                     })
             }
     }
