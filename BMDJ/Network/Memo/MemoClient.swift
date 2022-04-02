@@ -50,28 +50,28 @@ final class MemoClient {
     
     func add(memoCreate: MemoCreate) -> Observable<Memo> {
         return RxAlamofire.upload(multipartFormData: { formData in
-            if let data = memoCreate.image?.jpegData(compressionQuality: 0.8) {
+            if let data = memoCreate.imageData {
                 formData.append(data, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
             }
             formData.append(memoCreate.mood.rawValue.data(using: .utf8)!, withName: "mood")
             formData.append(memoCreate.text.data(using: .utf8)!, withName: "text")
             formData.append(memoCreate.danjiId.data(using: .utf8)!, withName: "danjiId")
-        }, urlRequest: MemoRouter.add(memoCreate: memoCreate))
+        }, urlRequest: MemoRouter.add)
         .flatMap { $0.rx.data() }
         .decode(type: NetworkResult<Memo>.self, decoder: decoder)
         .map { $0.data }
     }
     
-    func update(memo: Memo) -> Observable<Bool> {
+    func update(id: String, text: String) -> Observable<Bool> {
         return RxAlamofire.upload(multipartFormData: { formData in
-            if let text = memo.text.data(using: .utf8) {
+            if let text = text.data(using: .utf8) {
                 formData.append(text, withName: "text")
             }
-        }, urlRequest: MemoRouter.update(id: memo.id, text: memo.text))
+        }, urlRequest: MemoRouter.update(id: id, text: text))
         .map { _ in true }
     }
-    func delete(memo: Memo) -> Observable<Bool> {
-        return RxAlamofire.request(MemoRouter.delete(id: memo.id))
+    func delete(id: String) -> Observable<Bool> {
+        return RxAlamofire.request(MemoRouter.delete(id: id))
             .validate(statusCode: 200..<300)
             .map { _ in true }
     }
