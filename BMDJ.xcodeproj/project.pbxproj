@@ -96,11 +96,11 @@
 		6594339927D4D59D0016EDE7 /* LocalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */; };
 		659625E2262BF51D00277B80 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 659625E1262BF51D00277B80 /* ReactorKit */; };
 		659625E9262BF60D00277B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625E8262BF60D00277B80 /* HomeViewController.swift */; };
-		659625EF262BF80700277B80 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625EE262BF80700277B80 /* HomeViewReactor.swift */; };
 		659625F4262BFA1300277B80 /* Danji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F3262BFA1300277B80 /* Danji.swift */; };
 		659625F8262BFA2B00277B80 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F7262BFA2B00277B80 /* Memo.swift */; };
 		659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E542A265510AC00C6378A /* BMDJTextField.swift */; };
 		659EF7F32677A4D9003006F4 /* DanjiDregs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EF7F22677A4D9003006F4 /* DanjiDregs.swift */; };
+		65A8997A27F4BE1E0021DD29 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625EE262BF80700277B80 /* HomeViewReactor.swift */; };
 		65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */; };
 		65B02E7E2651177200A61D17 /* DanjiSettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */; };
 		65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8026511B3200A61D17 /* LoginViewController.swift */; };
@@ -1054,6 +1054,7 @@
 				6577641626371780001947CF /* AppService.swift in Sources */,
 				65139D2826B31AE000E32718 /* AuthClient.swift in Sources */,
 				6594338027D4CA240016EDE7 /* JobEvent.swift in Sources */,
+				65A8997A27F4BE1E0021DD29 /* HomeViewReactor.swift in Sources */,
 				65620A06266E84E30041C780 /* MemoViewController.swift in Sources */,
 				65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */,
 				6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */,
@@ -1110,7 +1111,6 @@
 				65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */,
 				6580837F265C09980071EED7 /* DanjiBase.swift in Sources */,
 				65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */,
-				659625EF262BF80700277B80 /* HomeViewReactor.swift in Sources */,
 				650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */,
 				6594339727D4D5590016EDE7 /* JobService.swift in Sources */,
 				6503613A26713279006CEBC1 /* MemoViewReactor.swift in Sources */,
