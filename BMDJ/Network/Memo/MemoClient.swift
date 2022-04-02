@@ -20,6 +20,26 @@ final class MemoClient {
     
     private init() {}
     
+    func lowLevelAll(danjiID: String) -> [Memo]? {
+        let semaphore = DispatchSemaphore(value: 0)
+        var result: [Memo]?
+        print(MemoRouter.all(danjiID: danjiID).urlRequest?.curlString ?? "nil")
+        AF.request(MemoRouter.all(danjiID: danjiID))
+            .responseData { [weak self] response in
+                if let data = response.data,
+                   let memos = try? self?.decoder.decode(NetworkResult<[Memo]>.self, from: data) {
+                    print("\(danjiID) Succes")
+                    result = memos.data
+                } else {
+                    print("\(danjiID) Fail")
+                    result = nil
+                }
+                semaphore.signal()
+            }
+        semaphore.wait()
+        return result
+    }
+    
     func all(danjiID: String) -> Observable<[Memo]> {
         return RxAlamofire.request(MemoRouter.all(danjiID: danjiID))
             .validate(statusCode: 200..<300)
