@@ -45,9 +45,8 @@ final class MenuViewReactor: Reactor {
     }
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let danjiEventMutation = provider.danjiRepository.event
+        let danjiEventMutation = provider.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
-                print("Close 1")
                 return self?.mutate(danjiEvent: event) ?? .empty()
             }
         
@@ -57,7 +56,6 @@ final class MenuViewReactor: Reactor {
     func mutate(danjiEvent: DanjiEvent) -> Observable<Mutation> {
         switch danjiEvent {
         case .add:
-            print("Close 2")
             return .just(.close)
         default:
             return .empty()

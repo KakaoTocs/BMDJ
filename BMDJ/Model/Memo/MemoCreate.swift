@@ -38,8 +38,19 @@ struct MemoCreate: Codable {
         try container.encode(mood, forKey: .mood)
         try container.encode(text, forKey: .text)
         try container.encode(danjiId, forKey: .danjiId)
-        if let data = image?.pngData() {
+        if let data = image?.jpegData(compressionQuality: 0.8) {
             try container.encode(data, forKey: .image)
         }
+    }
+}
+
+extension MemoCreate {
+    var memo: Memo {
+        return .init(id: "User-\(UUID().uuidString)", danjiID: danjiId, mood: mood, imageURLString: nil, imageBase64: image?.jpegData(compressionQuality: 0.8)?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+                      , text: text, createDate: Int(Date().timeIntervalSince1970 * 1000), updateDate: Int(Date().timeIntervalSince1970 * 1000))
+    }
+    
+    var imageData: Data? {
+        return image?.jpegData(compressionQuality: 0.8)
     }
 }

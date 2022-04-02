@@ -82,9 +82,12 @@ final class DanjiPlantViewReactor: Reactor {
         case .selectDday(let day):
             return .just(.selectDday(day))
         case .plant:
-            return provider.danjiRepository
-                .addDanji(danjiCreate: currentState.danjiCreate)
-                .map { _ in .dismiss }
+            let result = provider.repository.danjiAdd(danjiCreate: currentState.danjiCreate)
+            if result {
+                return .just(.dismiss)
+            } else {
+                return .empty()
+            }
         }
     }
     
@@ -102,8 +105,8 @@ final class DanjiPlantViewReactor: Reactor {
         case .changeMood(let mood):
             state.danjiCreate.mood = mood
         case .selectDday(let day):
-            let date = Date().addingTimeInterval(TimeInterval(86400 * day))
-            state.danjiCreate.dDay = Int(date.timeIntervalSince1970)
+            state.danjiCreate.dDay = day
+            state.danjiCreate.endDate = (Int(Date().timeIntervalSince1970) + day * 86400) * 1000
         case .dismiss:
             state.dismiss = true
         }

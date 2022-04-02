@@ -26,7 +26,6 @@ final class HomeViewReactor: Reactor {
         case fetchDanjiSections([DanjiSection])
         case fetchMemoSections([MemoSection])
         case activeDanjiIndex(Int, Danji, [MemoSection])
-        case removeEmpty
         case insertDanjiSectionItem(IndexPath, DanjiSection.Item)
         case updateDanjiSectionItem(IndexPath, DanjiSection.Item)
         case insertMemoSectionItem(IndexPath, MemoSection.Item)
@@ -43,6 +42,7 @@ final class HomeViewReactor: Reactor {
         var activeIndex: Int?
         var isPreviousActive: Bool = false
         var isNextActive: Bool = false
+        var scrollToFirst: Void?
     }
     
     let provider: ServiceProviderType
@@ -57,66 +57,60 @@ final class HomeViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .refresh:
-            return provider.danjiRepository.fetchDanjis()
-                .map { danjis in
-                    let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
-                    var section: [DanjiSection] = []
-                    if sectionItems.isEmpty {
-                        section = [DanjiSection(model: (), items: [DanjiCollectionCellReactor(danji: .empty)])]
-                    } else {
-                        section = [DanjiSection(model: (), items: sectionItems)]
-                    }
-                    return .fetchDanjiSections(section)
-                }
+            let danjis = provider.repository.danjiFetch()
+            let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
+            var section: [DanjiSection] = []
+            if sectionItems.isEmpty {
+                section = [DanjiSection(model: (), items: [DanjiCollectionCellReactor(danji: .empty)])]
+            } else {
+                section = [DanjiSection(model: (), items: sectionItems)]
+            }
+            return .just(.fetchDanjiSections(section))
         case .activeDanjiIndex(let index):
             if let danji = currentState.danjiSections.first?.items[index].currentState {
-                return provider.memoRepository.fetchMemo()
-                    .map { $0.filter { $0.danjiID == danji.danji.id }}
-                    .map { memos in
-                        let sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
-                        var section: [MemoSection] = []
-                        if sectionItems.isEmpty {
-                            let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
-                            section = [MemoSection(model: (), items: [.init(memo: mockMemo, isGradient: false)])]
-                        } else {
-                            section = [MemoSection(model: (), items: sectionItems)]
-                        }
-//                        let section = MemoSection(model: (), items: sectionItems)
-                        return .activeDanjiIndex(index, danji.danji, section)
-                    }
-            }
-            return .just(.removeEmpty)
-        case .refreshMemo:
-            return provider.memoRepository.fetchMemo()
-                .map { $0.filter { $0.danjiID == self.currentState.activeDanji?.id }}
-                .map { memos in
-                    var sectionItems: [MemoCollectionCellReactor] = []
-                    if memos.isEmpty {
-                        let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
-                        sectionItems = [.init(memo: mockMemo, isGradient: false)]
-                    } else {
-                        sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
-                    }
-                    let section = MemoSection(model: (), items: sectionItems)
-                    return .fetchMemoSections([section])
+                let memos = provider.repository.memoFetch(danji.id)
+                let sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
+                var section: [MemoSection] = []
+                if sectionItems.isEmpty {
+                    let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
+                    section = [MemoSection(model: (), items: [.init(memo: mockMemo, isGradient: false)])]
+                } else {
+                    section = [MemoSection(model: (), items: sectionItems)]
                 }
+                return .just(.activeDanjiIndex(index, danji.danji, section))
+            }
+            return .empty()
+        case .refreshMemo:
+            if let danji = currentState.activeDanji {
+                let memos = provider.repository.memoFetch(danji.id)
+                var sectionItems: [MemoCollectionCellReactor] = []
+                if memos.isEmpty {
+                    let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
+                    sectionItems = [.init(memo: mockMemo, isGradient: false)]
+                } else {
+                    sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
+                }
+                let section = MemoSection(model: (), items: sectionItems)
+                return .just(.fetchMemoSections([section]))
+            }
+            return .empty()
         }
     }
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let danjiEventMutation = provider.danjiRepository.event
+        let danjiEventMutation = provider.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 self?.mutate(danjiEvent: event) ?? .empty()
             }
         
-        let memoEventMutation = provider.memoRepository.event
+        let memoEventMutation = provider.repository.memoEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 self?.mutate(memoEvent: event) ?? .empty()
             }
-        let memoEvent2Mutation = provider.danjiRepository.event
+        let memoEvent2Mutation = provider.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 switch event {
-                case .create, .move, .refresh:
+                case .add, .create, .move, .refresh:
                     return self?.mutate(action: .refreshMemo) ?? .empty()
                 default:
                     return .empty()
@@ -126,34 +120,36 @@ final class HomeViewReactor: Reactor {
     }
     
     func mutate(danjiEvent: DanjiEvent) -> Observable<Mutation> {
-        let state = self.currentState
-        
         switch danjiEvent {
         case let .add(danji), let .create(danji):
           let indexPath = IndexPath(item: 0, section: 0)
             let reactor = DanjiCollectionCellReactor(danji: danji)
           return .just(.insertDanjiSectionItem(indexPath, reactor))
 
-        case let .update(danji):
-          guard let indexPath = self.danjiIndexPath(forDanjiID: danji.id, from: state) else { return .empty() }
-            let reactor = DanjiCollectionCellReactor(danji: danji)
-          return .just(.updateDanjiSectionItem(indexPath, reactor))
+//        case let .update(danji):
+//          guard let indexPath = self.danjiIndexPath(forDanjiID: danji.id, from: state) else { return .empty() }
+//            let reactor = DanjiCollectionCellReactor(danji: danji)
+//          return .just(.updateDanjiSectionItem(indexPath, reactor))
         case .move:
-            return provider.danjiRepository.fetchDanjis()
-                .map { danjis in
-                    let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
-                    let section = DanjiSection(model: (), items: sectionItems)
-                    return .fetchDanjiSections([section])
-                }
-        case .refresh:
-            return .just(.removeEmpty)
+            let danjis = provider.repository.danjiFetch()
+            let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
+            let section = DanjiSection(model: (), items: sectionItems)
+            return .just(.fetchDanjiSections([section]))
+        case .refresh, .update:
+            let danjis = provider.repository.danjiFetch()
+            let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
+            var section: [DanjiSection] = []
+            if sectionItems.isEmpty {
+                section = [DanjiSection(model: (), items: [DanjiCollectionCellReactor(danji: .empty)])]
+            } else {
+                section = [DanjiSection(model: (), items: sectionItems)]
+            }
+            return .just(.fetchDanjiSections(section))
         }
     }
     
     
     func mutate(memoEvent: MemoEvent) -> Observable<Mutation> {
-        let state = self.currentState
-        
         switch memoEvent {
         case let .add(memo), let .create(memo):
           let indexPath = IndexPath(item: 0, section: 0)
@@ -165,14 +161,30 @@ final class HomeViewReactor: Reactor {
 //          let reactor = MemoCollectionCellReactor(memo: memo, isGradient: false)
 //          return .just(.updateMemoSectionItem(indexPath, reactor))
         case .move:
-            return provider.memoRepository.fetchMemo()
-                .map { memos in
-                    let sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
-                    let section = MemoSection(model: (), items: sectionItems)
-                    return .fetchMemoSections([section])
-                }
+            return .empty()
+//            let memos = provider.repository.memoFetch()
+//            let sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
+//            let section = MemoSection(model: (), items: sectionItems)
+//            return .just(.fetchMemoSections([section]))
+//
+//            return provider.memoRepository.fetchMemo()
+//                .map { memos in
+//
+//                }
         case .refresh:
-            return .just(.removeEmpty)
+            if let danji = currentState.activeDanji {
+                let memos = provider.repository.memoFetch(danji.id)
+                var sectionItems: [MemoCollectionCellReactor] = []
+                if memos.isEmpty {
+                    let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
+                    sectionItems = [.init(memo: mockMemo, isGradient: false)]
+                } else {
+                    sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
+                }
+                let section = MemoSection(model: (), items: sectionItems)
+                return .just(.fetchMemoSections([section]))
+            }
+            return .empty()
         case let .delete(memo):
             return .just(.delete(memo))
         case let .update(memo):
@@ -185,6 +197,7 @@ final class HomeViewReactor: Reactor {
         
         switch mutation {
         case let .activeDanjiIndex(index, danji, sections):
+            print("active")
             state.activeDanji = danji
             state.activeIndex = index
             if index > 0 {
@@ -198,7 +211,9 @@ final class HomeViewReactor: Reactor {
                 state.isNextActive = false
             }
             state.memoSections = sections
+            state.scrollToFirst = nil
         case .fetchDanjiSections(let sections):
+            print("fetch")
             state.danjiSections = sections
             let index = (sections.first?.items.count ?? 0) > 0 ? 0 : nil
             if let section = sections.first,
@@ -209,7 +224,9 @@ final class HomeViewReactor: Reactor {
             if sections.first?.items.count ?? 0 > 1 {
                 state.isNextActive = true
             }
+            state.scrollToFirst = nil
         case let .insertDanjiSectionItem(indexPath, sectionItem):
+            print("insert")
             if let danji = state.danjiSections.first?.items.first,
                danji.currentState.danji.color == .gray {
                 state.danjiSections = [DanjiSection(model: (), items: [sectionItem])]
@@ -224,6 +241,7 @@ final class HomeViewReactor: Reactor {
                     state.activeDanji = sectionItem.currentState.danji
                 }
             }
+            state.scrollToFirst = ()
         case let .insertMemoSectionItem(indexPath, sectionItem):
             if let memo = state.memoSections.first?.items.first,
                memo.currentState.memoe.mood == .nomal {
@@ -231,29 +249,35 @@ final class HomeViewReactor: Reactor {
             } else {
                 state.memoSections.insert(sectionItem, at: indexPath)
             }
+            state.scrollToFirst = nil
         case let .updateDanjiSectionItem(indexPath, sectionItem):
+            print("update")
             state.danjiSections[indexPath] = sectionItem
             if indexPath.item == state.activeIndex {
                 state.activeDanji = sectionItem.currentState.danji
             }
+            state.scrollToFirst = nil
         case let .fetchMemoSections(sections):
             state.memoSections = sections
+            state.scrollToFirst = nil
         case let .delete(memo):
             if let index = state.memoSections.first?.items.firstIndex(where: { $0.currentState.memoe.id == memo.id }),
                var section = state.memoSections.first {
                 section.items.remove(at: index)
                 state.memoSections = [.init(model: (), items: section.items)]
             }
+            state.scrollToFirst = nil
         case let .update(memo):
             if let index = state.memoSections.first?.items.firstIndex(where: { $0.currentState.memoe.id == memo.id }),
                var section = state.memoSections.first {
                 section.items[index] = .init(memo: memo, isGradient: false)
                 state.memoSections = [.init(model: (), items: section.items)]
             }
+            state.scrollToFirst = nil
         default:
             break
         }
-        
+        print("\(state.activeDanji?.id ?? "nil") - \(state.activeIndex ?? -1)")
         return state
     }
     

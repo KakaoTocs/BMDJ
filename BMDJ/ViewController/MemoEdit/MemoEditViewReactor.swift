@@ -36,9 +36,13 @@ final class MemoEditViewReactor: Reactor {
         switch action {
         case .edit(let text):
             let memo = currentState.memo
-            let newMemo = Memo(id: memo.id, danjiID: memo.danjiID, mood: memo.mood, imageURLString: memo.imageURLString, text: text, createDate: memo.createDate)
-            return provider.memoRepository.updateMemo(newMemo)
-                .map { _ in .dismiss }
+            let newMemo = Memo(id: memo.id, danjiID: memo.danjiID, mood: memo.mood, imageURLString: memo.imageURLString, text: text, createDate: memo.createDate, updateDate: Int(Date().timeIntervalSince1970 * 1000))
+            let result = provider.repository.memoUpdate(id: newMemo.id, text: newMemo.text)
+            if result {
+                return .just(.dismiss)
+            } else {
+                return .empty()
+            }
         }
     }
     

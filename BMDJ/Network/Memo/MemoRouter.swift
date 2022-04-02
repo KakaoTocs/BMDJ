@@ -10,7 +10,7 @@ import Alamofire
 
 enum MemoRouter: URLRequestConvertible {
     case all(danjiID: String)
-    case add(memoCreate: MemoCreate)
+    case add
     case update(id: String, text: String)
     case delete(id: String)
     

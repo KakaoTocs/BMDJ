@@ -75,17 +75,32 @@
 		6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2F8264E4C5D00654178 /* DanjiRouter.swift */; };
 		6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2FB264E59FF00654178 /* DanjiClient.swift */; };
 		65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65898D7626CC180400DAD62C /* IndicatorViewController.swift */; };
+		658B160C27D88E3800945098 /* JobClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B160B27D88E3800945098 /* JobClient.swift */; };
+		658B161027D8C0E200945098 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B160F27D8C0E200945098 /* DatabaseService.swift */; };
+		658B161227D8C47000945098 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B161127D8C47000945098 /* Repository.swift */; };
 		658CC9F2263D38E9000286D3 /* MemoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658CC9F1263D38E9000286D3 /* MemoCollectionCell.swift */; };
 		658CC9F5263D440F000286D3 /* DanjiCollectionCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658CC9F4263D440F000286D3 /* DanjiCollectionCellReactor.swift */; };
 		658CC9F9263D499B000286D3 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 658CC9F8263D499B000286D3 /* RxDataSources */; };
 		658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658CC9FB263DB89B000286D3 /* MemoCollectionCellReactor.swift */; };
+		6594337C27D4C9DB0016EDE7 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594337B27D4C9DB0016EDE7 /* Job.swift */; };
+		6594337E27D4CA0D0016EDE7 /* JobTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594337D27D4CA0D0016EDE7 /* JobTarget.swift */; };
+		6594338027D4CA240016EDE7 /* JobEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594337F27D4CA240016EDE7 /* JobEvent.swift */; };
+		6594338227D4CA770016EDE7 /* DanjiAddJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594338127D4CA770016EDE7 /* DanjiAddJob.swift */; };
+		6594338527D4CD390016EDE7 /* DanjiDeleteJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594338427D4CD390016EDE7 /* DanjiDeleteJob.swift */; };
+		6594338927D4CD7B0016EDE7 /* DanjiSortJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594338827D4CD7B0016EDE7 /* DanjiSortJob.swift */; };
+		6594338B27D4CE510016EDE7 /* DanjiUpdateJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594338A27D4CE510016EDE7 /* DanjiUpdateJob.swift */; };
+		6594338E27D4CE9C0016EDE7 /* MemoAddJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594338D27D4CE9C0016EDE7 /* MemoAddJob.swift */; };
+		6594339027D4D1470016EDE7 /* MemoDeleteJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594338F27D4D1470016EDE7 /* MemoDeleteJob.swift */; };
+		6594339227D4D2C00016EDE7 /* MemoUpdateJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594339127D4D2C00016EDE7 /* MemoUpdateJob.swift */; };
+		6594339727D4D5590016EDE7 /* JobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594339627D4D5590016EDE7 /* JobService.swift */; };
+		6594339927D4D59D0016EDE7 /* LocalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */; };
 		659625E2262BF51D00277B80 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 659625E1262BF51D00277B80 /* ReactorKit */; };
 		659625E9262BF60D00277B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625E8262BF60D00277B80 /* HomeViewController.swift */; };
-		659625EF262BF80700277B80 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625EE262BF80700277B80 /* HomeViewReactor.swift */; };
 		659625F4262BFA1300277B80 /* Danji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F3262BFA1300277B80 /* Danji.swift */; };
 		659625F8262BFA2B00277B80 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F7262BFA2B00277B80 /* Memo.swift */; };
 		659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E542A265510AC00C6378A /* BMDJTextField.swift */; };
 		659EF7F32677A4D9003006F4 /* DanjiDregs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EF7F22677A4D9003006F4 /* DanjiDregs.swift */; };
+		65A8997A27F4BE1E0021DD29 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625EE262BF80700277B80 /* HomeViewReactor.swift */; };
 		65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */; };
 		65B02E7E2651177200A61D17 /* DanjiSettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */; };
 		65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8026511B3200A61D17 /* LoginViewController.swift */; };
@@ -199,9 +214,24 @@
 		6587E2F8264E4C5D00654178 /* DanjiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiRouter.swift; sourceTree = "<group>"; };
 		6587E2FB264E59FF00654178 /* DanjiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiClient.swift; sourceTree = "<group>"; };
 		65898D7626CC180400DAD62C /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
+		658B160B27D88E3800945098 /* JobClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobClient.swift; sourceTree = "<group>"; };
+		658B160F27D8C0E200945098 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Feature/DatabaseService.swift; sourceTree = "<group>"; };
+		658B161127D8C47000945098 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		658CC9F1263D38E9000286D3 /* MemoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCollectionCell.swift; sourceTree = "<group>"; };
 		658CC9F4263D440F000286D3 /* DanjiCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiCollectionCellReactor.swift; sourceTree = "<group>"; };
 		658CC9FB263DB89B000286D3 /* MemoCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCollectionCellReactor.swift; sourceTree = "<group>"; };
+		6594337B27D4C9DB0016EDE7 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		6594337D27D4CA0D0016EDE7 /* JobTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTarget.swift; sourceTree = "<group>"; };
+		6594337F27D4CA240016EDE7 /* JobEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobEvent.swift; sourceTree = "<group>"; };
+		6594338127D4CA770016EDE7 /* DanjiAddJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddJob.swift; sourceTree = "<group>"; };
+		6594338427D4CD390016EDE7 /* DanjiDeleteJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiDeleteJob.swift; sourceTree = "<group>"; };
+		6594338827D4CD7B0016EDE7 /* DanjiSortJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortJob.swift; sourceTree = "<group>"; };
+		6594338A27D4CE510016EDE7 /* DanjiUpdateJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiUpdateJob.swift; sourceTree = "<group>"; };
+		6594338D27D4CE9C0016EDE7 /* MemoAddJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAddJob.swift; sourceTree = "<group>"; };
+		6594338F27D4D1470016EDE7 /* MemoDeleteJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDeleteJob.swift; sourceTree = "<group>"; };
+		6594339127D4D2C00016EDE7 /* MemoUpdateJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdateJob.swift; sourceTree = "<group>"; };
+		6594339627D4D5590016EDE7 /* JobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobService.swift; sourceTree = "<group>"; };
+		6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEnvironment.swift; sourceTree = "<group>"; };
 		659625E8262BF60D00277B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		659625EE262BF80700277B80 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		659625F3262BFA1300277B80 /* Danji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Danji.swift; sourceTree = "<group>"; };
@@ -465,6 +495,7 @@
 		6577641426371777001947CF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6594339327D4D31D0016EDE7 /* Job */,
 				6577641526371780001947CF /* AppService.swift */,
 				657EC22B265823D100D343DF /* DanjiRepository.swift */,
 				6575A00B267E60DA0004ACEF /* DataBaseService.swift */,
@@ -476,6 +507,8 @@
 				65091C4026C97775000F698A /* UserDefaultService.swift */,
 				652A4E2F277DA2BB00F7D54A /* StockService.swift */,
 				653970DE2799B6C70006E2A9 /* FIBDatabaseService.swift */,
+				658B160F27D8C0E200945098 /* DatabaseService.swift */,
+				658B161127D8C47000945098 /* Repository.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -523,6 +556,54 @@
 				6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */,
 			);
 			path = DanjiSort;
+			sourceTree = "<group>";
+		};
+		658B160E27D8C0D900945098 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		6594337A27D4C9C90016EDE7 /* Job */ = {
+			isa = PBXGroup;
+			children = (
+				6594337B27D4C9DB0016EDE7 /* Job.swift */,
+				6594337D27D4CA0D0016EDE7 /* JobTarget.swift */,
+				6594337F27D4CA240016EDE7 /* JobEvent.swift */,
+			);
+			path = Job;
+			sourceTree = "<group>";
+		};
+		6594338327D4CD270016EDE7 /* Job */ = {
+			isa = PBXGroup;
+			children = (
+				6594338127D4CA770016EDE7 /* DanjiAddJob.swift */,
+				6594338427D4CD390016EDE7 /* DanjiDeleteJob.swift */,
+				6594338827D4CD7B0016EDE7 /* DanjiSortJob.swift */,
+				6594338A27D4CE510016EDE7 /* DanjiUpdateJob.swift */,
+			);
+			path = Job;
+			sourceTree = "<group>";
+		};
+		6594338C27D4CE8B0016EDE7 /* Job */ = {
+			isa = PBXGroup;
+			children = (
+				6594338D27D4CE9C0016EDE7 /* MemoAddJob.swift */,
+				6594338F27D4D1470016EDE7 /* MemoDeleteJob.swift */,
+				6594339127D4D2C00016EDE7 /* MemoUpdateJob.swift */,
+			);
+			path = Job;
+			sourceTree = "<group>";
+		};
+		6594339327D4D31D0016EDE7 /* Job */ = {
+			isa = PBXGroup;
+			children = (
+				6594339627D4D5590016EDE7 /* JobService.swift */,
+				6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */,
+				658B160B27D88E3800945098 /* JobClient.swift */,
+			);
+			path = Job;
 			sourceTree = "<group>";
 		};
 		659625E4262BF52500277B80 /* ViewController */ = {
@@ -581,6 +662,7 @@
 			isa = PBXGroup;
 			children = (
 				65429F8A2660CDA2000819BE /* NetworkResult.swift */,
+				6594337A27D4C9C90016EDE7 /* Job */,
 				65B9D01527B96F1200053545 /* Danji */,
 				65B9D01627B96F2C00053545 /* Memo */,
 				65B9D01427B96F0800053545 /* Stock */,
@@ -618,6 +700,7 @@
 		65B377A4262AE513000D03E7 /* BMDJ */ = {
 			isa = PBXGroup;
 			children = (
+				658B160E27D8C0D900945098 /* Feature */,
 				65B9D01727B970E200053545 /* Deprecated */,
 				65F3018026C99330004FAA63 /* GoogleService-Info.plist */,
 				65FD602026B05FDB0049023F /* BMDJ.entitlements */,
@@ -678,6 +761,7 @@
 		65B9D01527B96F1200053545 /* Danji */ = {
 			isa = PBXGroup;
 			children = (
+				6594338327D4CD270016EDE7 /* Job */,
 				659625F3262BFA1300277B80 /* Danji.swift */,
 				6580837E265C09980071EED7 /* DanjiBase.swift */,
 				65D985312675F86C00D3F467 /* DanjiCreate.swift */,
@@ -689,6 +773,7 @@
 		65B9D01627B96F2C00053545 /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				6594338C27D4CE8B0016EDE7 /* Job */,
 				659625F7262BFA2B00277B80 /* Memo.swift */,
 				65261A7D2693616A005E877C /* MemoCreate.swift */,
 			);
@@ -932,13 +1017,18 @@
 				65D6A43627772A7C009A3A6E /* StockSearchViewReactor.swift in Sources */,
 				65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */,
 				65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */,
+				6594339027D4D1470016EDE7 /* MemoDeleteJob.swift in Sources */,
+				6594339227D4D2C00016EDE7 /* MemoUpdateJob.swift in Sources */,
 				65B377C0262AE5B0000D03E7 /* BMDJColor.swift in Sources */,
 				650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */,
 				65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */,
+				6594337E27D4CA0D0016EDE7 /* JobTarget.swift in Sources */,
 				658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */,
 				65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */,
 				65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */,
 				65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */,
+				6594338E27D4CE9C0016EDE7 /* MemoAddJob.swift in Sources */,
+				658B160C27D88E3800945098 /* JobClient.swift in Sources */,
 				65D7D29226849BDF00D69C7C /* Array.swift in Sources */,
 				65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */,
 				65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */,
@@ -949,6 +1039,7 @@
 				6519946E26498AE80067A29D /* DanjiSortViewController.swift in Sources */,
 				65739EA6263E96C0009AA160 /* Date.swift in Sources */,
 				65110674269F44B0009AB050 /* Int.swift in Sources */,
+				658B161027D8C0E200945098 /* DatabaseService.swift in Sources */,
 				6586FF48264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift in Sources */,
 				6585A982265D69D7008D6858 /* MemoClient.swift in Sources */,
 				65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */,
@@ -963,6 +1054,8 @@
 				65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */,
 				6577641626371780001947CF /* AppService.swift in Sources */,
 				65139D2826B31AE000E32718 /* AuthClient.swift in Sources */,
+				6594338027D4CA240016EDE7 /* JobEvent.swift in Sources */,
+				65A8997A27F4BE1E0021DD29 /* HomeViewReactor.swift in Sources */,
 				65620A06266E84E30041C780 /* MemoViewController.swift in Sources */,
 				65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */,
 				6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */,
@@ -971,16 +1064,21 @@
 				6546D65527897C8800C39D5C /* BMDJIconTextField.swift in Sources */,
 				65D6A43D2777313E009A3A6E /* StockCellReactor.swift in Sources */,
 				65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */,
+				6594338B27D4CE510016EDE7 /* DanjiUpdateJob.swift in Sources */,
 				656574CA27946600008B56D5 /* BMDJIconButton.swift in Sources */,
 				65D6A442277737E1009A3A6E /* DanjiEmptyCellReactor.swift in Sources */,
+				6594338227D4CA770016EDE7 /* DanjiAddJob.swift in Sources */,
 				659625F4262BFA1300277B80 /* Danji.swift in Sources */,
 				6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */,
 				65D6A42F2776E610009A3A6E /* EditPopupViewReactor.swift in Sources */,
+				658B161227D8C47000945098 /* Repository.swift in Sources */,
 				65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */,
 				659625E9262BF60D00277B80 /* HomeViewController.swift in Sources */,
+				6594337C27D4C9DB0016EDE7 /* Job.swift in Sources */,
 				65FC091A26639359001E70FC /* BMDJWeatherView.swift in Sources */,
 				65B02E7E2651177200A61D17 /* DanjiSettingViewReactor.swift in Sources */,
 				652A4E2C277D97D300F7D54A /* BMDJSearchBar.swift in Sources */,
+				6594338527D4CD390016EDE7 /* DanjiDeleteJob.swift in Sources */,
 				65201390276A63AC006F3DC1 /* GuideViewReactor.swift in Sources */,
 				659625F8262BFA2B00277B80 /* Memo.swift in Sources */,
 				65B893FD268A3362001BB6D9 /* ServiceProvider.swift in Sources */,
@@ -996,6 +1094,7 @@
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
 				6559820C264416720011D5BC /* MenuViewController.swift in Sources */,
 				657EC22C265823D100D343DF /* DanjiRepository.swift in Sources */,
+				6594338927D4CD7B0016EDE7 /* DanjiSortJob.swift in Sources */,
 				653970DF2799B6C70006E2A9 /* FIBDatabaseService.swift in Sources */,
 				657CF7FF267F330200A4CD57 /* MemoListViewController.swift in Sources */,
 				65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */,
@@ -1013,8 +1112,8 @@
 				65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */,
 				6580837F265C09980071EED7 /* DanjiBase.swift in Sources */,
 				65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */,
-				659625EF262BF80700277B80 /* HomeViewReactor.swift in Sources */,
 				650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */,
+				6594339727D4D5590016EDE7 /* JobService.swift in Sources */,
 				6503613A26713279006CEBC1 /* MemoViewReactor.swift in Sources */,
 				6559820F264418140011D5BC /* MenuViewReactor.swift in Sources */,
 				65FF1E152658F45700F65164 /* ColorCollectionCellReactor.swift in Sources */,
@@ -1022,6 +1121,7 @@
 				659EF7F32677A4D9003006F4 /* DanjiDregs.swift in Sources */,
 				6582DAC3278AC0D600B104EA /* BMDJGradientView.swift in Sources */,
 				651BAC2F265A50450090D6A7 /* SettingTableCellReactor.swift in Sources */,
+				6594339927D4D59D0016EDE7 /* LocalEnvironment.swift in Sources */,
 				65429F8B2660CDA2000819BE /* NetworkResult.swift in Sources */,
 				6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */,
 				6560409E2680F50D00F9A725 /* SettingTitleHeaderReactor.swift in Sources */,
@@ -1165,7 +1265,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BMDJ/BMDJ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P7PUGAUP8K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1179,7 +1279,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1196,7 +1296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BMDJ/BMDJ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P7PUGAUP8K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1210,7 +1310,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";

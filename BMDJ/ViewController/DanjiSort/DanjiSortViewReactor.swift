@@ -39,9 +39,12 @@ final class DanjiSortViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .move(let sourceIndexPath, let destinationIndexPath):
-//            let danji = currentState.danjiSortSections[sourceIndexPath].currentState
-            return provider.danjiRepository.moveDanji(index: sourceIndexPath.item, to: destinationIndexPath.item)
-                .flatMap { _ in Observable.just(.move(sourceIndexPath, destinationIndexPath)) }
+            let result = provider.repository.danjiMove(index: sourceIndexPath.item, to: destinationIndexPath.item)
+            if result {
+                return .just(.move(sourceIndexPath, destinationIndexPath))
+            } else {
+                return .empty()
+            }
         }
     }
     
