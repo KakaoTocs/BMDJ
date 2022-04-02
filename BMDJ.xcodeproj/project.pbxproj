@@ -215,7 +215,7 @@
 		6587E2FB264E59FF00654178 /* DanjiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiClient.swift; sourceTree = "<group>"; };
 		65898D7626CC180400DAD62C /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
 		658B160B27D88E3800945098 /* JobClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobClient.swift; sourceTree = "<group>"; };
-		658B160F27D8C0E200945098 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		658B160F27D8C0E200945098 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseService.swift; path = ../Feature/DatabaseService.swift; sourceTree = "<group>"; };
 		658B161127D8C47000945098 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		658CC9F1263D38E9000286D3 /* MemoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCollectionCell.swift; sourceTree = "<group>"; };
 		658CC9F4263D440F000286D3 /* DanjiCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiCollectionCellReactor.swift; sourceTree = "<group>"; };
@@ -507,6 +507,8 @@
 				65091C4026C97775000F698A /* UserDefaultService.swift */,
 				652A4E2F277DA2BB00F7D54A /* StockService.swift */,
 				653970DE2799B6C70006E2A9 /* FIBDatabaseService.swift */,
+				658B160F27D8C0E200945098 /* DatabaseService.swift */,
+				658B161127D8C47000945098 /* Repository.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -559,8 +561,6 @@
 		658B160E27D8C0D900945098 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				658B160F27D8C0E200945098 /* DatabaseService.swift */,
-				658B161127D8C47000945098 /* Repository.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -700,6 +700,7 @@
 		65B377A4262AE513000D03E7 /* BMDJ */ = {
 			isa = PBXGroup;
 			children = (
+				658B160E27D8C0D900945098 /* Feature */,
 				65B9D01727B970E200053545 /* Deprecated */,
 				65F3018026C99330004FAA63 /* GoogleService-Info.plist */,
 				65FD602026B05FDB0049023F /* BMDJ.entitlements */,
