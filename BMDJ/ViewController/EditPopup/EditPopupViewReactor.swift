@@ -33,12 +33,12 @@ final class EditPopupViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .delete:
-            return provider.memoRepository.deleteMemo(currentState.memo)
-                .do(onNext: { result in
-                    dump(result)
-                    print(result)
-                })
-                .map { _ in .delete }
+            let result = provider.repository.memoDelete(id: currentState.memo.id)
+            if result {
+                return .just(.delete)
+            } else {
+                return .empty()
+            }
         }
     }
     

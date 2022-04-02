@@ -23,7 +23,7 @@ final class DanjiCollectionCellReactor: Reactor {
     }
     
     enum Mutation {
-        case update(Danji?)
+        case update(Danji.Mood)
     }
     
     struct State {
@@ -43,8 +43,12 @@ final class DanjiCollectionCellReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .setMood(let mood):
-            return provider!.danjiRepository.updateMood(id: currentState.id, mood: mood)
-                .map { danji in .update(danji)}
+            let result = provider!.repository.danjiUpdate(id: currentState.id, mood: mood)
+            if result {
+                return .just(.update(mood))
+            } else {
+                return .empty()
+            }
         }
     }
     
@@ -52,10 +56,8 @@ final class DanjiCollectionCellReactor: Reactor {
         var state = state
         
         switch mutation {
-        case .update(let danji):
-            if let danji = danji {
-                state.mood = danji.mood
-            }
+        case .update(let mood):
+            state.mood = mood
         }
         return state
     }

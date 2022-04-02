@@ -53,7 +53,7 @@ final class MemoListViewReactor: Reactor {
     }
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let memoEventMutation = provider.memoRepository.event
+        let memoEventMutation = provider.repository.memoEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 switch event {
                 case .delete(let memo):
