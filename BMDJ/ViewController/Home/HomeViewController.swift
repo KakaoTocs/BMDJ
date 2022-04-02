@@ -487,6 +487,15 @@ final class HomeViewController: UIViewController, View {
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        reactor.state.compactMap { $0.scrollToFirst }
+            .bind { _ in
+                DispatchQueue.main.async { [weak self] in
+                    self?.danjiCollectionView.scrollToItem(at: .init(item: 0, section: 0), at: .left, animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        JobService.shared.isNeedCheck = true
         Observable.just(())
             .map { Reactor.Action.refresh }
             .bind(to: reactor.action)
