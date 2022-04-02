@@ -472,7 +472,9 @@ final class HomeViewController: UIViewController, View {
             .filterNil()
             .map { $0.mood == .happy ? .font1 : .white }
             .do(onNext: { v in
-                self.memoShowButton.setTitleColor(v, for: .normal)
+                DispatchQueue.main.async {
+                    self.memoShowButton.setTitleColor(v, for: .normal)
+                }
             })
             .bind(to: menuButton.rx.tintColor, alarmButton.rx.tintColor, shareButton.rx.tintColor, memoTitleLabel.rx.textColor, memoShowButton.rx.tintColor)
             .disposed(by: disposeBag)
