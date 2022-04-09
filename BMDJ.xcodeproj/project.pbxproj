@@ -71,8 +71,8 @@
 		6585A982265D69D7008D6858 /* MemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A981265D69D7008D6858 /* MemoClient.swift */; };
 		6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */; };
 		6586FF42264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */; };
-		6586FF45264AD3B800BF4CD5 /* DanjiPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */; };
-		6586FF48264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */; };
+		6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */; };
+		6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */; };
 		6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2F8264E4C5D00654178 /* DanjiRouter.swift */; };
 		6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2FB264E59FF00654178 /* DanjiClient.swift */; };
 		65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65898D7626CC180400DAD62C /* IndicatorViewController.swift */; };
@@ -211,8 +211,8 @@
 		6585A981265D69D7008D6858 /* MemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoClient.swift; sourceTree = "<group>"; };
 		6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopupViewController.swift; sourceTree = "<group>"; };
 		6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortViewReactor.swift; sourceTree = "<group>"; };
-		6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiPlantViewController.swift; sourceTree = "<group>"; };
-		6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiPlantViewReactor.swift; sourceTree = "<group>"; };
+		6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddViewController.swift; sourceTree = "<group>"; };
+		6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddViewReactor.swift; sourceTree = "<group>"; };
 		6587E2F8264E4C5D00654178 /* DanjiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiRouter.swift; sourceTree = "<group>"; };
 		6587E2FB264E59FF00654178 /* DanjiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiClient.swift; sourceTree = "<group>"; };
 		65898D7626CC180400DAD62C /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
@@ -396,13 +396,13 @@
 			path = Memo;
 			sourceTree = "<group>";
 		};
-		655C2E662768FBB3006542EA /* DanjiPlant */ = {
+		655C2E662768FBB3006542EA /* DanjiAdd */ = {
 			isa = PBXGroup;
 			children = (
-				6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */,
-				6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */,
+				6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */,
+				6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */,
 			);
-			path = DanjiPlant;
+			path = DanjiAdd;
 			sourceTree = "<group>";
 		};
 		655C2E672768FBDC006542EA /* DanjiSetting */ = {
@@ -620,8 +620,8 @@
 				655C2E6A2768FC22006542EA /* MemoList */,
 				655C2E692768FC18006542EA /* Memo */,
 				655C2E672768FBDC006542EA /* DanjiSetting */,
-				655C2E662768FBB3006542EA /* DanjiPlant */,
 				6586A632271EAF5B00AEFC7C /* AddMemo */,
+				655C2E662768FBB3006542EA /* DanjiAdd */,
 				6586A631271EAF5300AEFC7C /* Menu */,
 				650B75862732F170000D2B79 /* Alert */,
 				65D2D49F2731A658007D9D8C /* MemoEdit */,
@@ -1043,7 +1043,7 @@
 				65739EA6263E96C0009AA160 /* Date.swift in Sources */,
 				65110674269F44B0009AB050 /* Int.swift in Sources */,
 				658B161027D8C0E200945098 /* DatabaseService.swift in Sources */,
-				6586FF48264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift in Sources */,
+				6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */,
 				6585A982265D69D7008D6858 /* MemoClient.swift in Sources */,
 				65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */,
 				65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */,
@@ -1051,7 +1051,7 @@
 				6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */,
 				65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */,
 				65261A7E2693616A005E877C /* MemoCreate.swift in Sources */,
-				6586FF45264AD3B800BF4CD5 /* DanjiPlantViewController.swift in Sources */,
+				6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */,
 				65C152E2265978C500418EBE /* DanjiSortTableCellReactor.swift in Sources */,
 				65091C4126C97775000F698A /* UserDefaultService.swift in Sources */,
 				65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */,

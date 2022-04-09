@@ -195,7 +195,7 @@ final class MenuViewController: UIViewController, View {
             .map { reactor.reactorForPlantDanji() }
             .subscribe(onNext: { [weak self] reactor in
                 guard let `self` = self else { return }
-                let viewController = DanjiPlantViewController()
+                let viewController = DanjiAddViewController()
                 viewController.reactor = reactor
                 viewController.delegate = self
                 viewController.modalPresentationStyle = .fullScreen

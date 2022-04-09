@@ -13,7 +13,7 @@ import RxDataSources
 typealias ColorSection = SectionModel<Void, ColorCollectionCellReactor>
 typealias DaySection = SectionModel<Void, DayCollectionCellReactor>
 
-final class DanjiPlantViewReactor: Reactor {
+final class DanjiAddViewReactor: Reactor {
     enum Action {
         case selectColor(Danji.Color)
         case changeMood(Danji.Mood)

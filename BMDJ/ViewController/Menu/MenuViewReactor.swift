@@ -63,8 +63,8 @@ final class MenuViewReactor: Reactor {
     }
     
     // Reactor Export
-    func reactorForPlantDanji() -> DanjiPlantViewReactor {
-        return DanjiPlantViewReactor(provider: provider)
+    func reactorForPlantDanji() -> DanjiAddViewReactor {
+        return DanjiAddViewReactor(provider: provider)
     }
     
     func reactorForSortDanji() -> DanjiSortViewReactor {

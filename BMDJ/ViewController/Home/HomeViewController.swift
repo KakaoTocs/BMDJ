@@ -397,7 +397,7 @@ final class HomeViewController: UIViewController, View {
             .subscribe(onNext: { [weak self] cellReactor in
                 guard let `self` = self else { return }
                 if cellReactor.currentState.danji.color == .gray {
-                    let viewController = DanjiPlantViewController()
+                    let viewController = DanjiAddViewController()
                     viewController.reactor = .init(provider: reactor.provider)
                     viewController.modalPresentationStyle = .fullScreen
                     self.present(viewController, animated: true)
