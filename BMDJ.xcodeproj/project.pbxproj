@@ -105,7 +105,7 @@
 		65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */; };
 		65B02E7E2651177200A61D17 /* DanjiSettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */; };
 		65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8026511B3200A61D17 /* LoginViewController.swift */; };
-		65B02E8426511E9D00A61D17 /* DanjiLoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */; };
+		65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8326511E9D00A61D17 /* LoginViewReactor.swift */; };
 		65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B377A5262AE513000D03E7 /* AppDelegate.swift */; };
 		65B377AF262AE514000D03E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B377AE262AE514000D03E7 /* Assets.xcassets */; };
 		65B377B2262AE514000D03E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B377B0262AE514000D03E7 /* LaunchScreen.storyboard */; };
@@ -243,7 +243,7 @@
 		65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSettingViewController.swift; sourceTree = "<group>"; };
 		65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSettingViewReactor.swift; sourceTree = "<group>"; };
 		65B02E8026511B3200A61D17 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiLoginViewReactor.swift; sourceTree = "<group>"; };
+		65B02E8326511E9D00A61D17 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
 		65B377A2262AE513000D03E7 /* BMDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B377A5262AE513000D03E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B377AE262AE514000D03E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -418,7 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				65B02E8026511B3200A61D17 /* LoginViewController.swift */,
-				65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */,
+				65B02E8326511E9D00A61D17 /* LoginViewReactor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1092,7 +1092,7 @@
 				65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */,
 				6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */,
 				65D6A440277737DB009A3A6E /* DanjiEmptyCell.swift in Sources */,
-				65B02E8426511E9D00A61D17 /* DanjiLoginViewReactor.swift in Sources */,
+				65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */,
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
 				6559820C264416720011D5BC /* MenuViewController.swift in Sources */,

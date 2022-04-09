@@ -120,7 +120,7 @@ final class LoginViewController: UIViewController, View {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func bind(reactor: DanjiLoginViewReactor) {
+    func bind(reactor: LoginViewReactor) {
         bindAction(reactor)
         bindState(reactor)
     }
@@ -186,7 +186,7 @@ final class LoginViewController: UIViewController, View {
         }
     }
     
-    private func bindAction(_ reactor: DanjiLoginViewReactor) {
+    private func bindAction(_ reactor: LoginViewReactor) {
         appleButton.rx.tap
             .subscribe(onNext: { _ in
                 self.appleLogin()
@@ -200,7 +200,7 @@ final class LoginViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
-    private func bindState(_ reactor: DanjiLoginViewReactor) {
+    private func bindState(_ reactor: LoginViewReactor) {
         
     }
     

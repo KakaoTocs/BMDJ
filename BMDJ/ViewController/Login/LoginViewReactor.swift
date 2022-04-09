@@ -9,7 +9,7 @@ import Foundation
 
 import ReactorKit
 
-final class DanjiLoginViewReactor: Reactor {
+final class LoginViewReactor: Reactor {
     enum Action {
     }
     
