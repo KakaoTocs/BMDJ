@@ -627,7 +627,7 @@
 				65D2D49F2731A658007D9D8C /* MemoEdit */,
 				6586A633271EAF6400AEFC7C /* DanjiSort */,
 				6586A62B271EAF1100AEFC7C /* EditPopup */,
-				65D6A43027772A0F009A3A6E /* Search */,
+				65D6A43027772A0F009A3A6E /* StockSearch */,
 				65CA5536268A13940006FCDB /* LottieTestViewController.swift */,
 			);
 			path = ViewController;
@@ -809,13 +809,13 @@
 			path = MemoEdit;
 			sourceTree = "<group>";
 		};
-		65D6A43027772A0F009A3A6E /* Search */ = {
+		65D6A43027772A0F009A3A6E /* StockSearch */ = {
 			isa = PBXGroup;
 			children = (
 				65D6A43327772A6F009A3A6E /* StockSearchViewController.swift */,
 				65D6A43527772A7C009A3A6E /* StockSearchViewReactor.swift */,
 			);
-			path = Search;
+			path = StockSearch;
 			sourceTree = "<group>";
 		};
 		65D6A43727773120009A3A6E /* Stock */ = {
