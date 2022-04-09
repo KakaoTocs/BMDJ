@@ -89,6 +89,13 @@ final class HomeViewController: UIViewController, View {
         return button
     }()
     
+    private lazy var backgroundSyncIconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .refresh?.withTintColor(.gray)
+        topBar.addSubview(imageView)
+        return imageView
+    }()
+    
     // Danji
     private lazy var danjiCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -275,6 +282,12 @@ final class HomeViewController: UIViewController, View {
             $0.top.equalToSuperview().offset(2 * AppService.shared.layoutScale)
             $0.right.equalToSuperview().offset(-12 * AppService.shared.layoutScale)
             $0.bottom.equalToSuperview().offset(-2 * AppService.shared.layoutScale)
+        }
+        
+        backgroundSyncIconImageView.snp.makeConstraints {
+            $0.width.height.equalTo(26 * AppService.shared.layoutScale)
+            $0.top.equalToSuperview().offset(9 * AppService.shared.layoutScale)
+            $0.right.equalTo(shareButton.snp.left).offset(-12 * AppService.shared.layoutScale)
         }
         
         alarmButton.isHidden = true
@@ -491,6 +504,16 @@ final class HomeViewController: UIViewController, View {
             .bind { _ in
                 DispatchQueue.main.async { [weak self] in
                     self?.danjiCollectionView.scrollToItem(at: .init(item: 0, section: 0), at: .left, animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        reactor.state.compactMap { $0.isRunningBackgroundSync }
+            .bind { isRunning in
+                if isRunning {
+                    self.backgroundSyncIconImageView.startRotateAnimation()
+                } else {
+                    self.backgroundSyncIconImageView.stopRotateAnimation()
                 }
             }
             .disposed(by: disposeBag)
