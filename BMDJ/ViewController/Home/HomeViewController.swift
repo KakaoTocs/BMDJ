@@ -415,11 +415,11 @@ final class HomeViewController: UIViewController, View {
                         sendErrorAlert.show()
                         return
                     }
-                    let addMemoVC = AddMemoViewController()
-                    addMemoVC.isPresentOnly = true
-                    addMemoVC.modalPresentationStyle = .overFullScreen
-                    addMemoVC.reactor = .init(provider: reactor.provider, activeDanji: danji)
-                    self.present(addMemoVC, animated: false)
+                    let memoAddVC = MemoAddViewController()
+                    memoAddVC.isPresentOnly = true
+                    memoAddVC.modalPresentationStyle = .overFullScreen
+                    memoAddVC.reactor = .init(provider: reactor.provider, activeDanji: danji)
+                    self.present(memoAddVC, animated: false)
                 } else {
                     let memoVC = MemoViewController(reactor: reactor.reactorForMemoView(cellReactor))
                     self.navigationController?.pushViewController(memoVC, animated: true)

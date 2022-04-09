@@ -71,9 +71,9 @@ final class MenuViewReactor: Reactor {
         return DanjiSortViewReactor(provider: provider, danjis: danjis)
     }
     
-    func reactorForAddMemo() -> AddMemoViewReactor? {
+    func reactorForMemoAdd() -> MemoAddViewReactor? {
         if let danji = activeDanji {
-            return AddMemoViewReactor(provider: provider, activeDanji: danji)
+            return MemoAddViewReactor(provider: provider, activeDanji: danji)
         }
         return nil
     }

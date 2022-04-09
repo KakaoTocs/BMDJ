@@ -9,7 +9,7 @@ import UIKit
 
 import ReactorKit
 
-final class AddMemoViewReactor: Reactor {
+final class MemoAddViewReactor: Reactor {
     
     enum Action {
         case updateText(String?)

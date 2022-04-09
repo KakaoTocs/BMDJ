@@ -216,7 +216,7 @@ final class MenuViewController: UIViewController, View {
         
         
         memoButton.rx.tap
-            .map { reactor.reactorForAddMemo() }
+            .map { reactor.reactorForMemoAdd() }
             .subscribe(onNext: { [weak self]  reactor in
                 if reactor?.currentState.memoCreate.danjiId == "empty" {
                     let sendErrorAlert = UIAlertView(title: "단지가 없습니다!", message: "단지를 먼저 심어주세요.", delegate: self, cancelButtonTitle: "확인")
@@ -224,11 +224,11 @@ final class MenuViewController: UIViewController, View {
                     return
                 }
                 guard let `self` = self else { return }
-                let addMemoVC = AddMemoViewController()
-                addMemoVC.modalPresentationStyle = .overFullScreen
-                addMemoVC.delegate = self
-                addMemoVC.reactor = reactor
-                self.present(addMemoVC, animated: false)
+                let memoAddVC = MemoAddViewController()
+                memoAddVC.modalPresentationStyle = .overFullScreen
+                memoAddVC.delegate = self
+                memoAddVC.reactor = reactor
+                self.present(memoAddVC, animated: false)
             })
             .disposed(by: disposeBag)
         

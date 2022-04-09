@@ -136,8 +136,8 @@
 		65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */; };
 		65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2140726E3D60C00136D18 /* LicenseListViewController.swift */; };
 		65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */; };
-		65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B3264839D300EB6315 /* AddMemoViewController.swift */; };
-		65EF92B726484AC200EB6315 /* AddMemoViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */; };
+		65EF92B4264839D300EB6315 /* MemoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B3264839D300EB6315 /* MemoAddViewController.swift */; };
+		65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B626484AC200EB6315 /* MemoAddViewReactor.swift */; };
 		65F3018126C99330004FAA63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F3018026C99330004FAA63 /* GoogleService-Info.plist */; };
 		65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */; };
 		65FA36F3271AB9BD00131FAA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F2271AB9BD00131FAA /* CFNetwork.framework */; };
@@ -273,8 +273,8 @@
 		65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewReactor.swift; sourceTree = "<group>"; };
 		65E2140726E3D60C00136D18 /* LicenseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
 		65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
-		65EF92B3264839D300EB6315 /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
-		65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewReactor.swift; sourceTree = "<group>"; };
+		65EF92B3264839D300EB6315 /* MemoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAddViewController.swift; sourceTree = "<group>"; };
+		65EF92B626484AC200EB6315 /* MemoAddViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAddViewReactor.swift; sourceTree = "<group>"; };
 		65F3018026C99330004FAA63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65FA36EC271AB98900131FAA /* UserHabit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserHabit.framework; path = ../../../../Downloads/UserHabit.framework; sourceTree = "<group>"; };
 		65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -542,11 +542,11 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		6586A632271EAF5B00AEFC7C /* AddMemo */ = {
+		6586A632271EAF5B00AEFC7C /* MemoAdd */ = {
 			isa = PBXGroup;
 			children = (
-				65EF92B3264839D300EB6315 /* AddMemoViewController.swift */,
-				65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */,
+				65EF92B3264839D300EB6315 /* MemoAddViewController.swift */,
+				65EF92B626484AC200EB6315 /* MemoAddViewReactor.swift */,
 			);
 			path = AddMemo;
 			sourceTree = "<group>";
