@@ -207,7 +207,7 @@ final class MenuViewController: UIViewController, View {
             .map { reactor.reactorForSortDanji() }
             .subscribe(onNext: { [weak self] reactor in
                 guard let `self` = self else { return }
-                let viewController = DanjiSortViewController()
+                let viewController = DanjiManageViewController()
                 viewController.reactor = reactor
                 viewController.modalPresentationStyle = .fullScreen
                 self.present(viewController, animated: true)

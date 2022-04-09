@@ -12,7 +12,7 @@ import RxCocoa
 import RxDataSources
 import SnapKit
 
-final class DanjiSortViewController: UIViewController, View {
+final class DanjiManageViewController: UIViewController, View {
     
     // MARK: - UI Component
     private lazy var topBar: UIView = {
@@ -150,7 +150,7 @@ final class DanjiSortViewController: UIViewController, View {
     }
 }
 
-extension DanjiSortViewController: UITableViewDelegate {
+extension DanjiManageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 66 * AppService.shared.layoutScale
     }
