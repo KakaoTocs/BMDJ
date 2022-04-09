@@ -25,6 +25,8 @@ enum BMDJImage: String {
     case ic24GrSetting = "ic24GrSetting"
     case ic24BkBack = "ic24BkBack"
     case ic24GrSearch = "ic24GrSearch"
+    
+    case icRefresh = "icRefresh"
 
     case icSelectCheck = "icSelectCheck"
     
@@ -283,5 +285,9 @@ extension UIImage {
     
     class var emptySoil: UIImage? {
         return BMDJImage.emptySoil.image
+    }
+    
+    class var refresh: UIImage? {
+        return BMDJImage.icRefresh.image
     }
 }
