@@ -19,6 +19,7 @@
 		65110674269F44B0009AB050 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65110673269F44B0009AB050 /* Int.swift */; };
 		65139D2826B31AE000E32718 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65139D2726B31AE000E32718 /* AuthClient.swift */; };
 		6519946E26498AE80067A29D /* DanjiSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519946D26498AE80067A29D /* DanjiSortViewController.swift */; };
+		651A3B3727FDFDCB00361140 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A3B3627FDFDCB00361140 /* UIImage.swift */; };
 		651BAC23265A31090090D6A7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651BAC22265A31090090D6A7 /* UIView.swift */; };
 		651BAC2C265A503D0090D6A7 /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651BAC2B265A503D0090D6A7 /* SettingTableCell.swift */; };
 		651BAC2F265A50450090D6A7 /* SettingTableCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651BAC2E265A50450090D6A7 /* SettingTableCellReactor.swift */; };
@@ -164,6 +165,7 @@
 		65110673269F44B0009AB050 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		65139D2726B31AE000E32718 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		6519946D26498AE80067A29D /* DanjiSortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortViewController.swift; sourceTree = "<group>"; };
+		651A3B3627FDFDCB00361140 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		651BAC22265A31090090D6A7 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		651BAC2B265A503D0090D6A7 /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
 		651BAC2E265A50450090D6A7 /* SettingTableCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCellReactor.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 				65457B92265AD3C800F7F8F3 /* URLRequest.swift */,
 				65D7D29126849BDF00D69C7C /* Array.swift */,
 				65110673269F44B0009AB050 /* Int.swift */,
+				651A3B3627FDFDCB00361140 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1093,6 +1096,7 @@
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
 				6559820C264416720011D5BC /* MenuViewController.swift in Sources */,
+				651A3B3727FDFDCB00361140 /* UIImage.swift in Sources */,
 				657EC22C265823D100D343DF /* DanjiRepository.swift in Sources */,
 				6594338927D4CD7B0016EDE7 /* DanjiSortJob.swift in Sources */,
 				653970DF2799B6C70006E2A9 /* FIBDatabaseService.swift in Sources */,
