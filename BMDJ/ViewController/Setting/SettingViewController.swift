@@ -13,7 +13,7 @@ import RxCocoa
 import RxDataSources
 import SnapKit
 
-final class DanjiSettingViewController: UIViewController, View {
+final class SettingViewController: UIViewController, View {
     
     // MARK: - UI Component
     private lazy var topBar: UIView = {
@@ -63,7 +63,7 @@ final class DanjiSettingViewController: UIViewController, View {
         setLayout()
     }
     
-    func bind(reactor: DanjiSettingViewReactor) {
+    func bind(reactor: SettingViewReactor) {
         bindAction(reactor)
         bindState(reactor)
     }
@@ -94,7 +94,7 @@ final class DanjiSettingViewController: UIViewController, View {
         }
     }
     
-    private func bindAction(_ reactor: DanjiSettingViewReactor) {
+    private func bindAction(_ reactor: SettingViewReactor) {
         closeButton.rx.tap
             .subscribe { _ in
                 DispatchQueue.main.async {
@@ -104,7 +104,7 @@ final class DanjiSettingViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
-    private func bindState(_ reactor: DanjiSettingViewReactor) {
+    private func bindState(_ reactor: SettingViewReactor) {
         reactor.state.asObservable().map { $0.settingSections }
             .bind(to: tableView.rx.items(dataSource: settingDataSource))
             .disposed(by: disposeBag)
@@ -143,7 +143,7 @@ final class DanjiSettingViewController: UIViewController, View {
     }
 }
 
-extension DanjiSettingViewController: UITableViewDelegate {
+extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingTitleHeader.identifier) as! SettingTitleHeader
         let title = reactor?.currentState.settingSections[section].model ?? ""
@@ -197,7 +197,7 @@ extension DanjiSettingViewController: UITableViewDelegate {
     }
 }
 
-extension DanjiSettingViewController: MFMailComposeViewControllerDelegate {
+extension SettingViewController: MFMailComposeViewControllerDelegate {
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self

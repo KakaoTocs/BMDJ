@@ -12,7 +12,7 @@ import RxDataSources
 
 typealias SettingSection = SectionModel<String, SettingTableCellReactor>
 
-final class DanjiSettingViewReactor: Reactor {
+final class SettingViewReactor: Reactor {
     enum Action {
         
     }

@@ -78,7 +78,7 @@ final class MenuViewReactor: Reactor {
         return nil
     }
     
-    func reactorForSettingDanji() -> DanjiSettingViewReactor {
-        return DanjiSettingViewReactor()
+    func reactorForSetting() -> SettingViewReactor {
+        return SettingViewReactor()
     }
 }

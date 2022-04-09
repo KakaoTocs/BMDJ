@@ -233,10 +233,10 @@ final class MenuViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         settingButton.rx.tap
-            .map { reactor.reactorForSettingDanji() }
+            .map { reactor.reactorForSetting() }
             .subscribe(onNext: { [weak self] reactor in
                 guard let `self` = self else { return }
-                let viewController = DanjiSettingViewController()
+                let viewController = SettingViewController()
                 viewController.reactor = reactor
                 viewController.modalPresentationStyle = .fullScreen
                 self.present(viewController, animated: true)
