@@ -93,7 +93,7 @@ final class MemoEditViewController: UIViewController, View {
     
     // MARK: - Property
     var disposeBag = DisposeBag()
-    weak var delegate: EditPopupViewController?
+    weak var delegate: MemoMenuViewController?
     
     // MARK: - LifeCycle
     override func viewWillLayoutSubviews() {

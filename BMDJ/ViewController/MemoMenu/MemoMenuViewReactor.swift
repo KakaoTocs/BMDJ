@@ -7,7 +7,7 @@
 
 import ReactorKit
 
-final class EditPopupViewReactor: Reactor {
+final class MemoMenuViewReactor: Reactor {
     
     enum Action {
         case delete

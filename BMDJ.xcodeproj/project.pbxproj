@@ -69,7 +69,7 @@
 		6582DAC3278AC0D600B104EA /* BMDJGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582DAC2278AC0D600B104EA /* BMDJGradientView.swift */; };
 		6585A97E265D69CD008D6858 /* MemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A97D265D69CD008D6858 /* MemoRouter.swift */; };
 		6585A982265D69D7008D6858 /* MemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A981265D69D7008D6858 /* MemoClient.swift */; };
-		6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */; };
+		6586A62D271EAF2500AEFC7C /* MemoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A62C271EAF2500AEFC7C /* MemoMenuViewController.swift */; };
 		6586FF42264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF41264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift */; };
 		6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */; };
 		6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */; };
@@ -123,7 +123,7 @@
 		65CA5539268A14970006FCDB /* danji.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CA5538268A14970006FCDB /* danji.json */; };
 		65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */; };
 		65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */; };
-		65D6A42F2776E610009A3A6E /* EditPopupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A42E2776E610009A3A6E /* EditPopupViewReactor.swift */; };
+		65D6A42F2776E610009A3A6E /* MemoMenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */; };
 		65D6A43427772A6F009A3A6E /* StockSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43327772A6F009A3A6E /* StockSearchViewController.swift */; };
 		65D6A43627772A7C009A3A6E /* StockSearchViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43527772A7C009A3A6E /* StockSearchViewReactor.swift */; };
 		65D6A43B27773138009A3A6E /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43A27773138009A3A6E /* StockCell.swift */; };
@@ -209,7 +209,7 @@
 		6582DAC2278AC0D600B104EA /* BMDJGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJGradientView.swift; sourceTree = "<group>"; };
 		6585A97D265D69CD008D6858 /* MemoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRouter.swift; sourceTree = "<group>"; };
 		6585A981265D69D7008D6858 /* MemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoClient.swift; sourceTree = "<group>"; };
-		6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopupViewController.swift; sourceTree = "<group>"; };
+		6586A62C271EAF2500AEFC7C /* MemoMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoMenuViewController.swift; sourceTree = "<group>"; };
 		6586FF41264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiManageViewReactor.swift; sourceTree = "<group>"; };
 		6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddViewController.swift; sourceTree = "<group>"; };
 		6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddViewReactor.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		65CA5538268A14970006FCDB /* danji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = danji.json; sourceTree = "<group>"; };
 		65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEditViewController.swift; sourceTree = "<group>"; };
-		65D6A42E2776E610009A3A6E /* EditPopupViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPopupViewReactor.swift; sourceTree = "<group>"; };
+		65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoMenuViewReactor.swift; sourceTree = "<group>"; };
 		65D6A43327772A6F009A3A6E /* StockSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewController.swift; sourceTree = "<group>"; };
 		65D6A43527772A7C009A3A6E /* StockSearchViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewReactor.swift; sourceTree = "<group>"; };
 		65D6A43A27773138009A3A6E /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
@@ -515,13 +515,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		6586A62B271EAF1100AEFC7C /* EditPopup */ = {
+		6586A62B271EAF1100AEFC7C /* MemoMenu */ = {
 			isa = PBXGroup;
 			children = (
-				6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */,
-				65D6A42E2776E610009A3A6E /* EditPopupViewReactor.swift */,
+				6586A62C271EAF2500AEFC7C /* MemoMenuViewController.swift */,
+				65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */,
 			);
-			path = EditPopup;
+			path = MemoMenu;
 			sourceTree = "<group>";
 		};
 		6586A630271EAF4C00AEFC7C /* Home */ = {
@@ -625,8 +625,8 @@
 				6586A631271EAF5300AEFC7C /* Menu */,
 				650B75862732F170000D2B79 /* Alert */,
 				65D2D49F2731A658007D9D8C /* MemoEdit */,
-				6586A62B271EAF1100AEFC7C /* EditPopup */,
 				6586A633271EAF6400AEFC7C /* DanjiManage */,
+				6586A62B271EAF1100AEFC7C /* MemoMenu */,
 				65D6A43027772A0F009A3A6E /* StockSearch */,
 				65CA5536268A13940006FCDB /* LottieTestViewController.swift */,
 			);
@@ -1048,7 +1048,7 @@
 				65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */,
 				65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */,
 				65440B5A26B67C1100186E7B /* PrivacyPolicyReactor.swift in Sources */,
-				6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */,
+				6586A62D271EAF2500AEFC7C /* MemoMenuViewController.swift in Sources */,
 				65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */,
 				65261A7E2693616A005E877C /* MemoCreate.swift in Sources */,
 				6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */,
@@ -1073,7 +1073,7 @@
 				6594338227D4CA770016EDE7 /* DanjiAddJob.swift in Sources */,
 				659625F4262BFA1300277B80 /* Danji.swift in Sources */,
 				6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */,
-				65D6A42F2776E610009A3A6E /* EditPopupViewReactor.swift in Sources */,
+				65D6A42F2776E610009A3A6E /* MemoMenuViewReactor.swift in Sources */,
 				658B161227D8C47000945098 /* Repository.swift in Sources */,
 				65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */,
 				659625E9262BF60D00277B80 /* HomeViewController.swift in Sources */,

@@ -11,7 +11,7 @@ import ReactorKit
 import RxCocoa
 import SnapKit
 
-final class EditPopupViewController: UIViewController, View {
+final class MemoMenuViewController: UIViewController, View {
     
     // MARK: - UI Component
     private lazy var contentView: UIView = {
@@ -89,7 +89,7 @@ final class EditPopupViewController: UIViewController, View {
         }
     }
     
-    func bind(reactor: EditPopupViewReactor) {
+    func bind(reactor: MemoMenuViewReactor) {
         bindAction(reactor)
         bindState(reactor)
     }
@@ -128,9 +128,9 @@ final class EditPopupViewController: UIViewController, View {
         }
     }
     
-    private func bindAction(_ reactor: EditPopupViewReactor) {
+    private func bindAction(_ reactor: MemoMenuViewReactor) {
         deleteButton.rx.tap
-            .map { _ in EditPopupViewReactor.Action.delete }
+            .map { _ in MemoMenuViewReactor.Action.delete }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -147,7 +147,7 @@ final class EditPopupViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
-    private func bindState(_ reactor: EditPopupViewReactor) {
+    private func bindState(_ reactor: MemoMenuViewReactor) {
         reactor.state.map { $0.dismiss }
             .bind { _ in
                 let alertVC = AlertViewController(reactor: .init())

@@ -92,7 +92,7 @@ final class MemoListViewReactor: Reactor {
         return MemoViewReactor(memo: reactor.currentState.memoe)
     }
     
-    func reactorForEditPopup(_ memo: Memo) -> EditPopupViewReactor {
+    func reactorForMemoMenu(_ memo: Memo) -> MemoMenuViewReactor {
         return .init(memo: memo, provider: provider)
     }
 }
