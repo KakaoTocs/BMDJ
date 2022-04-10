@@ -189,7 +189,7 @@ final class HomeViewController: UIViewController, View {
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanjiCollectionCell.identifier, for: indexPath) as! DanjiCollectionCell
-                reactor.provider = self.reactor?.provider
+                reactor.provider = ServiceProvider.shared
                 cell.reactor = reactor
                 return cell
             }
@@ -398,7 +398,7 @@ final class HomeViewController: UIViewController, View {
                 guard let `self` = self else { return }
                 if cellReactor.currentState.danji.color == .gray {
                     let viewController = DanjiAddViewController()
-                    viewController.reactor = .init(provider: reactor.provider)
+                    viewController.reactor = reactor.reactorForDanjiAdd()
                     viewController.modalPresentationStyle = .fullScreen
                     self.present(viewController, animated: true)
                 }
@@ -409,7 +409,7 @@ final class HomeViewController: UIViewController, View {
             .subscribe(onNext: { [weak self] cellReactor in
                 guard let `self` = self else { return }
                 if cellReactor.currentState.memoe.mood == .nomal,
-                   let danji = reactor.currentState.activeDanji {
+                   let memoAddVR = reactor.reactorForMemoAdd() {
                     if reactor.currentState.activeDanji?.color == .gray {
                         let sendErrorAlert = UIAlertView(title: "단지가 없습니다!", message: "단지를 먼저 심어주세요.", delegate: self, cancelButtonTitle: "확인")
                         sendErrorAlert.show()
@@ -418,7 +418,7 @@ final class HomeViewController: UIViewController, View {
                     let memoAddVC = MemoAddViewController()
                     memoAddVC.isPresentOnly = true
                     memoAddVC.modalPresentationStyle = .overFullScreen
-                    memoAddVC.reactor = .init(provider: reactor.provider, activeDanji: danji)
+                    memoAddVC.reactor = memoAddVR
                     self.present(memoAddVC, animated: false)
                 } else {
                     let memoVC = MemoViewController(reactor: reactor.reactorForMemoView(cellReactor))

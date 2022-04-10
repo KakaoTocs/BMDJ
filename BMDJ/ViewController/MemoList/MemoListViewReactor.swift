@@ -7,9 +7,20 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 
 final class MemoListViewReactor: Reactor {
+    
+    // MARK: - Define
+    struct Dependency {
+        let repository: Repository
+    }
+    
+    struct Payload {
+        let memos: [Memo]
+    }
+    
     enum Action {
         case edit(memo: Memo)
         case delete(memo: Memo)
@@ -27,13 +38,17 @@ final class MemoListViewReactor: Reactor {
         var edit: Memo?
     }
     
+    // MARK: - Property
     let initialState: State
     private let disposeBag = DisposeBag()
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(memos: [Memo], provider: ServiceProviderType) {
-        self.provider = provider
-        let memoReactors = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: true) }
+    // MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        let memoReactors = payload.memos.map { MemoCollectionCellReactor(memo: $0, isGradient: true) }
         initialState = .init(memoSections: [.init(model: (), items: memoReactors)])
         
         for memoReactor in memoReactors {
@@ -41,6 +56,7 @@ final class MemoListViewReactor: Reactor {
         }
     }
     
+    // MARK: - Method
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .edit(let memo):
@@ -53,7 +69,7 @@ final class MemoListViewReactor: Reactor {
     }
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let memoEventMutation = provider.repository.memoEvent
+        let memoEventMutation = dependency.repository.memoEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 switch event {
                 case .delete(let memo):
@@ -93,7 +109,7 @@ final class MemoListViewReactor: Reactor {
     }
     
     func reactorForMemoMenu(_ memo: Memo) -> MemoMenuViewReactor {
-        return .init(memo: memo, provider: provider)
+        return .init(dependency: .init(repository: dependency.repository), payload: .init(memo: memo))
     }
 }
 

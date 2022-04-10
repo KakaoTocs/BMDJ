@@ -7,12 +7,23 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 import RxDataSources
 
 typealias DanjiSortSection = SectionModel<Void, DanjiSortTableCellReactor>
 
-final class DanjiSortViewReactor: Reactor {
+final class DanjiSortViewReactor: Reactor, FactoryModule {
+    
+//    MARK: - Define
+    struct Dependency {
+        let repository: Repository
+    }
+    
+    struct Payload {
+        let danjis: [Danji]
+    }
+    
     enum Action {
         case move(IndexPath, IndexPath)
     }
@@ -27,19 +38,24 @@ final class DanjiSortViewReactor: Reactor {
         var dismiss: Bool = false
     }
     
+//    MARK: - Property
     let initialState: State
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(provider: ServiceProviderType, danjis: [Danji]) {
-        self.provider = provider
-        let danjiReactors = danjis.map { DanjiSortTableCellReactor(danji: $0) }
-        self.initialState = State(danjiSortSections: [.init(model: (), items: danjiReactors)])
+//    MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        let danjiReactors = payload.danjis.map { DanjiSortTableCellReactor(danji: $0) }
+        self.initialState = .init(danjiSortSections: [.init(model: (), items: danjiReactors)])
     }
     
+//    MARK: - Method
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .move(let sourceIndexPath, let destinationIndexPath):
-            let result = provider.repository.danjiMove(index: sourceIndexPath.item, to: destinationIndexPath.item)
+            let result = dependency.repository.danjiMove(index: sourceIndexPath.item, to: destinationIndexPath.item)
             if result {
                 return .just(.move(sourceIndexPath, destinationIndexPath))
             } else {

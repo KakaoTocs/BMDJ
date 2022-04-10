@@ -7,13 +7,23 @@
 
 import UIKit
 
+import Pure
 import ReactorKit
 import RxDataSources
 
 typealias ColorSection = SectionModel<Void, ColorCollectionCellReactor>
 typealias DaySection = SectionModel<Void, DayCollectionCellReactor>
 
-final class DanjiAddViewReactor: Reactor {
+final class DanjiAddViewReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+        let repository: Repository
+    }
+    
+    struct Payload {
+    }
+    
     enum Action {
         case selectColor(Danji.Color)
         case changeMood(Danji.Mood)
@@ -59,14 +69,18 @@ final class DanjiAddViewReactor: Reactor {
         ]
     }
     
+    // MARK: - Property
     let initialState: State
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(provider: ServiceProviderType) {
-        self.provider = provider
-        initialState = State()
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        initialState = .init()
     }
     
+    // MARK: - Method
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .selectColor(let color):
@@ -82,7 +96,7 @@ final class DanjiAddViewReactor: Reactor {
         case .selectDday(let day):
             return .just(.selectDday(day))
         case .plant:
-            let result = provider.repository.danjiAdd(danjiCreate: currentState.danjiCreate)
+            let result = dependency.repository.danjiAdd(danjiCreate: currentState.danjiCreate)
             if result {
                 return .just(.dismiss)
             } else {

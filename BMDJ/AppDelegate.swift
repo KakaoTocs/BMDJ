@@ -13,8 +13,19 @@ import GoogleSignIn
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    private let appDependency: AppDependency
     let gcmMessageIDKey = "634NV3MK2C"
     var window: UIWindow?
+    
+    private override init() {
+        self.appDependency = .resolve()
+        super.init()
+    }
+    
+    init(appDependency: AppDependency) {
+        self.appDependency = appDependency
+        super.init()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print(UserDefaultService.shared.token)
@@ -31,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let serviceProvider = ServiceProvider.shared
-        let reactor = HomeViewReactor(provider: serviceProvider)
+        let reactor = HomeViewReactor(dependency: .init(repository: appDependency.repository), payload: .init())
         let homeVC = HomeViewController(reactor: reactor)
         let naviVC = UINavigationController(rootViewController: homeVC)
         naviVC.isNavigationBarHidden = true
@@ -86,5 +97,13 @@ extension AppDelegate: MessagingDelegate {
             let dataDict: [String: String] = ["token": fcmToken]
             NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         }
+    }
+}
+
+struct AppDependency {
+    let repository: Repository
+    
+    static func resolve() -> AppDependency {
+        return .init(repository: .shared)
     }
 }
