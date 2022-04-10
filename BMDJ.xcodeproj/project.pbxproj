@@ -119,6 +119,7 @@
 		65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B893FE268A3C18001BB6D9 /* BaseService.swift */; };
 		65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C152DC2659789400418EBE /* DanjiSortTableCell.swift */; };
 		65C152E2265978C500418EBE /* DanjiSortTableCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C152E1265978C500418EBE /* DanjiSortTableCellReactor.swift */; };
+		65C878E32802C32E0079D1FF /* Pure in Frameworks */ = {isa = PBXBuildFile; productRef = 65C878E22802C32E0079D1FF /* Pure */; };
 		65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA5536268A13940006FCDB /* LottieTestViewController.swift */; };
 		65CA5539268A14970006FCDB /* danji.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CA5538268A14970006FCDB /* danji.json */; };
 		65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */; };
@@ -300,6 +301,7 @@
 				65B377D9262AE6C4000D03E7 /* RxKingfisher in Frameworks */,
 				65FA36F7271AB9E800131FAA /* libz.tbd in Frameworks */,
 				655AB69E26E2AC9000A7D9BC /* FirebaseAuth in Frameworks */,
+				65C878E32802C32E0079D1FF /* Pure in Frameworks */,
 				65048A7F2656B73800B275D0 /* Lottie in Frameworks */,
 				655AB69C26E2AC9000A7D9BC /* FirebaseMessaging in Frameworks */,
 				655AB6A226E2AC9000A7D9BC /* FirebaseRemoteConfig in Frameworks */,
@@ -922,6 +924,7 @@
 				655AB69F26E2AC9000A7D9BC /* FirebaseStorage */,
 				655AB6A126E2AC9000A7D9BC /* FirebaseRemoteConfig */,
 				653970E22799B8730006E2A9 /* FirebaseDatabase */,
+				65C878E22802C32E0079D1FF /* Pure */,
 			);
 			productName = BMDJ;
 			productReference = 65B377A2262AE513000D03E7 /* BMDJ.app */;
@@ -960,6 +963,7 @@
 				655DC07F267DFF1E000A44A0 /* XCRemoteSwiftPackageReference "RxOptional" */,
 				65FD602126B070430049023F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				655AB69626E2AC9000A7D9BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				65C878E12802C32E0079D1FF /* XCRemoteSwiftPackageReference "Pure" */,
 			);
 			productRefGroup = 65B377A3262AE513000D03E7 /* Products */;
 			projectDirPath = "";
@@ -1412,6 +1416,14 @@
 				minimumVersion = 6.1.1;
 			};
 		};
+		65C878E12802C32E0079D1FF /* XCRemoteSwiftPackageReference "Pure" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Pure";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		65FD602126B070430049023F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
@@ -1492,6 +1504,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 65B377DB262AE729000D03E7 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
 			productName = RxAlamofire;
+		};
+		65C878E22802C32E0079D1FF /* Pure */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65C878E12802C32E0079D1FF /* XCRemoteSwiftPackageReference "Pure" */;
+			productName = Pure;
 		};
 		65FD602226B070430049023F /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
