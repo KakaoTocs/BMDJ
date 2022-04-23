@@ -6,7 +6,14 @@
 //
 
 import Foundation
+
 import RxSwift
+import RxRelay
+
+enum JobServiceEvent {
+    case running
+    case stop
+}
 
 final class JobService {
     
@@ -23,8 +30,18 @@ final class JobService {
     private var executeTimer: Timer?
     private let disposeBag = DisposeBag()
     
+    let event = PublishSubject<JobServiceEvent>()
+    
     var isConnected: Bool = true
-    var isRunning: Bool = false
+    var isRunning: Bool = false {
+        didSet {
+            if isRunning {
+                event.onNext(.running)
+            } else {
+                event.onNext(.stop)
+            }
+        }
+    }
     var isNeedCheck: Bool = false
     var crashCount = 0
     

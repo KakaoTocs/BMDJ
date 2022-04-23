@@ -32,6 +32,7 @@ final class HomeViewReactor: Reactor {
         case updateMemoSectionItem(IndexPath, MemoSection.Item)
         case delete(Memo)
         case update(Memo)
+        case setIsRunningBackgroundSync(Bool)
     }
     
     struct State {
@@ -43,6 +44,7 @@ final class HomeViewReactor: Reactor {
         var isPreviousActive: Bool = false
         var isNextActive: Bool = false
         var scrollToFirst: Void?
+        var isRunningBackgroundSync = false
     }
     
     let provider: ServiceProviderType
@@ -116,7 +118,13 @@ final class HomeViewReactor: Reactor {
                     return .empty()
                 }
             }
-        return Observable.of(mutation, danjiEventMutation, memoEvent2Mutation, memoEventMutation).merge()
+        
+        let jobEventMutation = JobService.shared.event
+            .flatMap { [weak self] event -> Observable<Mutation> in
+                return self?.mutate(jobServiceEvent: event) ?? .empty()
+            }
+        
+        return Observable.of(mutation, danjiEventMutation, memoEvent2Mutation, memoEventMutation, jobEventMutation).merge()
     }
     
     func mutate(danjiEvent: DanjiEvent) -> Observable<Mutation> {
@@ -189,6 +197,15 @@ final class HomeViewReactor: Reactor {
             return .just(.delete(memo))
         case let .update(memo):
             return .just(.update(memo))
+        }
+    }
+    
+    func mutate(jobServiceEvent: JobServiceEvent) -> Observable<Mutation> {
+        switch jobServiceEvent {
+        case .running:
+            return .just(.setIsRunningBackgroundSync(true))
+        case .stop:
+            return .just(.setIsRunningBackgroundSync(false))
         }
     }
     
@@ -274,6 +291,8 @@ final class HomeViewReactor: Reactor {
                 state.memoSections = [.init(model: (), items: section.items)]
             }
             state.scrollToFirst = nil
+        case let .setIsRunningBackgroundSync(isRunning):
+            state.isRunningBackgroundSync = isRunning
         default:
             break
         }
