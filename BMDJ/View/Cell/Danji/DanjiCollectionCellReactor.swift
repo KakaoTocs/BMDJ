@@ -7,8 +7,13 @@
 
 import ReactorKit
 import RxCocoa
+import Pure
 
 final class DanjiCollectionCellReactor: Reactor {
+    
+//    static let configurator: () -> (DanjiCollectionCellReactor, Danji) -> Void = {
+//        
+//    }
     
     let initialState: State
     var provider: ServiceProviderType?

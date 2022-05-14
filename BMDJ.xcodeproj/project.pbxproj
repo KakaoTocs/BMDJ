@@ -50,7 +50,6 @@
 		655AB6A226E2AC9000A7D9BC /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 655AB6A126E2AC9000A7D9BC /* FirebaseRemoteConfig */; };
 		655DC081267DFF1E000A44A0 /* RxOptional in Frameworks */ = {isa = PBXBuildFile; productRef = 655DC080267DFF1E000A44A0 /* RxOptional */; };
 		6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656040992680F4FF00F9A725 /* SettingTItleHeader.swift */; };
-		6560409E2680F50D00F9A725 /* SettingTitleHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */; };
 		65620A06266E84E30041C780 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65620A05266E84E30041C780 /* MemoViewController.swift */; };
 		656574CA27946600008B56D5 /* BMDJIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656574C927946600008B56D5 /* BMDJIconButton.swift */; };
 		65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65724E51273ACFEC00C84E91 /* MemoEditViewReactor.swift */; };
@@ -75,6 +74,8 @@
 		6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */; };
 		6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2F8264E4C5D00654178 /* DanjiRouter.swift */; };
 		6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2FB264E59FF00654178 /* DanjiClient.swift */; };
+		658965E42802EDB3005253C2 /* SettingTitleHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */; };
+		658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A441277737E1009A3A6E /* DanjiEmptyCellReactor.swift */; };
 		65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65898D7626CC180400DAD62C /* IndicatorViewController.swift */; };
 		658B160C27D88E3800945098 /* JobClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B160B27D88E3800945098 /* JobClient.swift */; };
 		658B161027D8C0E200945098 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B160F27D8C0E200945098 /* DatabaseService.swift */; };
@@ -130,7 +131,6 @@
 		65D6A43B27773138009A3A6E /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43A27773138009A3A6E /* StockCell.swift */; };
 		65D6A43D2777313E009A3A6E /* StockCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43C2777313E009A3A6E /* StockCellReactor.swift */; };
 		65D6A440277737DB009A3A6E /* DanjiEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43F277737DB009A3A6E /* DanjiEmptyCell.swift */; };
-		65D6A442277737E1009A3A6E /* DanjiEmptyCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A441277737E1009A3A6E /* DanjiEmptyCellReactor.swift */; };
 		65D7D29226849BDF00D69C7C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7D29126849BDF00D69C7C /* Array.swift */; };
 		65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D985312675F86C00D3F467 /* DanjiCreate.swift */; };
 		65DB9A6B26E3DC8500643D71 /* LicenseListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */; };
@@ -1073,7 +1073,6 @@
 				65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */,
 				6594338B27D4CE510016EDE7 /* DanjiUpdateJob.swift in Sources */,
 				656574CA27946600008B56D5 /* BMDJIconButton.swift in Sources */,
-				65D6A442277737E1009A3A6E /* DanjiEmptyCellReactor.swift in Sources */,
 				6594338227D4CA770016EDE7 /* DanjiAddJob.swift in Sources */,
 				659625F4262BFA1300277B80 /* Danji.swift in Sources */,
 				6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */,
@@ -1096,6 +1095,7 @@
 				65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */,
 				6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */,
 				65D6A440277737DB009A3A6E /* DanjiEmptyCell.swift in Sources */,
+				658965E42802EDB3005253C2 /* SettingTitleHeaderReactor.swift in Sources */,
 				65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */,
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
@@ -1112,6 +1112,7 @@
 				6554B36B2691BAC90080D3C5 /* MemoDatabaseService.swift in Sources */,
 				65261A7C269359B5005E877C /* MemoRepository.swift in Sources */,
 				65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */,
+				658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */,
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
 				6505390F2795BC67003651BA /* StockInfo.swift in Sources */,
@@ -1132,7 +1133,6 @@
 				6594339927D4D59D0016EDE7 /* LocalEnvironment.swift in Sources */,
 				65429F8B2660CDA2000819BE /* NetworkResult.swift in Sources */,
 				6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */,
-				6560409E2680F50D00F9A725 /* SettingTitleHeaderReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

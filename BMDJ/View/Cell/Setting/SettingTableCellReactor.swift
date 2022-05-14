@@ -9,9 +9,9 @@ import ReactorKit
 import RxCocoa
 
 final class SettingTableCellReactor: Reactor {
-    typealias Action = NoAction
     
-    let initialState: State
+    // MARK: - Define
+    typealias Action = NoAction
     
     struct State {
         let name: String
@@ -19,6 +19,10 @@ final class SettingTableCellReactor: Reactor {
         let isSwitch: Bool
     }
     
+    // MARK: - Property
+    let initialState: State
+    
+    // MARK: - Init
     init(state: State) {
         initialState = state
     }
