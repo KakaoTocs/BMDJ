@@ -7,9 +7,20 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 
-final class LoginViewReactor: Reactor {
+final class LoginViewReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+        let homeViewReactor: HomeViewReactor
+    }
+    
+    struct Payload {
+        
+    }
+    
     enum Action {
     }
     
@@ -22,8 +33,10 @@ final class LoginViewReactor: Reactor {
     }
     
     let initialState: State
+    let dependency: Dependency
     
-    init() {
+    init(dependency: Dependency, payload: Payload) {
         initialState = State()
+        self.dependency = dependency
     }
 }

@@ -133,7 +133,7 @@ final class SettingViewController: UIViewController, View {
                     print("탈퇴 완료")
                     UserDefaultService.shared.removeToken()
                     let loginVC = LoginViewController()
-                    loginVC.reactor = .init()
+                    loginVC.reactor = AppDependency.resolve().loginViewReactor
                     UIApplication.shared.keyWindow?.rootViewController = loginVC
                 } else {
                     print("탈퇴 실패")
@@ -147,7 +147,7 @@ extension SettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingTitleHeader.identifier) as! SettingTitleHeader
         let title = reactor?.currentState.settingSections[section].model ?? ""
-        header.reactor = .init(title: title)
+        header.reactor = .init(dependency: .init(), payload: .init(title: title))
         return header
     }
     

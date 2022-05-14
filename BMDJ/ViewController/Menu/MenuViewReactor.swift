@@ -14,6 +14,11 @@ final class MenuViewReactor: Reactor, FactoryModule {
     
     // MARK: - Define
     struct Dependency {
+        let danjiAddViewReactor: DanjiAddViewReactor
+        let danjiManageViewReactorFactory: DanjiSortViewReactor.Factory
+        let memoAddViewReactorFactory: MemoAddViewReactor.Factory
+        let settingViewReactor: SettingViewReactor
+        
         let repository: Repository
     }
     
@@ -76,21 +81,21 @@ final class MenuViewReactor: Reactor, FactoryModule {
     
     // Reactor Export
     func reactorForPlantDanji() -> DanjiAddViewReactor {
-        return .init(dependency: .init(repository: dependency.repository), payload: .init())
+        return dependency.danjiAddViewReactor
     }
     
     func reactorForSortDanji() -> DanjiSortViewReactor {
-        return .init(dependency: .init(repository: dependency.repository), payload: .init(danjis: payload.danjis))
+        return dependency.danjiManageViewReactorFactory.create(payload: .init(danjis: payload.danjis))
     }
     
     func reactorForMemoAdd() -> MemoAddViewReactor? {
         if let activeDanji = payload.activeDanji {
-            return .init(dependency: .init(repository: dependency.repository), payload: .init(activeDanji: activeDanji))
+            return dependency.memoAddViewReactorFactory.create(payload: .init(activeDanji: activeDanji))
         }
         return nil
     }
     
     func reactorForSetting() -> SettingViewReactor {
-        return SettingViewReactor()
+        return dependency.settingViewReactor
     }
 }

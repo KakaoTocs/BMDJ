@@ -247,7 +247,7 @@ final class LoginViewController: UIViewController, View {
         let serviceProvider = ServiceProvider()
         serviceProvider.danjiDataBaseService.clear()
         serviceProvider.memoDataBaseService.clear()
-        let reactor = HomeViewReactor(dependency: .init(repository: serviceProvider.repository), payload: .init())
+        let reactor = reactor!.dependency.homeViewReactor
         let homeVC = HomeViewController(reactor: reactor)
         let naviVC = UINavigationController(rootViewController: homeVC)
         naviVC.isNavigationBarHidden = true

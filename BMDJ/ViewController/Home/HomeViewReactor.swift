@@ -19,6 +19,11 @@ final class HomeViewReactor: Reactor, FactoryModule {
     
     // MARK: - Define
     struct Dependency {
+        let menuViewReactorFactory: MenuViewReactor.Factory
+        let memoViewReactorFactory: MemoViewReactor.Factory
+        let memoListReatorFactory: MemoListViewReactor.Factory
+        let memoAddReactorFactory: MemoAddViewReactor.Factory
+        
         let repository: Repository
     }
     
@@ -244,7 +249,6 @@ final class HomeViewReactor: Reactor, FactoryModule {
             state.memoSections = sections
             state.scrollToFirst = nil
         case .fetchDanjiSections(let sections):
-            print("fetch")
             state.danjiSections = sections
             let index = (sections.first?.items.count ?? 0) > 0 ? 0 : nil
             if let section = sections.first,
@@ -339,7 +343,7 @@ final class HomeViewReactor: Reactor, FactoryModule {
         if let danjiReactors = currentState.danjiSections.first?.items {
             danjis = danjiReactors.map { $0.currentState.danji }.filter { $0.color != .gray }
         }
-        return .init(dependency: .init(repository: dependency.repository), payload: .init(danjis: danjis, activeDanji: currentState.activeDanji))
+        return dependency.menuViewReactorFactory.create(payload: .init(danjis: danjis, activeDanji: currentState.activeDanji))
     }
     
     func reactorForDanjiAdd() -> DanjiAddViewReactor {
@@ -347,7 +351,7 @@ final class HomeViewReactor: Reactor, FactoryModule {
     }
     
     func reactorForMemoView(_ reactor: MemoCollectionCellReactor) -> MemoViewReactor {
-        return MemoViewReactor(memo: reactor.currentState.memoe)
+        return dependency.memoViewReactorFactory.create(payload: .init(memo: reactor.currentState.memoe))
     }
     
     func reactorForMemoAdd() -> MemoAddViewReactor? {
@@ -363,6 +367,6 @@ final class HomeViewReactor: Reactor, FactoryModule {
         if let memoReactors = currentState.memoSections.first?.items {
             memos = memoReactors.map { $0.initialState.memoe }
         }
-        return .init(dependency: .init(repository: dependency.repository), payload: .init(memos: memos))
+        return dependency.memoListReatorFactory.create(payload: .init(memos: memos))
     }
 }

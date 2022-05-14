@@ -42,13 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let serviceProvider = ServiceProvider.shared
-        let reactor = HomeViewReactor(dependency: .init(repository: appDependency.repository), payload: .init())
+        let reactor = appDependency.homeViewReactor
         let homeVC = HomeViewController(reactor: reactor)
         let naviVC = UINavigationController(rootViewController: homeVC)
         naviVC.isNavigationBarHidden = true
         
         let loginVC = LoginViewController()
-        loginVC.reactor = .init()
+        loginVC.reactor = appDependency.loginViewReactor
         if AppService.shared.isLoggedIn {
             window?.rootViewController = naviVC
         } else {
@@ -101,9 +101,41 @@ extension AppDelegate: MessagingDelegate {
 }
 
 struct AppDependency {
-    let repository: Repository
+    let homeViewReactor: HomeViewReactor
+    let loginViewReactor: LoginViewReactor
     
     static func resolve() -> AppDependency {
-        return .init(repository: .shared)
+        let repository: Repository = .shared
+        
+        let danjiAddViewReactor: DanjiAddViewReactor = .init(dependency: .init(repository: repository), payload: .init())
+        let danjiManageViewReactorFactory: DanjiSortViewReactor.Factory = .init(dependency: .init(repository: repository))
+        let memoViewReactorFactory: MemoViewReactor.Factory = .init(dependency: .init())
+        let memoAddViewViewReactorFactory: MemoAddViewReactor.Factory = .init(dependency: .init(repository: repository))
+        let memoEditViewReactorFactory: MemoEditViewReactor.Factory = .init(dependency: .init(repository: repository))
+        let settingViewReactor: SettingViewReactor = .init(dependency: .init(), payload: .init())
+        
+        let memoListViewReactorFactory: MemoListViewReactor.Factory = .init(dependency: .init(
+            memoViewReactorFactory: memoViewReactorFactory,
+            memoEditViewReactorFactory: memoEditViewReactorFactory,
+            repository: repository)
+        )
+        let menuViewReactorFactory: MenuViewReactor.Factory = .init(dependency: .init(
+            danjiAddViewReactor: danjiAddViewReactor,
+            danjiManageViewReactorFactory: danjiManageViewReactorFactory,
+            memoAddViewReactorFactory: memoAddViewViewReactorFactory,
+            settingViewReactor: settingViewReactor,
+            repository: repository)
+        )
+        let homeViewReactor: HomeViewReactor = .init(dependency: .init(
+            menuViewReactorFactory: menuViewReactorFactory,
+            memoViewReactorFactory: memoViewReactorFactory,
+            memoListReatorFactory: memoListViewReactorFactory,
+            memoAddReactorFactory: memoAddViewViewReactorFactory,
+            repository: repository
+        ), payload: .init())
+        
+        let loginViewReactor: LoginViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor), payload: .init())
+        
+        return .init(homeViewReactor: homeViewReactor, loginViewReactor: loginViewReactor)
     }
 }

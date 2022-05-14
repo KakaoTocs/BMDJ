@@ -10,10 +10,12 @@ import Foundation
 import Pure
 import ReactorKit
 
-final class MemoListViewReactor: Reactor {
+final class MemoListViewReactor: Reactor, FactoryModule {
     
     // MARK: - Define
     struct Dependency {
+        let memoViewReactorFactory: MemoViewReactor.Factory
+        let memoEditViewReactorFactory: MemoEditViewReactor.Factory
         let repository: Repository
     }
     
@@ -105,7 +107,7 @@ final class MemoListViewReactor: Reactor {
     }
     
     func reactorForMemoView(_ reactor: MemoCollectionCellReactor) -> MemoViewReactor {
-        return MemoViewReactor(memo: reactor.currentState.memoe)
+        return dependency.memoViewReactorFactory.create(payload: .init(memo: reactor.currentState.memoe))
     }
     
     func reactorForMemoMenu(_ memo: Memo) -> MemoMenuViewReactor {
