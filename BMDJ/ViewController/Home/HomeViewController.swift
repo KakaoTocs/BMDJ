@@ -235,8 +235,8 @@ final class HomeViewController: UIViewController, View {
     }
     
     func bind(reactor: HomeViewReactor) {
-        bindAction(reactor)
         bindState(reactor)
+        bindAction(reactor)
     }
     
     // MARK: - Method

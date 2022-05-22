@@ -109,11 +109,11 @@ final class LoginViewController: UIViewController, View {
     var disposeBag = DisposeBag()
     
     // MARK: - Init
-    init() {
+    init(reactor: LoginViewReactor) {
         super.init(nibName: nil, bundle: nil)
         
         setLayout()
-        view.backgroundColor = .white
+        self.reactor = reactor
     }
     
     required init?(coder: NSCoder) {
@@ -127,6 +127,8 @@ final class LoginViewController: UIViewController, View {
     
     // MARK: - Method
     private func setLayout() {
+        view.backgroundColor = .white
+        
         titleLabel.snp.makeConstraints {
             $0.width.equalTo(194 * AppService.shared.layoutScale)
             $0.height.equalTo(64 * AppService.shared.layoutScale)
