@@ -41,24 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let serviceProvider = ServiceProvider.shared
-        let reactor = appDependency.homeViewReactor
-        let homeVC = HomeViewController(reactor: reactor)
-        let naviVC = UINavigationController(rootViewController: homeVC)
+        let rootVC = RootViewController(reactor: appDependency.rootViewReactor)
+        let naviVC = UINavigationController(rootViewController: rootVC)
         naviVC.isNavigationBarHidden = true
+        window?.rootViewController = naviVC
         
-        let loginVC = LoginViewController()
-        loginVC.reactor = appDependency.loginViewReactor
-        if AppService.shared.isLoggedIn {
-            window?.rootViewController = naviVC
-        } else {
-            window?.rootViewController = loginVC
-        }
-        #if DEBUG
-        UserHabit.sessionStart("dev_4289ca4293b33fdaaa7ab19af85c28b29f732dca", withAutoTracking: true)
-        #else
-        UserHabit.sessionStart("4289ca4293b33fdaaa7ab19af85c28b29f732dca", withAutoTracking: true)
-        #endif
         return true
     }
     
