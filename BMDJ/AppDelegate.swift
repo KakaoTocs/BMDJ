@@ -101,11 +101,11 @@ extension AppDelegate: MessagingDelegate {
 }
 
 struct AppDependency {
-    let homeViewReactor: HomeViewReactor
-    let loginViewReactor: LoginViewReactor
+    let rootViewReactor: RootViewReactor
     
     static func resolve() -> AppDependency {
         let repository: Repository = .shared
+        let userDefaultService: UserDefaultService = .shared
         
         let danjiAddViewReactor: DanjiAddViewReactor = .init(dependency: .init(repository: repository), payload: .init())
         let danjiManageViewReactorFactory: DanjiSortViewReactor.Factory = .init(dependency: .init(repository: repository))
@@ -126,6 +126,7 @@ struct AppDependency {
             settingViewReactor: settingViewReactor,
             repository: repository)
         )
+        
         let homeViewReactor: HomeViewReactor = .init(dependency: .init(
             menuViewReactorFactory: menuViewReactorFactory,
             memoViewReactorFactory: memoViewReactorFactory,
@@ -133,9 +134,10 @@ struct AppDependency {
             memoAddReactorFactory: memoAddViewViewReactorFactory,
             repository: repository
         ), payload: .init())
-        
         let loginViewReactor: LoginViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor), payload: .init())
         
-        return .init(homeViewReactor: homeViewReactor, loginViewReactor: loginViewReactor)
+        let rootViewReactor: RootViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor, loginViewReactor: loginViewReactor, userDefaultService: userDefaultService), payload: .init())
+        
+        return .init(rootViewReactor: rootViewReactor)
     }
 }
