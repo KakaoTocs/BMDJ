@@ -132,8 +132,7 @@ final class SettingViewController: UIViewController, View {
                 if result {
                     print("탈퇴 완료")
                     UserDefaultService.shared.removeToken()
-                    let loginVC = LoginViewController()
-                    loginVC.reactor = AppDependency.resolve().loginViewReactor
+                    let loginVC = LoginViewController(reactor: AppDependency.resolve().rootViewReactor.dependency.loginViewReactor)
                     UIApplication.shared.keyWindow?.rootViewController = loginVC
                 } else {
                     print("탈퇴 실패")
