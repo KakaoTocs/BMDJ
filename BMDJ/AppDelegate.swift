@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print(UserDefaultService.shared.token)
+        print("API token: \(UserDefaultService.shared.token ?? "nil")")
         FirebaseApp.configure()
         
         UNUserNotificationCenter.current().delegate = self
@@ -92,7 +92,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("Firebase registration token: \(fcmToken)")
+        print("Firebase registration token: \(fcmToken ?? "nil")")
         if let fcmToken = fcmToken {
             let dataDict: [String: String] = ["token": fcmToken]
             NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
