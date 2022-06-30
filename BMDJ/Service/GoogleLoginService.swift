@@ -55,14 +55,14 @@ final class GoogleLoginService: LoginServiceProtocol {
         let signInConfig = GIDConfiguration(clientID: clientID)
         var authentication: GIDAuthentication?
         
-        guard let viewController = viewController else {
+        if let viewController = viewController {
+            GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: viewController) { user, error in
+                guard error == nil else { return }
+                authentication = user?.authentication
+                semaphore.signal()
+            }
+        } else  {
             return nil
-        }
-
-        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: viewController) { user, error in
-            guard error == nil else { return }
-            authentication = user?.authentication
-            semaphore.signal()
         }
         semaphore.wait()
         return authentication
