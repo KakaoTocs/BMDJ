@@ -43,6 +43,7 @@
 		65457B93265AD3C800F7F8F3 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65457B92265AD3C800F7F8F3 /* URLRequest.swift */; };
 		6546D65527897C8800C39D5C /* BMDJIconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546D65427897C8800C39D5C /* BMDJIconTextField.swift */; };
 		6554B36B2691BAC90080D3C5 /* MemoDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6554B36A2691BAC90080D3C5 /* MemoDatabaseService.swift */; };
+		65598059283D30BD00731E43 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65598058283D30BD00731E43 /* AppleLoginService.swift */; };
 		6559805B283D30E900731E43 /* GoogleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559805A283D30E900731E43 /* GoogleLoginService.swift */; };
 		6559805F283D324900731E43 /* LoginServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559805E283D324900731E43 /* LoginServiceProtocol.swift */; };
 		6559820C264416720011D5BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559820B264416720011D5BC /* MenuViewController.swift */; };
@@ -195,6 +196,7 @@
 		65457B92265AD3C800F7F8F3 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		6546D65427897C8800C39D5C /* BMDJIconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJIconTextField.swift; sourceTree = "<group>"; };
 		6554B36A2691BAC90080D3C5 /* MemoDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDatabaseService.swift; sourceTree = "<group>"; };
+		65598058283D30BD00731E43 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
 		6559805A283D30E900731E43 /* GoogleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginService.swift; sourceTree = "<group>"; };
 		6559805E283D324900731E43 /* LoginServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceProtocol.swift; sourceTree = "<group>"; };
 		6559820B264416720011D5BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				65455216285F0B0300963B06 /* LoginService.swift */,
+				65598058283D30BD00731E43 /* AppleLoginService.swift */,
 				6559805A283D30E900731E43 /* GoogleLoginService.swift */,
 				6594339327D4D31D0016EDE7 /* Job */,
 				6577641526371780001947CF /* AppService.swift */,
@@ -1134,6 +1137,7 @@
 				653970DF2799B6C70006E2A9 /* FIBDatabaseService.swift in Sources */,
 				657CF7FF267F330200A4CD57 /* MemoListViewController.swift in Sources */,
 				65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */,
+				65598059283D30BD00731E43 /* AppleLoginService.swift in Sources */,
 				65B377BC262AE5A3000D03E7 /* BMDJTypography.swift in Sources */,
 				65D6A43427772A6F009A3A6E /* StockSearchViewController.swift in Sources */,
 				65457B93265AD3C800F7F8F3 /* URLRequest.swift in Sources */,
