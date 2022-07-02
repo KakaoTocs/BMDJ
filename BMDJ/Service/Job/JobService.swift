@@ -25,7 +25,6 @@ final class JobService {
     private let danjiClient = DanjiClient.shared
     private let memoClient = MemoClient.shared
     private let localEnvironment = LocalEnvironment()
-    private let provider = ServiceProvider.shared
     
     private var executeTimer: Timer?
     private let disposeBag = DisposeBag()

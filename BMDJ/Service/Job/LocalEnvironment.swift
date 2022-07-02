@@ -27,12 +27,6 @@ final class LocalEnvironment {
     func compareDanji(_ remoteDanjis: [Danji]) -> (Bool, [Danji]) {
         var danjiJob: [Job] = []
         
-//        let (deleteDanjis, deletedRemoteDanjis) = checkDanjiDelete(remoteDanjis)
-//        if let deleteDanjis = deleteDanjis {
-//            let deleteJob = deleteDanjis.map { DanjiDeleteJob(id: $0.id) as Job }
-//            danjiJob.append(contentsOf: deleteJob)
-//        }
-        
         if danjis.isEmpty {
             let result = Repository.shared.danjiOverWrite(danjis: remoteDanjis)
             return (result, remoteDanjis)
@@ -61,30 +55,6 @@ final class LocalEnvironment {
         
         return (result, moodedRemoteDanjis)
     }
-    
-//    private func checkDanjiDelete(_ remoteDanjis: [Danji]) -> ([Danji]?, [Danji]) {
-//        var deleteIDs: [String] = []
-//        let backupRemoteDanjis = remoteDanjis
-//        var remoteDanjis = remoteDanjis
-//        let remoteIDs = remoteDanjis.map { $0.id }
-//
-//        for remoteID in remoteIDs {
-//            if !danjisID.contains(remoteID),
-//               let remoteIndex = remoteDanjis.firstIndex(where: { $0.id == remoteID }) {
-//                deleteIDs.append(remoteID)
-//                remoteDanjis.remove(at: remoteIndex)
-//            }
-//        }
-//
-//        if deleteIDs.isEmpty {
-//            return (nil, remoteDanjis)
-//        } else {
-//            let deleteDanjis = deleteIDs.map { id in
-//                return backupRemoteDanjis.filter { $0.id == id }.first!
-//            }
-//            return (deleteDanjis, remoteDanjis)
-//        }
-//    }
     
     private func checkDanjiPull(_ remoteDanjis: [Danji]) {
         for danji in remoteDanjis {
