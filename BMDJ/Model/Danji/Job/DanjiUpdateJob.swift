@@ -10,5 +10,5 @@ struct DanjiUpdateJob: Job {
     let event: JobEvent = .update
     
     let id: String
-    let mood: Danji.Mood
+    let mood: DanjiLite.Mood
 }

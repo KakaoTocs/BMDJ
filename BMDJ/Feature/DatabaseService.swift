@@ -16,11 +16,11 @@ final class DatabaseService {
     
     private let fileUtility = FileUtility.shared
     
-    private(set) var danjis: [Danji] = []
+    private(set) var danjis: [DanjiLite] = []
     private(set) var memos: [Memo] = []
     
     private init() {
-        let danjis: [Danji] = []
+        let danjis: [DanjiLite] = []
         let danjisData = try! JSONEncoder().encode(danjis)
         fileUtility.checkDBFile(url: DatabaseService.danjiCacheFileURL, data: danjisData)
         
@@ -36,8 +36,8 @@ final class DatabaseService {
         memos = memoAll()
     }
     
-    func danjiAll() -> [Danji] {
-        if let danjis = fileUtility.readFileToObject(at: DatabaseService.danjiCacheFileURL, [Danji].self) {
+    func danjiAll() -> [DanjiLite] {
+        if let danjis = fileUtility.readFileToObject(at: DatabaseService.danjiCacheFileURL, [DanjiLite].self) {
             return danjis
         }
         return []
@@ -45,12 +45,12 @@ final class DatabaseService {
     
     func danjiClear() {
         fileUtility.removeFile(at: DatabaseService.danjiCacheFileURL)
-        let danjis: [Danji] = []
+        let danjis: [DanjiLite] = []
         let data = try! JSONEncoder().encode(danjis)
         fileUtility.checkDBFile(url: DatabaseService.danjiCacheFileURL, data: data)
     }
     
-    func danjiWrite(danjis: [Danji]) -> Bool {
+    func danjiWrite(danjis: [DanjiLite]) -> Bool {
         if let data = try? JSONEncoder().encode(danjis) {
             fileUtility.saveFile(at: DatabaseService.danjiCacheFileURL, data: data)
             self.danjis = danjiAll()

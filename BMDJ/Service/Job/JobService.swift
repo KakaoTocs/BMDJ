@@ -113,7 +113,7 @@ final class JobService {
         }
     }
     
-    private func getMemoAll(danjis: [Danji]) -> [Memo]? {
+    private func getMemoAll(danjis: [DanjiLite]) -> [Memo]? {
         let group = DispatchGroup()
         let queue = DispatchQueue(label: "LocalEnvironment", qos: .utility, attributes: .concurrent)
         let resultQueue = DispatchQueue(label: "ResultQueue")

@@ -497,7 +497,7 @@ final class DanjiAddViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         moodSwitch.rx.controlEvent(.valueChanged)
-            .map { self.moodSwitch.isOn ? Danji.Mood.happy : Danji.Mood.sad }
+            .map { self.moodSwitch.isOn ? DanjiLite.Mood.happy : DanjiLite.Mood.sad }
             .map { Reactor.Action.changeMood($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)

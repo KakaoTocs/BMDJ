@@ -11,7 +11,7 @@ struct MemoAddJob: Job {
     
     let id: String
     let danjiID: String
-    let mood: Danji.Mood
+    let mood: DanjiLite.Mood
     let text: String
     let imageData: Data?
 }

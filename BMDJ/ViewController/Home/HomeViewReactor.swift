@@ -39,7 +39,7 @@ final class HomeViewReactor: Reactor, FactoryModule {
     enum Mutation {
         case fetchDanjiSections([DanjiSection])
         case fetchMemoSections([MemoSection])
-        case activeDanjiIndex(Int, Danji, [MemoSection])
+        case activeDanjiIndex(Int, DanjiLite, [MemoSection])
         case insertDanjiSectionItem(IndexPath, DanjiSection.Item)
         case updateDanjiSectionItem(IndexPath, DanjiSection.Item)
         case insertMemoSectionItem(IndexPath, MemoSection.Item)
@@ -53,7 +53,7 @@ final class HomeViewReactor: Reactor, FactoryModule {
         var backgroundGradients: [UIColor] = [.background3Gradarion1, .background3Gradarion2]
         var danjiSections: [DanjiSection]
         var memoSections: [MemoSection]
-        var activeDanji: Danji?
+        var activeDanji: DanjiLite?
         var activeIndex: Int?
         var isPreviousActive: Bool = false
         var isNextActive: Bool = false
@@ -339,7 +339,7 @@ final class HomeViewReactor: Reactor, FactoryModule {
     }
     
     func reactorForMenu() -> MenuViewReactor {
-        var danjis: [Danji] = []
+        var danjis: [DanjiLite] = []
         if let danjiReactors = currentState.danjiSections.first?.items {
             danjis = danjiReactors.map { $0.currentState.danji }.filter { $0.color != .gray }
         }

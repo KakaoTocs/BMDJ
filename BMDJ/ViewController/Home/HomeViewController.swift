@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController, View {
     
     private lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = Danji.Mood.empty.gradient.map { $0.cgColor }//[UIColor.background3Gradarion1.cgColor, UIColor.background3Gradarion2.cgColor]
+        gradientLayer.colors = DanjiLite.Mood.empty.gradient.map { $0.cgColor }//[UIColor.background3Gradarion1.cgColor, UIColor.background3Gradarion2.cgColor]
         return gradientLayer
     }()
     
@@ -179,7 +179,7 @@ final class HomeViewController: UIViewController, View {
     }()
     
     // MARK: - Property
-    let activeMood: PublishRelay<Danji.Mood> = .init()
+    let activeMood: PublishRelay<DanjiLite.Mood> = .init()
     var disposeBag = DisposeBag()
     
     lazy var danjiDataSource = RxCollectionViewSectionedReloadDataSource<DanjiSection>(

@@ -11,9 +11,9 @@ import RxCocoa
 final class DanjiSortTableCellReactor: Reactor {
     typealias Action = NoAction
     
-    let initialState: Danji
+    let initialState: DanjiLite
     
-    init(danji: Danji) {
+    init(danji: DanjiLite) {
         initialState = danji
     }
 }

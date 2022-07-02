@@ -23,26 +23,26 @@ class DanjiDBService: BaseService {
     override init(provider: ServiceProviderType) {
         super.init(provider: provider)
         
-        let danjis: [Danji] = []
+        let danjis: [DanjiLite] = []
         let data = try! JSONEncoder().encode(danjis)
         fileUtility.checkDBFile(url: DanjiDBService.cacheFileURL, data: data)
     }
     
     func clear() {
         fileUtility.removeFile(at: DanjiDBService.cacheFileURL)
-        let danjis: [Danji] = []
+        let danjis: [DanjiLite] = []
         let data = try! JSONEncoder().encode(danjis)
         fileUtility.checkDBFile(url: DanjiDBService.cacheFileURL, data: data)
     }
     
-    func all() -> [Danji] {
-        if let danjis = fileUtility.readFileToObject(at: DanjiDBService.cacheFileURL, [Danji].self) {
+    func all() -> [DanjiLite] {
+        if let danjis = fileUtility.readFileToObject(at: DanjiDBService.cacheFileURL, [DanjiLite].self) {
             return danjis
         }
         return []
     }
     
-    func write(danjis: [Danji]) {
+    func write(danjis: [DanjiLite]) {
         if let data = try? JSONEncoder().encode(danjis) {
             fileUtility.saveFile(at: DanjiDBService.cacheFileURL, data: data)
         }

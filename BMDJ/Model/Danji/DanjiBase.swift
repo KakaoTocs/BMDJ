@@ -6,11 +6,11 @@
 //
 
 struct DanjiBase {
-    let color: Danji.Color
+    let color: DanjiLite.Color
     let name: String
     let stockName: String
     let volume: String
-    let mood: Danji.Mood
+    let mood: DanjiLite.Mood
     let endDate: UInt
     let dDay: Int
 }

@@ -18,19 +18,19 @@ final class MemoAddViewReactor: Reactor, FactoryModule {
     }
     
     struct Payload {
-        let activeDanji: Danji
+        let activeDanji: DanjiLite
     }
     
     enum Action {
         case updateText(String?)
-        case updateMood(Danji.Mood)
+        case updateMood(DanjiLite.Mood)
         case selectImage(UIImage?)
         case save
     }
     
     enum Mutation {
         case updateText(String?)
-        case updateMood(Danji.Mood)
+        case updateMood(DanjiLite.Mood)
         case updateDanjiID(String)
         case selectImage(UIImage?)
         case dismiss

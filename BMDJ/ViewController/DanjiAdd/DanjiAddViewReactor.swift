@@ -25,8 +25,8 @@ final class DanjiAddViewReactor: Reactor, FactoryModule {
     }
     
     enum Action {
-        case selectColor(Danji.Color)
-        case changeMood(Danji.Mood)
+        case selectColor(DanjiLite.Color)
+        case changeMood(DanjiLite.Mood)
         case updateDanjiName(String)
         case updateStockName(String)
         case updateStockQuantity(String)
@@ -35,8 +35,8 @@ final class DanjiAddViewReactor: Reactor, FactoryModule {
     }
     
     enum Mutation {
-        case changeMood(Danji.Mood)
-        case selectColor(Danji.Color)
+        case changeMood(DanjiLite.Mood)
+        case selectColor(DanjiLite.Color)
         case updateDanjiName(String)
         case updateStockName(String)
         case updateStockQuantity(String)
@@ -128,7 +128,7 @@ final class DanjiAddViewReactor: Reactor, FactoryModule {
         return state
     }
     
-    private func colorToDanjiColor(color: UIColor) -> Danji.Color? {
+    private func colorToDanjiColor(color: UIColor) -> DanjiLite.Color? {
         switch color {
         case .sub1:
             return .red

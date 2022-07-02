@@ -23,8 +23,8 @@ final class MenuViewReactor: Reactor, FactoryModule {
     }
     
     struct Payload {
-        let danjis: [Danji]
-        let activeDanji: Danji?
+        let danjis: [DanjiLite]
+        let activeDanji: DanjiLite?
     }
     
     typealias Action = NoAction

@@ -21,7 +21,7 @@ final class DanjiSortViewReactor: Reactor, FactoryModule {
     }
     
     struct Payload {
-        let danjis: [Danji]
+        let danjis: [DanjiLite]
     }
     
     enum Action {

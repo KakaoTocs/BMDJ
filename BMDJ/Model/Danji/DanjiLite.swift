@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Danji: Codable {
+struct DanjiLite: Codable {
     enum Mood: String, Codable {
         case happy = "HAPPY"
         case sad = "SAD"
@@ -132,8 +132,8 @@ struct Danji: Codable {
     }
 }
 
-extension Danji {
-    static var empty: Danji {
+extension DanjiLite {
+    static var empty: DanjiLite {
         return .init(id: "empty", userID: "", color: .gray, name: "장독대 애칭 지어주러 가기!", stock: .init(id: "000000", name: "000000"), volume: "보유 수량이 보여집니다.", mood: .happy, createDate: .init(), endDate: .init(), updateDate: .init(), dDay: 1)
     }
     
@@ -168,6 +168,6 @@ extension Danji {
     }
 }
 
-extension Danji: Identifiable {
+extension DanjiLite: Identifiable {
 }
 

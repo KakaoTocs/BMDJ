@@ -12,15 +12,15 @@ struct DanjiAddJob: Job {
     let event: JobEvent = .add
     
     let id: String
-    let color: Danji.Color
+    let color: DanjiLite.Color
     let name: String
     let stockName: String
     let volume: String
-    let mood: Danji.Mood
+    let mood: DanjiLite.Mood
     let endDate: Int
     let dDay: Int
     
-    init(danji: Danji) {
+    init(danji: DanjiLite) {
         self.id = danji.id
         self.color = danji.color
         self.name = danji.name
