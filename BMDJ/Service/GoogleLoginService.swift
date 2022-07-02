@@ -14,7 +14,7 @@ import FirebaseAuth
 final class GoogleLoginService: LoginServiceProtocol {
     
     private let clientID = "997325203999-gdsfqdq974gtfn8ip7hkpvp3pkdv9qku.apps.googleusercontent.com"
-    weak var viewController: UIViewController?
+    private weak var parentViewController: UIViewController?
     private let disposeBag = DisposeBag()
     
     init() {
@@ -29,6 +29,10 @@ final class GoogleLoginService: LoginServiceProtocol {
             return (token, authentication)
         }
         return nil
+    }
+    
+    func set(parent viewController: UIViewController) {
+        parentViewController = viewController
     }
     
     private func getAuthCredential(idToken: String, accessToken: String) -> AuthCredential? {

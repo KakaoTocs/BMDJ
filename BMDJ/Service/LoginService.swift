@@ -20,6 +20,12 @@ final class LoginService {
     
     init() {}
     
+    func set(parent viewController: UIViewController) {
+        for service in services.values {
+            service.set(parent: viewController)
+        }
+    }
+    
     func login(service kind: ServiceKind) -> String? {
         if let service = services[kind],
             let (token, credential) = service.login() {

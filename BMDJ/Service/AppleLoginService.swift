@@ -29,6 +29,9 @@ final class AppleLoginService: NSObject, LoginServiceProtocol {
         return nil
     }
     
+    func set(parent viewController: UIViewController) {
+    }
+    
     private func getAuthCredential(token: String) -> AuthCredential? {
         return OAuthProvider.credential(withProviderID: "apple.com", idToken: token, rawNonce: randomNonceString())
     }

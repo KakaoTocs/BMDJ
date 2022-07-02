@@ -25,7 +25,7 @@ final class LoginViewReactor: Reactor, FactoryModule {
     
     enum Action {
         case appleLogin
-        case googleLogin(UIViewController)
+        case googleLogin
     }
     
     enum Mutation {
@@ -53,7 +53,6 @@ final class LoginViewReactor: Reactor, FactoryModule {
             }
             return .just(.setToken(nil))
         case .googleLogin(let viewController):
-            dependency.googleLoginService.viewController = viewController
             if let (token, _) = dependency.googleLoginService.login() {
                 return .just(.setToken(token))
             }
