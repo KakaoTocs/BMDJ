@@ -8,17 +8,20 @@
 import Foundation
 
 import FirebaseAuth
+import UIKit
 
 final class LoginService {
-    
-    private let services: [ServiceKind: LoginServiceProtocol] = [:]
+    private weak var viewController: UIViewController?
+    private let services: [ServiceKind: LoginServiceProtocol]
     
     enum ServiceKind {
         case apple
         case google
     }
     
-    init() {}
+    init(services: [ServiceKind: LoginServiceProtocol]) {
+        self.services = services
+    }
     
     func set(parent viewController: UIViewController) {
         for service in services.values {

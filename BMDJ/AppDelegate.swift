@@ -95,6 +95,7 @@ struct AppDependency {
         let userDefaultService: UserDefaultService = .shared
         let appleLoginService: AppleLoginService = .init()
         let googleLoginService: GoogleLoginService = .init()
+        let loginService: LoginService = .init(services: [.apple: appleLoginService, .google: googleLoginService])
         
         let danjiAddViewReactor: DanjiAddViewReactor = .init(dependency: .init(repository: repository), payload: .init())
         let danjiManageViewReactorFactory: DanjiSortViewReactor.Factory = .init(dependency: .init(repository: repository))
@@ -123,7 +124,7 @@ struct AppDependency {
             memoAddReactorFactory: memoAddViewViewReactorFactory,
             repository: repository
         ), payload: .init())
-        let loginViewReactor: LoginViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor, appleLoginService: appleLoginService, googleLoginService: googleLoginService), payload: .init())
+        let loginViewReactor: LoginViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor, loginService: loginService), payload: .init())
         
         let rootViewReactor: RootViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor, loginViewReactor: loginViewReactor, userDefaultService: userDefaultService), payload: .init())
         

@@ -191,7 +191,7 @@ final class LoginViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         googleButton.rx.tap
-            .map { _ in Reactor.Action.googleLogin(self) }
+            .map { _ in Reactor.Action.googleLogin }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
@@ -205,6 +205,16 @@ final class LoginViewController: UIViewController, View {
                 self.loginSuccess(token: token)
             }
             .disposed(by: disposeBag)
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            let viewController = self
+            Observable.just(Reactor.Action.setParentViewController(viewController))
+                .bind(to: reactor.action)
+                .disposed(by: self.disposeBag)
+        }
     }
     
     private func loginSuccess(token: String) {
