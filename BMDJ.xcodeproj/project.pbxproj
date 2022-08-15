@@ -18,6 +18,7 @@
 		650D2A6026C4327200F9981E /* ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D2A5F26C4327200F9981E /* ImageImportButton.swift */; };
 		650E82FC28AA5F3100B4739C /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FB28AA5F3100B4739C /* MemoAPI.swift */; };
 		650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FD28AA652500B4739C /* MemoUpdate.swift */; };
+		650E830128AA67CE00B4739C /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E830028AA67CE00B4739C /* SessionProtocol.swift */; };
 		65110674269F44B0009AB050 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65110673269F44B0009AB050 /* Int.swift */; };
 		65139D2826B31AE000E32718 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65139D2726B31AE000E32718 /* AuthClient.swift */; };
 		6519946E26498AE80067A29D /* DanjiManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519946D26498AE80067A29D /* DanjiManageViewController.swift */; };
@@ -183,6 +184,7 @@
 		650D2A5F26C4327200F9981E /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImportButton.swift; sourceTree = "<group>"; };
 		650E82FB28AA5F3100B4739C /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
 		650E82FD28AA652500B4739C /* MemoUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdate.swift; sourceTree = "<group>"; };
+		650E830028AA67CE00B4739C /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
 		65110673269F44B0009AB050 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		65139D2726B31AE000E32718 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		6519946D26498AE80067A29D /* DanjiManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiManageViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +378,14 @@
 				650D2A5F26C4327200F9981E /* ImageImportButton.swift */,
 			);
 			path = ImageImportButton;
+			sourceTree = "<group>";
+		};
+		650E82FF28AA67B000B4739C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				650E830028AA67CE00B4739C /* SessionProtocol.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		651BAC25265A50170090D6A7 /* Setting */ = {
@@ -742,6 +752,7 @@
 		659625FA262BFA3E00277B80 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				650E82FF28AA67B000B4739C /* Test */,
 				65CB2A7426B1BD8300C61E50 /* Auth */,
 				6557AD0C265D630400F80A53 /* Danji */,
 				6557AD0D265D630C00F80A53 /* Memo */,
@@ -1135,6 +1146,7 @@
 				65709B6328717818005E8973 /* BDErrorType.swift in Sources */,
 				658B160C27D88E3800945098 /* JobClient.swift in Sources */,
 				65D7D29226849BDF00D69C7C /* Array.swift in Sources */,
+				650E830128AA67CE00B4739C /* SessionProtocol.swift in Sources */,
 				650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */,
 				65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */,
 				65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */,
