@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BDError {
+enum BDError: Error {
     case networkState
     case result
     case scheme
