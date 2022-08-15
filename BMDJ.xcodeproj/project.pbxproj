@@ -17,6 +17,7 @@
 		650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B758B2732F19F000D2B79 /* AlertViewReactor.swift */; };
 		650D2A6026C4327200F9981E /* ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D2A5F26C4327200F9981E /* ImageImportButton.swift */; };
 		650E82FC28AA5F3100B4739C /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FB28AA5F3100B4739C /* MemoAPI.swift */; };
+		650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FD28AA652500B4739C /* MemoUpdate.swift */; };
 		65110674269F44B0009AB050 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65110673269F44B0009AB050 /* Int.swift */; };
 		65139D2826B31AE000E32718 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65139D2726B31AE000E32718 /* AuthClient.swift */; };
 		6519946E26498AE80067A29D /* DanjiManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519946D26498AE80067A29D /* DanjiManageViewController.swift */; };
@@ -181,6 +182,7 @@
 		650B758B2732F19F000D2B79 /* AlertViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewReactor.swift; sourceTree = "<group>"; };
 		650D2A5F26C4327200F9981E /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImportButton.swift; sourceTree = "<group>"; };
 		650E82FB28AA5F3100B4739C /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
+		650E82FD28AA652500B4739C /* MemoUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdate.swift; sourceTree = "<group>"; };
 		65110673269F44B0009AB050 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		65139D2726B31AE000E32718 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		6519946D26498AE80067A29D /* DanjiManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiManageViewController.swift; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				6594338C27D4CE8B0016EDE7 /* Job */,
 				659625F7262BFA2B00277B80 /* Memo.swift */,
 				65261A7D2693616A005E877C /* MemoCreate.swift */,
+				650E82FD28AA652500B4739C /* MemoUpdate.swift */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -1132,6 +1135,7 @@
 				65709B6328717818005E8973 /* BDErrorType.swift in Sources */,
 				658B160C27D88E3800945098 /* JobClient.swift in Sources */,
 				65D7D29226849BDF00D69C7C /* Array.swift in Sources */,
+				650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */,
 				65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */,
 				65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */,
 				6586FF42264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift in Sources */,
