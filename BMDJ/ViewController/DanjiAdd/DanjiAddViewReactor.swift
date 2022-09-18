@@ -7,16 +7,26 @@
 
 import UIKit
 
+import Pure
 import ReactorKit
 import RxDataSources
 
 typealias ColorSection = SectionModel<Void, ColorCollectionCellReactor>
 typealias DaySection = SectionModel<Void, DayCollectionCellReactor>
 
-final class DanjiPlantViewReactor: Reactor {
+final class DanjiAddViewReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+        let repository: Repository
+    }
+    
+    struct Payload {
+    }
+    
     enum Action {
-        case selectColor(Danji.Color)
-        case changeMood(Danji.Mood)
+        case selectColor(DanjiLite.Color)
+        case changeMood(DanjiLite.Mood)
         case updateDanjiName(String)
         case updateStockName(String)
         case updateStockQuantity(String)
@@ -25,8 +35,8 @@ final class DanjiPlantViewReactor: Reactor {
     }
     
     enum Mutation {
-        case changeMood(Danji.Mood)
-        case selectColor(Danji.Color)
+        case changeMood(DanjiLite.Mood)
+        case selectColor(DanjiLite.Color)
         case updateDanjiName(String)
         case updateStockName(String)
         case updateStockQuantity(String)
@@ -59,14 +69,18 @@ final class DanjiPlantViewReactor: Reactor {
         ]
     }
     
+    // MARK: - Property
     let initialState: State
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(provider: ServiceProviderType) {
-        self.provider = provider
-        initialState = State()
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        initialState = .init()
     }
     
+    // MARK: - Method
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .selectColor(let color):
@@ -82,7 +96,7 @@ final class DanjiPlantViewReactor: Reactor {
         case .selectDday(let day):
             return .just(.selectDday(day))
         case .plant:
-            let result = provider.repository.danjiAdd(danjiCreate: currentState.danjiCreate)
+            let result = dependency.repository.danjiAdd(danjiCreate: currentState.danjiCreate)
             if result {
                 return .just(.dismiss)
             } else {
@@ -114,7 +128,7 @@ final class DanjiPlantViewReactor: Reactor {
         return state
     }
     
-    private func colorToDanjiColor(color: UIColor) -> Danji.Color? {
+    private func colorToDanjiColor(color: UIColor) -> DanjiLite.Color? {
         switch color {
         case .sub1:
             return .red

@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController, View {
     
     private lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = Danji.Mood.empty.gradient.map { $0.cgColor }//[UIColor.background3Gradarion1.cgColor, UIColor.background3Gradarion2.cgColor]
+        gradientLayer.colors = DanjiLite.Mood.empty.gradient.map { $0.cgColor }//[UIColor.background3Gradarion1.cgColor, UIColor.background3Gradarion2.cgColor]
         return gradientLayer
     }()
     
@@ -179,7 +179,7 @@ final class HomeViewController: UIViewController, View {
     }()
     
     // MARK: - Property
-    let activeMood: PublishRelay<Danji.Mood> = .init()
+    let activeMood: PublishRelay<DanjiLite.Mood> = .init()
     var disposeBag = DisposeBag()
     
     lazy var danjiDataSource = RxCollectionViewSectionedReloadDataSource<DanjiSection>(
@@ -189,7 +189,7 @@ final class HomeViewController: UIViewController, View {
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanjiCollectionCell.identifier, for: indexPath) as! DanjiCollectionCell
-                reactor.provider = self.reactor?.provider
+                reactor.provider = ServiceProvider.shared
                 cell.reactor = reactor
                 return cell
             }
@@ -235,8 +235,8 @@ final class HomeViewController: UIViewController, View {
     }
     
     func bind(reactor: HomeViewReactor) {
-        bindAction(reactor)
         bindState(reactor)
+        bindAction(reactor)
     }
     
     // MARK: - Method
@@ -397,8 +397,8 @@ final class HomeViewController: UIViewController, View {
             .subscribe(onNext: { [weak self] cellReactor in
                 guard let `self` = self else { return }
                 if cellReactor.currentState.danji.color == .gray {
-                    let viewController = DanjiPlantViewController()
-                    viewController.reactor = .init(provider: reactor.provider)
+                    let viewController = DanjiAddViewController()
+                    viewController.reactor = reactor.reactorForDanjiAdd()
                     viewController.modalPresentationStyle = .fullScreen
                     self.present(viewController, animated: true)
                 }
@@ -409,17 +409,17 @@ final class HomeViewController: UIViewController, View {
             .subscribe(onNext: { [weak self] cellReactor in
                 guard let `self` = self else { return }
                 if cellReactor.currentState.memoe.mood == .nomal,
-                   let danji = reactor.currentState.activeDanji {
+                   let memoAddVR = reactor.reactorForMemoAdd() {
                     if reactor.currentState.activeDanji?.color == .gray {
                         let sendErrorAlert = UIAlertView(title: "단지가 없습니다!", message: "단지를 먼저 심어주세요.", delegate: self, cancelButtonTitle: "확인")
                         sendErrorAlert.show()
                         return
                     }
-                    let addMemoVC = AddMemoViewController()
-                    addMemoVC.isPresentOnly = true
-                    addMemoVC.modalPresentationStyle = .overFullScreen
-                    addMemoVC.reactor = .init(provider: reactor.provider, activeDanji: danji)
-                    self.present(addMemoVC, animated: false)
+                    let memoAddVC = MemoAddViewController()
+                    memoAddVC.isPresentOnly = true
+                    memoAddVC.modalPresentationStyle = .overFullScreen
+                    memoAddVC.reactor = memoAddVR
+                    self.present(memoAddVC, animated: false)
                 } else {
                     let memoVC = MemoViewController(reactor: reactor.reactorForMemoView(cellReactor))
                     self.navigationController?.pushViewController(memoVC, animated: true)

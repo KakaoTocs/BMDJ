@@ -54,7 +54,7 @@ final class BMDJWeatherView: UIView {
         return imageView
     }()
     
-    var isHappy: Danji.Mood = .happy{
+    var isHappy: DanjiLite.Mood = .happy{
         didSet {
             switch isHappy {
             case .happy:

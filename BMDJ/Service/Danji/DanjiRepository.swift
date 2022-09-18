@@ -12,9 +12,9 @@ import RxRelay
 import RxOptional
 
 enum DanjiEvent {
-    case add(Danji)
-    case create(Danji)
-    case update(String, Danji)
+    case add(DanjiLite)
+    case create(DanjiLite)
+    case update(String, DanjiLite)
     case move(String, Int)
     case refresh
 }
@@ -28,21 +28,21 @@ final class DanjiRepository: BaseService {
     let event = PublishSubject<DanjiEvent>()
     
     // MARK: - Init
-    func fetchDanjis() -> Observable<[Danji]> {
+    func fetchDanjis() -> Observable<[DanjiLite]> {
         let danjis = provider.danjiDataBaseService.all()
         return .just(danjis)
     }
     
-    func saveDanjis(_ danjis: [Danji]) -> Observable<Void> {
+    func saveDanjis(_ danjis: [DanjiLite]) -> Observable<Void> {
         provider.danjiDataBaseService.write(danjis: danjis)
         return .just(())
     }
     
-    func addDanji(danjiCreate: DanjiCreate) -> Observable<Danji> {
+    func addDanji(danjiCreate: DanjiCreate) -> Observable<DanjiLite> {
         return DanjiClient.shared.plant(danji: danjiCreate)
             .flatMap { danji in
                 self.fetchDanjis()
-                .flatMap { [weak self] danjis -> Observable<Danji> in
+                .flatMap { [weak self] danjis -> Observable<DanjiLite> in
                     guard let `self` = self else { return .empty() }
                     return self.saveDanjis([danji] + danjis).map { danji }
                 }
@@ -52,11 +52,11 @@ final class DanjiRepository: BaseService {
             }
     }
     
-    func updateMood(id: String, mood: Danji.Mood) -> Observable<Danji> {
+    func updateMood(id: String, mood: DanjiLite.Mood) -> Observable<DanjiLite> {
         return DanjiClient.shared.mood(id: id, mood: mood)
             .flatMap { _ in
                 self.fetchDanjis()
-                    .flatMap { currentDanjis -> Observable<Danji> in
+                    .flatMap { currentDanjis -> Observable<DanjiLite> in
                         var danjis = currentDanjis
                         if let index = danjis.firstIndex(where: { $0.id == id }) {
                             danjis[index].mood = mood
@@ -71,9 +71,9 @@ final class DanjiRepository: BaseService {
             }
     }
     
-    func moveDanji(index: Int, to destinationIndex: Int) -> Observable<Danji> {
+    func moveDanji(index: Int, to destinationIndex: Int) -> Observable<DanjiLite> {
         fetchDanjis()
-            .flatMap { currentDanjis -> Observable<Danji> in
+            .flatMap { currentDanjis -> Observable<DanjiLite> in
                 var danjis = currentDanjis
                 let danji = danjis.remove(at: index)
                 danjis.insert(danji, at: destinationIndex)

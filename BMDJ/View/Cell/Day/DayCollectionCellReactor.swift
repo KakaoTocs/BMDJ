@@ -9,14 +9,18 @@ import ReactorKit
 import RxCocoa
 
 final class DayCollectionCellReactor: Reactor {
-    typealias Action = NoAction
     
-    let initialState: State
+    // MARK: - Define
+    typealias Action = NoAction
     
     struct State {
         let day: Int
     }
     
+    // MARK: - Property
+    let initialState: State
+    
+    // MARK: - Init
     init(state: State) {
         initialState = state
     }

@@ -7,9 +7,26 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 
-final class MenuViewReactor: Reactor {
+final class MenuViewReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+        let danjiAddViewReactor: DanjiAddViewReactor
+        let danjiManageViewReactorFactory: DanjiSortViewReactor.Factory
+        let memoAddViewReactorFactory: MemoAddViewReactor.Factory
+        let settingViewReactor: SettingViewReactor
+        
+        let repository: Repository
+    }
+    
+    struct Payload {
+        let danjis: [DanjiLite]
+        let activeDanji: DanjiLite?
+    }
+    
     typealias Action = NoAction
     
     enum Mutation {
@@ -20,24 +37,24 @@ final class MenuViewReactor: Reactor {
         var isClose: Bool = false
     }
     
+    // MARK: - Property
     let initialState: State
-    let danjis: [Danji]
-    let activeDanji: Danji?
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(provider: ServiceProviderType, danjis: [Danji], activeDanji: Danji?) {
-        self.provider = provider
-        self.danjis = danjis
-        self.activeDanji = activeDanji
-        self.initialState = State()
+    // MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        self.initialState = .init()
     }
     
+    // MARK: - Method
     func reduce(state: State, mutation: Mutation) -> State {
         var state = self.currentState
         
         switch mutation {
         case .close:
-            print("Close 3")
             state.isClose = true
         }
         
@@ -45,7 +62,7 @@ final class MenuViewReactor: Reactor {
     }
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let danjiEventMutation = provider.repository.danjiEvent
+        let danjiEventMutation = dependency.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 return self?.mutate(danjiEvent: event) ?? .empty()
             }
@@ -63,22 +80,22 @@ final class MenuViewReactor: Reactor {
     }
     
     // Reactor Export
-    func reactorForPlantDanji() -> DanjiPlantViewReactor {
-        return DanjiPlantViewReactor(provider: provider)
+    func reactorForPlantDanji() -> DanjiAddViewReactor {
+        return dependency.danjiAddViewReactor
     }
     
     func reactorForSortDanji() -> DanjiSortViewReactor {
-        return DanjiSortViewReactor(provider: provider, danjis: danjis)
+        return dependency.danjiManageViewReactorFactory.create(payload: .init(danjis: payload.danjis))
     }
     
-    func reactorForAddMemo() -> AddMemoViewReactor? {
-        if let danji = activeDanji {
-            return AddMemoViewReactor(provider: provider, activeDanji: danji)
+    func reactorForMemoAdd() -> MemoAddViewReactor? {
+        if let activeDanji = payload.activeDanji {
+            return dependency.memoAddViewReactorFactory.create(payload: .init(activeDanji: activeDanji))
         }
         return nil
     }
     
-    func reactorForSettingDanji() -> DanjiSettingViewReactor {
-        return DanjiSettingViewReactor()
+    func reactorForSetting() -> SettingViewReactor {
+        return dependency.settingViewReactor
     }
 }

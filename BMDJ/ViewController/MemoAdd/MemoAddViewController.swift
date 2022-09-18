@@ -11,7 +11,7 @@ import ReactorKit
 import RxCocoa
 import SnapKit
 
-final class AddMemoViewController: UIViewController, View {
+final class MemoAddViewController: UIViewController, View {
     
     private let CONTENTVIEW_HEIGHT_RATIO: CGFloat = 1.68
     
@@ -144,12 +144,12 @@ final class AddMemoViewController: UIViewController, View {
         setLayout()
     }
     
-    func bind(reactor: AddMemoViewReactor) {
+    func bind(reactor: MemoAddViewReactor) {
         bindAction(reactor)
         bindState(reactor)
     }
     
-    private func bindAction(_ reactor: AddMemoViewReactor) {
+    private func bindAction(_ reactor: MemoAddViewReactor) {
         closeButton.rx.tap
             .subscribe(onNext: { _ in
                 self.dismiss(animated: true, completion: nil)
@@ -177,7 +177,7 @@ final class AddMemoViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
-    private func bindState(_ reactor: AddMemoViewReactor) {
+    private func bindState(_ reactor: MemoAddViewReactor) {
         reactor.state.asObservable().map { $0.dismiss }
             .distinctUntilChanged()
             .filter { $0 }
@@ -298,7 +298,7 @@ final class AddMemoViewController: UIViewController, View {
     }
 }
 
-extension AddMemoViewController: UITextViewDelegate {
+extension MemoAddViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .font3 {
             textView.text = nil
@@ -314,7 +314,7 @@ extension AddMemoViewController: UITextViewDelegate {
     }
 }
 
-extension AddMemoViewController: ImageImportButtonDelegate {
+extension MemoAddViewController: ImageImportButtonDelegate {
     func didSelected(image: UIImage?) {
         if let reactor = reactor {
             Observable.just(())

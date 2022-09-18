@@ -10,7 +10,7 @@ import UIKit
 struct Memo: Codable, Equatable {
     var id: String
     var danjiID: String
-    let mood: Danji.Mood
+    let mood: DanjiLite.Mood
     var imageURLString: String?
     var imageBase64: String?
     var text: String

@@ -7,14 +7,29 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 
-final class SettingTitleHeaderReactor: Reactor {
+final class SettingTitleHeaderReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+    }
+    
+    struct Payload {
+        let title: String
+    }
+    
     typealias Action = NoAction
     
+    // MARK: - Property
     let initialState: String
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(title: String) {
-        initialState = title
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        initialState = .init()
     }
 }

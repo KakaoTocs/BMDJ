@@ -45,7 +45,7 @@ final class AlertViewController: UIViewController, View {
     
     // MARK: - Property
     var disposeBag = DisposeBag()
-    weak var delegate: EditPopupViewController?
+    weak var delegate: MemoMenuViewController?
     
     // MARK: - Init
     init(reactor: AlertViewReactor) {

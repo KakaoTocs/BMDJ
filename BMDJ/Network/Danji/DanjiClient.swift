@@ -20,13 +20,13 @@ final class DanjiClient {
     
     private init() {}
     
-    func lowLevelAll() -> [Danji]? {
+    func lowLevelAll() -> [DanjiLite]? {
         let semaphore = DispatchSemaphore(value: 0)
-        var result: [Danji]?
+        var result: [DanjiLite]?
         AF.request(DanjiRouter.all)
             .responseData { [weak self] response in
                 if let data = response.data,
-                   let danjis = try? self?.decoder.decode(NetworkResult<[Danji]>.self, from: data) {
+                   let danjis = try? self?.decoder.decode(NetworkResult<[DanjiLite]>.self, from: data) {
                     result = danjis.data
                 } else {
                     result = nil
@@ -37,33 +37,33 @@ final class DanjiClient {
         return result
     }
     
-    func all() -> Observable<[Danji]> {
+    func all() -> Observable<[DanjiLite]> {
         return RxAlamofire.request(DanjiRouter.all)
             .data()
-            .decode(type: NetworkResult<[Danji]>.self, decoder: decoder)
+            .decode(type: NetworkResult<[DanjiLite]>.self, decoder: decoder)
             .map { $0.data }
             .map { $0 }
     }
     
-    func plant(danji: DanjiCreate) -> Observable<Danji> {
+    func plant(danji: DanjiCreate) -> Observable<DanjiLite> {
         return RxAlamofire.request(DanjiRouter.plant(danji: danji))
             .validate(statusCode: 200..<300)
             .data()
-            .decode(type: NetworkResult<Danji>.self, decoder: decoder)
+            .decode(type: NetworkResult<DanjiLite>.self, decoder: decoder)
             .map { $0.data }
     }
     
-    func sort(ids: [String]) -> Observable<[Danji]> {
+    func sort(ids: [String]) -> Observable<[DanjiLite]> {
         return RxAlamofire.request(DanjiRouter.sort(ids: ids))
             .data()
-            .decode(type: NetworkResult<[Danji]>.self, decoder: decoder)
+            .decode(type: NetworkResult<[DanjiLite]>.self, decoder: decoder)
             .map { $0.data }
     }
     
-    func mood(id: String, mood: Danji.Mood) -> Observable<Danji> {
+    func mood(id: String, mood: DanjiLite.Mood) -> Observable<DanjiLite> {
         return RxAlamofire.request(DanjiRouter.mood(id: id, mood: mood))
             .data()
-            .decode(type: Danji.self, decoder: decoder)
+            .decode(type: DanjiLite.self, decoder: decoder)
     }
     
     func delete(danjiID: String) -> Observable<Int> {
@@ -76,5 +76,5 @@ final class DanjiClient {
 }
 
 struct Danjis: Codable {
-    let danji: [Danji]
+    let danji: [DanjiLite]
 }

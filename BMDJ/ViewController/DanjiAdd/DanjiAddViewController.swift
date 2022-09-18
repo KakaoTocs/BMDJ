@@ -14,7 +14,7 @@ import RxDataSources
 import SnapKit
 
 
-final class DanjiPlantViewController: UIViewController, View {
+final class DanjiAddViewController: UIViewController, View {
     
     private let DANJI_WIDTH_SCALE: CGFloat = 1.26
     
@@ -280,7 +280,7 @@ final class DanjiPlantViewController: UIViewController, View {
     }
 
     // MARK: - Method
-    func bind(reactor: DanjiPlantViewReactor) {
+    func bind(reactor: DanjiAddViewReactor) {
         setLayout()
         
         bindAction(reactor)
@@ -464,7 +464,7 @@ final class DanjiPlantViewController: UIViewController, View {
         }
     }
     
-    private func bindAction(_ reactor: DanjiPlantViewReactor) {
+    private func bindAction(_ reactor: DanjiAddViewReactor) {
         closeButton.rx.tap
             .subscribe { _ in
                 DispatchQueue.main.async {
@@ -497,7 +497,7 @@ final class DanjiPlantViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         moodSwitch.rx.controlEvent(.valueChanged)
-            .map { self.moodSwitch.isOn ? Danji.Mood.happy : Danji.Mood.sad }
+            .map { self.moodSwitch.isOn ? DanjiLite.Mood.happy : DanjiLite.Mood.sad }
             .map { Reactor.Action.changeMood($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -527,7 +527,7 @@ final class DanjiPlantViewController: UIViewController, View {
             .disposed(by: disposeBag)
     }
     
-    private func bindState(_ reactor: DanjiPlantViewReactor) {
+    private func bindState(_ reactor: DanjiAddViewReactor) {
         reactor.state.asObservable().map { $0.colorSections }
             .filter { _ in self.defaultSelectColorIsFirst }
             .bind(to: colorCollectionView.rx.items(dataSource: colorDataSource))
@@ -576,7 +576,7 @@ final class DanjiPlantViewController: UIViewController, View {
     }
 }
 
-extension DanjiPlantViewController: BMDJIconTextFieldDelegate {
+extension DanjiAddViewController: BMDJIconTextFieldDelegate {
     func didTap() {
         let searchVC = StockSearchViewController(reactor: .init())
         searchVC.delegate = self
@@ -586,7 +586,7 @@ extension DanjiPlantViewController: BMDJIconTextFieldDelegate {
     }
 }
 
-extension DanjiPlantViewController: StockSearchViewDelegate {
+extension DanjiAddViewController: StockSearchViewDelegate {
     func didSelected(stock: Stock) {
         if let reactor = reactor {
             Observable.just(stock.code)

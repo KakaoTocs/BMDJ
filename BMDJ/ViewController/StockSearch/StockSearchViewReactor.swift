@@ -45,7 +45,7 @@ final class StockSearchViewReactor: Reactor {
         switch mutation {
         case .search(let search):
             if let search = search {
-                let stocks = StockService.shared.search(text: search).map { StockCellReactor(stock: $0, keyword: search) }
+                let stocks = StockService.shared.search(text: search).map { StockCellReactor(dependency: .init(), payload: .init(stock: $0, keyword: search)) }
                 state.stockSections = [.init(model: (), items: stocks)]
             } else {
                 state.stockSections = [.init(model: (), items: [])]

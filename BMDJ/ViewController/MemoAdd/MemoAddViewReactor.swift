@@ -7,20 +7,30 @@
 
 import UIKit
 
+import Pure
 import ReactorKit
 
-final class AddMemoViewReactor: Reactor {
+final class MemoAddViewReactor: Reactor, FactoryModule {
+    
+//    MARK: - Define
+    struct Dependency {
+        let repository: Repository
+    }
+    
+    struct Payload {
+        let activeDanji: DanjiLite
+    }
     
     enum Action {
         case updateText(String?)
-        case updateMood(Danji.Mood)
+        case updateMood(DanjiLite.Mood)
         case selectImage(UIImage?)
         case save
     }
     
     enum Mutation {
         case updateText(String?)
-        case updateMood(Danji.Mood)
+        case updateMood(DanjiLite.Mood)
         case updateDanjiID(String)
         case selectImage(UIImage?)
         case dismiss
@@ -31,17 +41,22 @@ final class AddMemoViewReactor: Reactor {
         var dismiss: Bool = false
     }
     
+//    MARK: - Property
     let initialState: State
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
 
-    init(provider: ServiceProviderType, activeDanji: Danji) {
-        self.provider = provider
+//    MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
         
-        self.initialState = .init(memoCreate: .init(mood: .happy, text: "", danjiId: activeDanji.id, image: nil))
+        self.initialState = .init(memoCreate: .init(mood: .happy, text: "", danjiId: payload.activeDanji.id, image: nil))
     }
     
+//    MARK: - Method
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let danjiEventMutation = provider.repository.danjiEvent
+        let danjiEventMutation = dependency.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 self?.mutate(danjiEvent: event) ?? .empty()
             }
@@ -69,7 +84,7 @@ final class AddMemoViewReactor: Reactor {
         case .selectImage(let image):
             return .just(.selectImage(image))
         case .save:
-            let result = provider.repository.memoAdd(memoCreate: currentState.memoCreate)
+            let result = dependency.repository.memoAdd(memoCreate: currentState.memoCreate)
             if result {
                 return .just(.dismiss)
             } else {

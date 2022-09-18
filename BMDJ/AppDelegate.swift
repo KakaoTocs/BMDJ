@@ -13,11 +13,22 @@ import GoogleSignIn
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    private let appDependency: AppDependency
     let gcmMessageIDKey = "634NV3MK2C"
     var window: UIWindow?
+    
+    private override init() {
+        self.appDependency = .resolve()
+        super.init()
+    }
+    
+    init(appDependency: AppDependency) {
+        self.appDependency = appDependency
+        super.init()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print(UserDefaultService.shared.token)
+        print("API token: \(UserDefaultService.shared.token ?? "nil")")
         FirebaseApp.configure()
         
         UNUserNotificationCenter.current().delegate = self
@@ -30,24 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let serviceProvider = ServiceProvider.shared
-        let reactor = HomeViewReactor(provider: serviceProvider)
-        let homeVC = HomeViewController(reactor: reactor)
-        let naviVC = UINavigationController(rootViewController: homeVC)
+        let rootVC = RootViewController(reactor: appDependency.rootViewReactor)
+        let naviVC = UINavigationController(rootViewController: rootVC)
         naviVC.isNavigationBarHidden = true
+        window?.rootViewController = naviVC
         
-        let loginVC = LoginViewController()
-        loginVC.reactor = .init()
-        if AppService.shared.isLoggedIn {
-            window?.rootViewController = naviVC
-        } else {
-            window?.rootViewController = loginVC
-        }
-        #if DEBUG
-        UserHabit.sessionStart("dev_4289ca4293b33fdaaa7ab19af85c28b29f732dca", withAutoTracking: true)
-        #else
-        UserHabit.sessionStart("4289ca4293b33fdaaa7ab19af85c28b29f732dca", withAutoTracking: true)
-        #endif
         return true
     }
     
@@ -81,10 +79,55 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("Firebase registration token: \(fcmToken)")
+        print("Firebase registration token: \(fcmToken ?? "nil")")
         if let fcmToken = fcmToken {
             let dataDict: [String: String] = ["token": fcmToken]
             NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         }
+    }
+}
+
+struct AppDependency {
+    let rootViewReactor: RootViewReactor
+    
+    static func resolve() -> AppDependency {
+        let repository: Repository = .shared
+        let userDefaultService: UserDefaultService = .shared
+        let appleLoginService: AppleLoginService = .init()
+        let googleLoginService: GoogleLoginService = .init()
+        let loginService: LoginService = .init(services: [.apple: appleLoginService, .google: googleLoginService])
+        
+        let danjiAddViewReactor: DanjiAddViewReactor = .init(dependency: .init(repository: repository), payload: .init())
+        let danjiManageViewReactorFactory: DanjiSortViewReactor.Factory = .init(dependency: .init(repository: repository))
+        let memoViewReactorFactory: MemoViewReactor.Factory = .init(dependency: .init())
+        let memoAddViewViewReactorFactory: MemoAddViewReactor.Factory = .init(dependency: .init(repository: repository))
+        let memoEditViewReactorFactory: MemoEditViewReactor.Factory = .init(dependency: .init(repository: repository))
+        let settingViewReactor: SettingViewReactor = .init(dependency: .init(), payload: .init())
+        
+        let memoListViewReactorFactory: MemoListViewReactor.Factory = .init(dependency: .init(
+            memoViewReactorFactory: memoViewReactorFactory,
+            memoEditViewReactorFactory: memoEditViewReactorFactory,
+            repository: repository)
+        )
+        let menuViewReactorFactory: MenuViewReactor.Factory = .init(dependency: .init(
+            danjiAddViewReactor: danjiAddViewReactor,
+            danjiManageViewReactorFactory: danjiManageViewReactorFactory,
+            memoAddViewReactorFactory: memoAddViewViewReactorFactory,
+            settingViewReactor: settingViewReactor,
+            repository: repository)
+        )
+        
+        let homeViewReactor: HomeViewReactor = .init(dependency: .init(
+            menuViewReactorFactory: menuViewReactorFactory,
+            memoViewReactorFactory: memoViewReactorFactory,
+            memoListReatorFactory: memoListViewReactorFactory,
+            memoAddReactorFactory: memoAddViewViewReactorFactory,
+            repository: repository
+        ), payload: .init())
+        let loginViewReactor: LoginViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor, loginService: loginService), payload: .init())
+        
+        let rootViewReactor: RootViewReactor = .init(dependency: .init(homeViewReactor: homeViewReactor, loginViewReactor: loginViewReactor, userDefaultService: userDefaultService), payload: .init())
+        
+        return .init(rootViewReactor: rootViewReactor)
     }
 }

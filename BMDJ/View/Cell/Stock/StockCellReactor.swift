@@ -5,9 +5,21 @@
 //  Created by 김진우 on 2021/12/25.
 //
 
+import Pure
 import ReactorKit
 
-final class StockCellReactor: Reactor {
+final class StockCellReactor: Reactor, Module {
+    
+    // MARK: - Define
+    struct Dependency {
+        
+    }
+    
+    struct Payload {
+        let stock: Stock
+        let keyword: String
+    }
+    
     enum Action {
     }
     
@@ -19,9 +31,11 @@ final class StockCellReactor: Reactor {
         let keyword: String
     }
     
+    // MARK: - Property
     let initialState: State
     
-    init(stock: Stock, keyword: String) {
-        initialState = .init(stock: stock, keyword: keyword)
+    // MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        initialState = .init(stock: payload.stock, keyword: payload.keyword)
     }
 }
