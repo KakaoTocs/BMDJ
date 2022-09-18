@@ -16,6 +16,7 @@
 		650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B75892732F18D000D2B79 /* AlertViewController.swift */; };
 		650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B758B2732F19F000D2B79 /* AlertViewReactor.swift */; };
 		650D2A6026C4327200F9981E /* ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D2A5F26C4327200F9981E /* ImageImportButton.swift */; };
+		650E82FA28AA5EA700B4739C /* MemoRxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82F928AA5EA700B4739C /* MemoRxClient.swift */; };
 		650E82FC28AA5F3100B4739C /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FB28AA5F3100B4739C /* MemoAPI.swift */; };
 		650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FD28AA652500B4739C /* MemoUpdate.swift */; };
 		650E830128AA67CE00B4739C /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E830028AA67CE00B4739C /* SessionProtocol.swift */; };
@@ -181,6 +182,7 @@
 		650B75892732F18D000D2B79 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		650B758B2732F19F000D2B79 /* AlertViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewReactor.swift; sourceTree = "<group>"; };
 		650D2A5F26C4327200F9981E /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImportButton.swift; sourceTree = "<group>"; };
+		650E82F928AA5EA700B4739C /* MemoRxClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRxClient.swift; sourceTree = "<group>"; };
 		650E82FB28AA5F3100B4739C /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
 		650E82FD28AA652500B4739C /* MemoUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdate.swift; sourceTree = "<group>"; };
 		650E830028AA67CE00B4739C /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 			children = (
 				6585A97D265D69CD008D6858 /* MemoRouter.swift */,
 				6585A981265D69D7008D6858 /* MemoClient.swift */,
+				650E82F928AA5EA700B4739C /* MemoRxClient.swift */,
 				650E82FB28AA5F3100B4739C /* MemoAPI.swift */,
 			);
 			path = Memo;
@@ -1147,6 +1150,7 @@
 				6586FF42264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift in Sources */,
 				658CC9F2263D38E9000286D3 /* MemoCollectionCell.swift in Sources */,
 				65FD39CB2870726B00B2B5A7 /* OriginEnvironment.swift in Sources */,
+				650E82FA28AA5EA700B4739C /* MemoRxClient.swift in Sources */,
 				650E82FC28AA5F3100B4739C /* MemoAPI.swift in Sources */,
 				65300B08278DD86D007FA1FD /* BMDJGuideImageView.swift in Sources */,
 				65FF1E1C2658FF5C00F65164 /* DayCollectionCell.swift in Sources */,
