@@ -138,6 +138,7 @@
 		65C878E32802C32E0079D1FF /* Pure in Frameworks */ = {isa = PBXBuildFile; productRef = 65C878E22802C32E0079D1FF /* Pure */; };
 		65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA5536268A13940006FCDB /* LottieTestViewController.swift */; };
 		65CA5539268A14970006FCDB /* danji.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CA5538268A14970006FCDB /* danji.json */; };
+		65CA5FED28D73EDD00C6E5BC /* MemoRxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA5FEC28D73EDD00C6E5BC /* MemoRxService.swift */; };
 		65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */; };
 		65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */; };
 		65D6A42F2776E610009A3A6E /* MemoMenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */; };
@@ -294,6 +295,7 @@
 		65C152E1265978C500418EBE /* DanjiSortTableCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortTableCellReactor.swift; sourceTree = "<group>"; };
 		65CA5536268A13940006FCDB /* LottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestViewController.swift; sourceTree = "<group>"; };
 		65CA5538268A14970006FCDB /* danji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = danji.json; sourceTree = "<group>"; };
+		65CA5FEC28D73EDD00C6E5BC /* MemoRxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRxService.swift; sourceTree = "<group>"; };
 		65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEditViewController.swift; sourceTree = "<group>"; };
 		65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoMenuViewReactor.swift; sourceTree = "<group>"; };
@@ -936,6 +938,7 @@
 			isa = PBXGroup;
 			children = (
 				65FD39D3287082DB00B2B5A7 /* MemoService.swift */,
+				65CA5FEC28D73EDD00C6E5BC /* MemoRxService.swift */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -1136,6 +1139,7 @@
 				65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */,
 				6594337E27D4CA0D0016EDE7 /* JobTarget.swift in Sources */,
 				658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */,
+				65CA5FED28D73EDD00C6E5BC /* MemoRxService.swift in Sources */,
 				65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */,
 				65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */,
 				65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */,
