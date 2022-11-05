@@ -4,6 +4,7 @@
 //
 //  Created by 김진우 on 2022/03/06.
 //
+import Foundation
 
 struct MemoAddJob: Job {
     let target: JobTarget = .memo
