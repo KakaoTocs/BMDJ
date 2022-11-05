@@ -131,13 +131,13 @@ final class MemoListViewController: UIViewController, View {
         
         reactor.state.map { $0.edit }
             .filter { $0 != nil }
-            .map { reactor.reactorForEditPopup($0!)}
+            .map { reactor.reactorForMemoMenu($0!)}
             .bind { reactor in
-                let editVC = EditPopupViewController()
-                editVC.reactor = reactor
-                editVC.modalPresentationStyle = .overFullScreen
+                let memoMenuVC = MemoMenuViewController()
+                memoMenuVC.reactor = reactor
+                memoMenuVC.modalPresentationStyle = .overFullScreen
                 DispatchQueue.main.async {
-                    self.present(editVC, animated: false, completion: nil)
+                    self.present(memoMenuVC, animated: false, completion: nil)
                 }
             }
             .disposed(by: disposeBag)

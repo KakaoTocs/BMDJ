@@ -9,7 +9,7 @@ import UIKit
 
 struct MemoCreate: Codable {
     let uuid = UUID().uuidString
-    var mood: Danji.Mood = .happy
+    var mood: DanjiLite.Mood = .happy
     var text: String = ""
     var danjiId: String = ""
     var image: UIImage? = nil
@@ -18,7 +18,7 @@ struct MemoCreate: Codable {
         case mood, text, danjiId, image
     }
     
-    init(mood: Danji.Mood, text: String, danjiId: String, image: UIImage?) {
+    init(mood: DanjiLite.Mood, text: String, danjiId: String, image: UIImage?) {
         self.mood = mood
         self.text = text
         self.danjiId = danjiId
@@ -27,7 +27,7 @@ struct MemoCreate: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        mood = try values.decode(Danji.Mood.self, forKey: .mood)
+        mood = try values.decode(DanjiLite.Mood.self, forKey: .mood)
         text = try values.decode(String.self, forKey: .text)
         danjiId = try values.decode(String.self, forKey: .danjiId)
         image = try UIImage(data: values.decode(Data.self, forKey: .image))

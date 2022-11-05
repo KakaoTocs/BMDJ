@@ -16,9 +16,12 @@
 		650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B75892732F18D000D2B79 /* AlertViewController.swift */; };
 		650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B758B2732F19F000D2B79 /* AlertViewReactor.swift */; };
 		650D2A6026C4327200F9981E /* ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D2A5F26C4327200F9981E /* ImageImportButton.swift */; };
+		650E82FC28AA5F3100B4739C /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FB28AA5F3100B4739C /* MemoAPI.swift */; };
+		650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E82FD28AA652500B4739C /* MemoUpdate.swift */; };
+		650E830128AA67CE00B4739C /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650E830028AA67CE00B4739C /* SessionProtocol.swift */; };
 		65110674269F44B0009AB050 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65110673269F44B0009AB050 /* Int.swift */; };
 		65139D2826B31AE000E32718 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65139D2726B31AE000E32718 /* AuthClient.swift */; };
-		6519946E26498AE80067A29D /* DanjiSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519946D26498AE80067A29D /* DanjiSortViewController.swift */; };
+		6519946E26498AE80067A29D /* DanjiManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6519946D26498AE80067A29D /* DanjiManageViewController.swift */; };
 		651A3B3727FDFDCB00361140 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A3B3627FDFDCB00361140 /* UIImage.swift */; };
 		651BAC23265A31090090D6A7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651BAC22265A31090090D6A7 /* UIView.swift */; };
 		651BAC2C265A503D0090D6A7 /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651BAC2B265A503D0090D6A7 /* SettingTableCell.swift */; };
@@ -26,6 +29,8 @@
 		6520138E276A639C006F3DC1 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520138D276A639C006F3DC1 /* GuideViewController.swift */; };
 		65201390276A63AC006F3DC1 /* GuideViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520138F276A63AC006F3DC1 /* GuideViewReactor.swift */; };
 		65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65201392276A65B7006F3DC1 /* PagePointView.swift */; };
+		6521BF842838FD27004BB4CB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521BF832838FD27004BB4CB /* RootViewController.swift */; };
+		6521BF862838FD42004BB4CB /* RootViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521BF852838FD42004BB4CB /* RootViewReactor.swift */; };
 		65261A7C269359B5005E877C /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65261A7B269359B5005E877C /* MemoRepository.swift */; };
 		65261A7E2693616A005E877C /* MemoCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65261A7D2693616A005E877C /* MemoCreate.swift */; };
 		6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528EA1A2635219400D06F17 /* BMDJImage.swift */; };
@@ -37,9 +42,13 @@
 		65429F8B2660CDA2000819BE /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65429F8A2660CDA2000819BE /* NetworkResult.swift */; };
 		65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65440B5726B6757500186E7B /* PrivacyPolicyViewController.swift */; };
 		65440B5A26B67C1100186E7B /* PrivacyPolicyReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65440B5926B67C1100186E7B /* PrivacyPolicyReactor.swift */; };
+		65455217285F0B0300963B06 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65455216285F0B0300963B06 /* LoginService.swift */; };
 		65457B93265AD3C800F7F8F3 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65457B92265AD3C800F7F8F3 /* URLRequest.swift */; };
 		6546D65527897C8800C39D5C /* BMDJIconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546D65427897C8800C39D5C /* BMDJIconTextField.swift */; };
 		6554B36B2691BAC90080D3C5 /* MemoDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6554B36A2691BAC90080D3C5 /* MemoDatabaseService.swift */; };
+		65598059283D30BD00731E43 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65598058283D30BD00731E43 /* AppleLoginService.swift */; };
+		6559805B283D30E900731E43 /* GoogleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559805A283D30E900731E43 /* GoogleLoginService.swift */; };
+		6559805F283D324900731E43 /* LoginServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559805E283D324900731E43 /* LoginServiceProtocol.swift */; };
 		6559820C264416720011D5BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559820B264416720011D5BC /* MenuViewController.swift */; };
 		6559820F264418140011D5BC /* MenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559820E264418140011D5BC /* MenuViewReactor.swift */; };
 		655AB69826E2AC9000A7D9BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 655AB69726E2AC9000A7D9BC /* FirebaseAnalytics */; };
@@ -50,9 +59,14 @@
 		655AB6A226E2AC9000A7D9BC /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 655AB6A126E2AC9000A7D9BC /* FirebaseRemoteConfig */; };
 		655DC081267DFF1E000A44A0 /* RxOptional in Frameworks */ = {isa = PBXBuildFile; productRef = 655DC080267DFF1E000A44A0 /* RxOptional */; };
 		6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656040992680F4FF00F9A725 /* SettingTItleHeader.swift */; };
-		6560409E2680F50D00F9A725 /* SettingTitleHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */; };
 		65620A06266E84E30041C780 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65620A05266E84E30041C780 /* MemoViewController.swift */; };
 		656574CA27946600008B56D5 /* BMDJIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656574C927946600008B56D5 /* BMDJIconButton.swift */; };
+		65709B61287177D7005E8973 /* BDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709B60287177D7005E8973 /* BDError.swift */; };
+		65709B6328717818005E8973 /* BDErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709B6228717818005E8973 /* BDErrorType.swift */; };
+		65709B6528717864005E8973 /* BDErrorTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709B6428717864005E8973 /* BDErrorTarget.swift */; };
+		65709B67287178B8005E8973 /* BDErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709B66287178B8005E8973 /* BDErrorProtocol.swift */; };
+		65709B692871795D005E8973 /* BDErrorScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709B682871795D005E8973 /* BDErrorScenario.swift */; };
+		65709B6B28717E02005E8973 /* BDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65709B6A28717E02005E8973 /* BDResponse.swift */; };
 		65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65724E51273ACFEC00C84E91 /* MemoEditViewReactor.swift */; };
 		65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65739EA2263E9661009AA160 /* Date+Utility.swift */; };
 		65739EA6263E96C0009AA160 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65739EA5263E96C0009AA160 /* Date.swift */; };
@@ -63,18 +77,19 @@
 		6577641A2637184A001947CF /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657764192637184A001947CF /* CGFloat.swift */; };
 		657CF7FF267F330200A4CD57 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657CF7FE267F330200A4CD57 /* MemoListViewController.swift */; };
 		657CF802267F369A00A4CD57 /* MemoListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657CF801267F369A00A4CD57 /* MemoListViewReactor.swift */; };
-		657EC22C265823D100D343DF /* DanjiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657EC22B265823D100D343DF /* DanjiRepository.swift */; };
 		657ED691263093C6008823BC /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657ED690263093C6008823BC /* Stock.swift */; };
 		6580837F265C09980071EED7 /* DanjiBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6580837E265C09980071EED7 /* DanjiBase.swift */; };
 		6582DAC3278AC0D600B104EA /* BMDJGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6582DAC2278AC0D600B104EA /* BMDJGradientView.swift */; };
 		6585A97E265D69CD008D6858 /* MemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A97D265D69CD008D6858 /* MemoRouter.swift */; };
 		6585A982265D69D7008D6858 /* MemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585A981265D69D7008D6858 /* MemoClient.swift */; };
-		6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */; };
-		6586FF42264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */; };
-		6586FF45264AD3B800BF4CD5 /* DanjiPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */; };
-		6586FF48264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */; };
+		6586A62D271EAF2500AEFC7C /* MemoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586A62C271EAF2500AEFC7C /* MemoMenuViewController.swift */; };
+		6586FF42264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF41264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift */; };
+		6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */; };
+		6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */; };
 		6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2F8264E4C5D00654178 /* DanjiRouter.swift */; };
 		6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6587E2FB264E59FF00654178 /* DanjiClient.swift */; };
+		658965E42802EDB3005253C2 /* SettingTitleHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */; };
+		658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A441277737E1009A3A6E /* DanjiEmptyCellReactor.swift */; };
 		65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65898D7626CC180400DAD62C /* IndicatorViewController.swift */; };
 		658B160C27D88E3800945098 /* JobClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B160B27D88E3800945098 /* JobClient.swift */; };
 		658B161027D8C0E200945098 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B160F27D8C0E200945098 /* DatabaseService.swift */; };
@@ -97,15 +112,15 @@
 		6594339927D4D59D0016EDE7 /* LocalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */; };
 		659625E2262BF51D00277B80 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 659625E1262BF51D00277B80 /* ReactorKit */; };
 		659625E9262BF60D00277B80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625E8262BF60D00277B80 /* HomeViewController.swift */; };
-		659625F4262BFA1300277B80 /* Danji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F3262BFA1300277B80 /* Danji.swift */; };
+		659625F4262BFA1300277B80 /* DanjiLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F3262BFA1300277B80 /* DanjiLite.swift */; };
 		659625F8262BFA2B00277B80 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625F7262BFA2B00277B80 /* Memo.swift */; };
 		659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E542A265510AC00C6378A /* BMDJTextField.swift */; };
 		659EF7F32677A4D9003006F4 /* DanjiDregs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EF7F22677A4D9003006F4 /* DanjiDregs.swift */; };
 		65A8997A27F4BE1E0021DD29 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659625EE262BF80700277B80 /* HomeViewReactor.swift */; };
-		65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */; };
-		65B02E7E2651177200A61D17 /* DanjiSettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */; };
+		65B02E7B2651109A00A61D17 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7A2651109A00A61D17 /* SettingViewController.swift */; };
+		65B02E7E2651177200A61D17 /* SettingViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E7D2651177200A61D17 /* SettingViewReactor.swift */; };
 		65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8026511B3200A61D17 /* LoginViewController.swift */; };
-		65B02E8426511E9D00A61D17 /* DanjiLoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */; };
+		65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B02E8326511E9D00A61D17 /* LoginViewReactor.swift */; };
 		65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B377A5262AE513000D03E7 /* AppDelegate.swift */; };
 		65B377AF262AE514000D03E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B377AE262AE514000D03E7 /* Assets.xcassets */; };
 		65B377B2262AE514000D03E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B377B0262AE514000D03E7 /* LaunchScreen.storyboard */; };
@@ -119,32 +134,36 @@
 		65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B893FE268A3C18001BB6D9 /* BaseService.swift */; };
 		65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C152DC2659789400418EBE /* DanjiSortTableCell.swift */; };
 		65C152E2265978C500418EBE /* DanjiSortTableCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C152E1265978C500418EBE /* DanjiSortTableCellReactor.swift */; };
+		65C878E32802C32E0079D1FF /* Pure in Frameworks */ = {isa = PBXBuildFile; productRef = 65C878E22802C32E0079D1FF /* Pure */; };
 		65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CA5536268A13940006FCDB /* LottieTestViewController.swift */; };
 		65CA5539268A14970006FCDB /* danji.json in Resources */ = {isa = PBXBuildFile; fileRef = 65CA5538268A14970006FCDB /* danji.json */; };
 		65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */; };
 		65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */; };
-		65D6A42F2776E610009A3A6E /* EditPopupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A42E2776E610009A3A6E /* EditPopupViewReactor.swift */; };
+		65D6A42F2776E610009A3A6E /* MemoMenuViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */; };
 		65D6A43427772A6F009A3A6E /* StockSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43327772A6F009A3A6E /* StockSearchViewController.swift */; };
 		65D6A43627772A7C009A3A6E /* StockSearchViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43527772A7C009A3A6E /* StockSearchViewReactor.swift */; };
 		65D6A43B27773138009A3A6E /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43A27773138009A3A6E /* StockCell.swift */; };
 		65D6A43D2777313E009A3A6E /* StockCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43C2777313E009A3A6E /* StockCellReactor.swift */; };
 		65D6A440277737DB009A3A6E /* DanjiEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A43F277737DB009A3A6E /* DanjiEmptyCell.swift */; };
-		65D6A442277737E1009A3A6E /* DanjiEmptyCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6A441277737E1009A3A6E /* DanjiEmptyCellReactor.swift */; };
 		65D7D29226849BDF00D69C7C /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7D29126849BDF00D69C7C /* Array.swift */; };
 		65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D985312675F86C00D3F467 /* DanjiCreate.swift */; };
 		65DB9A6B26E3DC8500643D71 /* LicenseListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB9A6A26E3DC8500643D71 /* LicenseListViewReactor.swift */; };
 		65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */; };
 		65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2140726E3D60C00136D18 /* LicenseListViewController.swift */; };
 		65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */; };
-		65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B3264839D300EB6315 /* AddMemoViewController.swift */; };
-		65EF92B726484AC200EB6315 /* AddMemoViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */; };
+		65EF92B4264839D300EB6315 /* MemoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B3264839D300EB6315 /* MemoAddViewController.swift */; };
+		65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EF92B626484AC200EB6315 /* MemoAddViewReactor.swift */; };
 		65F3018126C99330004FAA63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F3018026C99330004FAA63 /* GoogleService-Info.plist */; };
 		65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */; };
 		65FA36F3271AB9BD00131FAA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F2271AB9BD00131FAA /* CFNetwork.framework */; };
 		65FA36F5271AB9C400131FAA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F4271AB9C400131FAA /* WebKit.framework */; };
 		65FA36F7271AB9E800131FAA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F6271AB9D600131FAA /* libz.tbd */; };
-		65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36FB271ABDC900131FAA /* UserHabit.framework */; };
 		65FC091A26639359001E70FC /* BMDJWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC091926639359001E70FC /* BMDJWeatherView.swift */; };
+		65FD39CB2870726B00B2B5A7 /* OriginEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD39CA2870726B00B2B5A7 /* OriginEnvironment.swift */; };
+		65FD39CE2870734200B2B5A7 /* DanjiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD39CD2870734200B2B5A7 /* DanjiService.swift */; };
+		65FD39CF2870746000B2B5A7 /* DanjiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657EC22B265823D100D343DF /* DanjiRepository.swift */; };
+		65FD39D12870795600B2B5A7 /* Danji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD39D02870795600B2B5A7 /* Danji.swift */; };
+		65FD39D4287082DB00B2B5A7 /* MemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD39D3287082DB00B2B5A7 /* MemoService.swift */; };
 		65FD602326B070430049023F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 65FD602226B070430049023F /* GoogleSignIn */; };
 		65FF1E0D2658E49D00F65164 /* BMDJMoodSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E0C2658E49D00F65164 /* BMDJMoodSwitch.swift */; };
 		65FF1E122658F44E00F65164 /* ColorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E112658F44E00F65164 /* ColorCollectionCell.swift */; };
@@ -162,9 +181,12 @@
 		650B75892732F18D000D2B79 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		650B758B2732F19F000D2B79 /* AlertViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewReactor.swift; sourceTree = "<group>"; };
 		650D2A5F26C4327200F9981E /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImportButton.swift; sourceTree = "<group>"; };
+		650E82FB28AA5F3100B4739C /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
+		650E82FD28AA652500B4739C /* MemoUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdate.swift; sourceTree = "<group>"; };
+		650E830028AA67CE00B4739C /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
 		65110673269F44B0009AB050 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		65139D2726B31AE000E32718 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
-		6519946D26498AE80067A29D /* DanjiSortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortViewController.swift; sourceTree = "<group>"; };
+		6519946D26498AE80067A29D /* DanjiManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiManageViewController.swift; sourceTree = "<group>"; };
 		651A3B3627FDFDCB00361140 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		651BAC22265A31090090D6A7 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		651BAC2B265A503D0090D6A7 /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
@@ -172,6 +194,8 @@
 		6520138D276A639C006F3DC1 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		6520138F276A63AC006F3DC1 /* GuideViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewReactor.swift; sourceTree = "<group>"; };
 		65201392276A65B7006F3DC1 /* PagePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePointView.swift; sourceTree = "<group>"; };
+		6521BF832838FD27004BB4CB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		6521BF852838FD42004BB4CB /* RootViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewReactor.swift; sourceTree = "<group>"; };
 		65261A7B269359B5005E877C /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 		65261A7D2693616A005E877C /* MemoCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCreate.swift; sourceTree = "<group>"; };
 		6528EA1A2635219400D06F17 /* BMDJImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJImage.swift; sourceTree = "<group>"; };
@@ -183,9 +207,13 @@
 		65429F8A2660CDA2000819BE /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		65440B5726B6757500186E7B /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		65440B5926B67C1100186E7B /* PrivacyPolicyReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyReactor.swift; sourceTree = "<group>"; };
+		65455216285F0B0300963B06 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		65457B92265AD3C800F7F8F3 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		6546D65427897C8800C39D5C /* BMDJIconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJIconTextField.swift; sourceTree = "<group>"; };
 		6554B36A2691BAC90080D3C5 /* MemoDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDatabaseService.swift; sourceTree = "<group>"; };
+		65598058283D30BD00731E43 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
+		6559805A283D30E900731E43 /* GoogleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginService.swift; sourceTree = "<group>"; };
+		6559805E283D324900731E43 /* LoginServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceProtocol.swift; sourceTree = "<group>"; };
 		6559820B264416720011D5BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6559820E264418140011D5BC /* MenuViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewReactor.swift; sourceTree = "<group>"; };
 		655DC07C267DD5B9000A44A0 /* DanjiCellDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiCellDelegateProxy.swift; sourceTree = "<group>"; };
@@ -193,6 +221,12 @@
 		6560409D2680F50D00F9A725 /* SettingTitleHeaderReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTitleHeaderReactor.swift; sourceTree = "<group>"; };
 		65620A05266E84E30041C780 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		656574C927946600008B56D5 /* BMDJIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJIconButton.swift; sourceTree = "<group>"; };
+		65709B60287177D7005E8973 /* BDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDError.swift; sourceTree = "<group>"; };
+		65709B6228717818005E8973 /* BDErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDErrorType.swift; sourceTree = "<group>"; };
+		65709B6428717864005E8973 /* BDErrorTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDErrorTarget.swift; sourceTree = "<group>"; };
+		65709B66287178B8005E8973 /* BDErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDErrorProtocol.swift; sourceTree = "<group>"; };
+		65709B682871795D005E8973 /* BDErrorScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDErrorScenario.swift; sourceTree = "<group>"; };
+		65709B6A28717E02005E8973 /* BDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDResponse.swift; sourceTree = "<group>"; };
 		65724E51273ACFEC00C84E91 /* MemoEditViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEditViewReactor.swift; sourceTree = "<group>"; };
 		65739EA2263E9661009AA160 /* Date+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utility.swift"; sourceTree = "<group>"; };
 		65739EA5263E96C0009AA160 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -209,10 +243,10 @@
 		6582DAC2278AC0D600B104EA /* BMDJGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJGradientView.swift; sourceTree = "<group>"; };
 		6585A97D265D69CD008D6858 /* MemoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRouter.swift; sourceTree = "<group>"; };
 		6585A981265D69D7008D6858 /* MemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoClient.swift; sourceTree = "<group>"; };
-		6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopupViewController.swift; sourceTree = "<group>"; };
-		6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortViewReactor.swift; sourceTree = "<group>"; };
-		6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiPlantViewController.swift; sourceTree = "<group>"; };
-		6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiPlantViewReactor.swift; sourceTree = "<group>"; };
+		6586A62C271EAF2500AEFC7C /* MemoMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoMenuViewController.swift; sourceTree = "<group>"; };
+		6586FF41264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiManageViewReactor.swift; sourceTree = "<group>"; };
+		6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddViewController.swift; sourceTree = "<group>"; };
+		6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAddViewReactor.swift; sourceTree = "<group>"; };
 		6587E2F8264E4C5D00654178 /* DanjiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiRouter.swift; sourceTree = "<group>"; };
 		6587E2FB264E59FF00654178 /* DanjiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiClient.swift; sourceTree = "<group>"; };
 		65898D7626CC180400DAD62C /* IndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorViewController.swift; sourceTree = "<group>"; };
@@ -236,14 +270,14 @@
 		6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEnvironment.swift; sourceTree = "<group>"; };
 		659625E8262BF60D00277B80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		659625EE262BF80700277B80 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
-		659625F3262BFA1300277B80 /* Danji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Danji.swift; sourceTree = "<group>"; };
+		659625F3262BFA1300277B80 /* DanjiLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiLite.swift; sourceTree = "<group>"; };
 		659625F7262BFA2B00277B80 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		659E542A265510AC00C6378A /* BMDJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJTextField.swift; sourceTree = "<group>"; };
 		659EF7F22677A4D9003006F4 /* DanjiDregs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiDregs.swift; sourceTree = "<group>"; };
-		65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSettingViewController.swift; sourceTree = "<group>"; };
-		65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSettingViewReactor.swift; sourceTree = "<group>"; };
+		65B02E7A2651109A00A61D17 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		65B02E7D2651177200A61D17 /* SettingViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewReactor.swift; sourceTree = "<group>"; };
 		65B02E8026511B3200A61D17 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiLoginViewReactor.swift; sourceTree = "<group>"; };
+		65B02E8326511E9D00A61D17 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
 		65B377A2262AE513000D03E7 /* BMDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B377A5262AE513000D03E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B377AE262AE514000D03E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -260,7 +294,7 @@
 		65CA5538268A14970006FCDB /* danji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = danji.json; sourceTree = "<group>"; };
 		65CB2A7526B1BD8E00C61E50 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		65D2D49D2731A655007D9D8C /* MemoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEditViewController.swift; sourceTree = "<group>"; };
-		65D6A42E2776E610009A3A6E /* EditPopupViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPopupViewReactor.swift; sourceTree = "<group>"; };
+		65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoMenuViewReactor.swift; sourceTree = "<group>"; };
 		65D6A43327772A6F009A3A6E /* StockSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewController.swift; sourceTree = "<group>"; };
 		65D6A43527772A7C009A3A6E /* StockSearchViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchViewReactor.swift; sourceTree = "<group>"; };
 		65D6A43A27773138009A3A6E /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
@@ -273,17 +307,19 @@
 		65DB9A6C26E3DCC700643D71 /* LicenseDetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewReactor.swift; sourceTree = "<group>"; };
 		65E2140726E3D60C00136D18 /* LicenseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseListViewController.swift; sourceTree = "<group>"; };
 		65E2140926E3D61600136D18 /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
-		65EF92B3264839D300EB6315 /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
-		65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewReactor.swift; sourceTree = "<group>"; };
+		65EF92B3264839D300EB6315 /* MemoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAddViewController.swift; sourceTree = "<group>"; };
+		65EF92B626484AC200EB6315 /* MemoAddViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAddViewReactor.swift; sourceTree = "<group>"; };
 		65F3018026C99330004FAA63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65FA36EC271AB98900131FAA /* UserHabit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserHabit.framework; path = ../../../../Downloads/UserHabit.framework; sourceTree = "<group>"; };
 		65FA36F0271AB9AC00131FAA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		65FA36F2271AB9BD00131FAA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		65FA36F4271AB9C400131FAA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		65FA36F6271AB9D600131FAA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		65FA36F8271ABA5700131FAA /* UserHabit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserHabit-Bridging-Header.h"; sourceTree = "<group>"; };
-		65FA36FB271ABDC900131FAA /* UserHabit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UserHabit.framework; sourceTree = "<group>"; };
 		65FC091926639359001E70FC /* BMDJWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJWeatherView.swift; sourceTree = "<group>"; };
+		65FD39CA2870726B00B2B5A7 /* OriginEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginEnvironment.swift; sourceTree = "<group>"; };
+		65FD39CD2870734200B2B5A7 /* DanjiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiService.swift; sourceTree = "<group>"; };
+		65FD39D02870795600B2B5A7 /* Danji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Danji.swift; sourceTree = "<group>"; };
+		65FD39D3287082DB00B2B5A7 /* MemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoService.swift; sourceTree = "<group>"; };
 		65FD602026B05FDB0049023F /* BMDJ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BMDJ.entitlements; sourceTree = "<group>"; };
 		65FF1E0C2658E49D00F65164 /* BMDJMoodSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJMoodSwitch.swift; sourceTree = "<group>"; };
 		65FF1E112658F44E00F65164 /* ColorCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionCell.swift; sourceTree = "<group>"; };
@@ -300,6 +336,7 @@
 				65B377D9262AE6C4000D03E7 /* RxKingfisher in Frameworks */,
 				65FA36F7271AB9E800131FAA /* libz.tbd in Frameworks */,
 				655AB69E26E2AC9000A7D9BC /* FirebaseAuth in Frameworks */,
+				65C878E32802C32E0079D1FF /* Pure in Frameworks */,
 				65048A7F2656B73800B275D0 /* Lottie in Frameworks */,
 				655AB69C26E2AC9000A7D9BC /* FirebaseMessaging in Frameworks */,
 				655AB6A226E2AC9000A7D9BC /* FirebaseRemoteConfig in Frameworks */,
@@ -315,7 +352,6 @@
 				655AB69A26E2AC9000A7D9BC /* FirebaseCrashlytics in Frameworks */,
 				659625E2262BF51D00277B80 /* ReactorKit in Frameworks */,
 				65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */,
-				65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */,
 				65B377C9262AE687000D03E7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +374,14 @@
 				650D2A5F26C4327200F9981E /* ImageImportButton.swift */,
 			);
 			path = ImageImportButton;
+			sourceTree = "<group>";
+		};
+		650E82FF28AA67B000B4739C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				650E830028AA67CE00B4739C /* SessionProtocol.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		651BAC25265A50170090D6A7 /* Setting */ = {
@@ -366,6 +410,15 @@
 			path = PagePointView;
 			sourceTree = "<group>";
 		};
+		6521BF822838FD19004BB4CB /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				6521BF832838FD27004BB4CB /* RootViewController.swift */,
+				6521BF852838FD42004BB4CB /* RootViewReactor.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		653837912632F10B00F4D6EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,33 +445,34 @@
 			children = (
 				6585A97D265D69CD008D6858 /* MemoRouter.swift */,
 				6585A981265D69D7008D6858 /* MemoClient.swift */,
+				650E82FB28AA5F3100B4739C /* MemoAPI.swift */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
 		};
-		655C2E662768FBB3006542EA /* DanjiPlant */ = {
+		655C2E662768FBB3006542EA /* DanjiAdd */ = {
 			isa = PBXGroup;
 			children = (
-				6586FF44264AD3B800BF4CD5 /* DanjiPlantViewController.swift */,
-				6586FF47264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift */,
+				6586FF44264AD3B800BF4CD5 /* DanjiAddViewController.swift */,
+				6586FF47264AE0D000BF4CD5 /* DanjiAddViewReactor.swift */,
 			);
-			path = DanjiPlant;
+			path = DanjiAdd;
 			sourceTree = "<group>";
 		};
-		655C2E672768FBDC006542EA /* DanjiSetting */ = {
+		655C2E672768FBDC006542EA /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				65B02E7A2651109A00A61D17 /* DanjiSettingViewController.swift */,
-				65B02E7D2651177200A61D17 /* DanjiSettingViewReactor.swift */,
+				65B02E7A2651109A00A61D17 /* SettingViewController.swift */,
+				65B02E7D2651177200A61D17 /* SettingViewReactor.swift */,
 			);
-			path = DanjiSetting;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		655C2E682768FBE8006542EA /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				65B02E8026511B3200A61D17 /* LoginViewController.swift */,
-				65B02E8326511E9D00A61D17 /* DanjiLoginViewReactor.swift */,
+				65B02E8326511E9D00A61D17 /* LoginViewReactor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -485,6 +539,18 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		65709B5F287177A2005E8973 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				65709B60287177D7005E8973 /* BDError.swift */,
+				65709B6228717818005E8973 /* BDErrorType.swift */,
+				65709B6428717864005E8973 /* BDErrorTarget.swift */,
+				65709B66287178B8005E8973 /* BDErrorProtocol.swift */,
+				65709B682871795D005E8973 /* BDErrorScenario.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		65739EA1263E9633009AA160 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,9 +563,11 @@
 		6577641426371777001947CF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				65FD39D2287082CE00B2B5A7 /* Memo */,
+				65FD39CC2870733400B2B5A7 /* Danji */,
+				65FD39C92870565000B2B5A7 /* Login */,
 				6594339327D4D31D0016EDE7 /* Job */,
 				6577641526371780001947CF /* AppService.swift */,
-				657EC22B265823D100D343DF /* DanjiRepository.swift */,
 				6575A00B267E60DA0004ACEF /* DataBaseService.swift */,
 				65B893FC268A3362001BB6D9 /* ServiceProvider.swift */,
 				65B893FE268A3C18001BB6D9 /* BaseService.swift */,
@@ -511,17 +579,18 @@
 				653970DE2799B6C70006E2A9 /* FIBDatabaseService.swift */,
 				658B160F27D8C0E200945098 /* DatabaseService.swift */,
 				658B161127D8C47000945098 /* Repository.swift */,
+				6559805E283D324900731E43 /* LoginServiceProtocol.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		6586A62B271EAF1100AEFC7C /* EditPopup */ = {
+		6586A62B271EAF1100AEFC7C /* MemoMenu */ = {
 			isa = PBXGroup;
 			children = (
-				6586A62C271EAF2500AEFC7C /* EditPopupViewController.swift */,
-				65D6A42E2776E610009A3A6E /* EditPopupViewReactor.swift */,
+				6586A62C271EAF2500AEFC7C /* MemoMenuViewController.swift */,
+				65D6A42E2776E610009A3A6E /* MemoMenuViewReactor.swift */,
 			);
-			path = EditPopup;
+			path = MemoMenu;
 			sourceTree = "<group>";
 		};
 		6586A630271EAF4C00AEFC7C /* Home */ = {
@@ -542,22 +611,22 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		6586A632271EAF5B00AEFC7C /* AddMemo */ = {
+		6586A632271EAF5B00AEFC7C /* MemoAdd */ = {
 			isa = PBXGroup;
 			children = (
-				65EF92B3264839D300EB6315 /* AddMemoViewController.swift */,
-				65EF92B626484AC200EB6315 /* AddMemoViewReactor.swift */,
+				65EF92B3264839D300EB6315 /* MemoAddViewController.swift */,
+				65EF92B626484AC200EB6315 /* MemoAddViewReactor.swift */,
 			);
-			path = AddMemo;
+			path = MemoAdd;
 			sourceTree = "<group>";
 		};
-		6586A633271EAF6400AEFC7C /* DanjiSort */ = {
+		6586A633271EAF6400AEFC7C /* DanjiManage */ = {
 			isa = PBXGroup;
 			children = (
-				6519946D26498AE80067A29D /* DanjiSortViewController.swift */,
-				6586FF41264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift */,
+				6519946D26498AE80067A29D /* DanjiManageViewController.swift */,
+				6586FF41264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift */,
 			);
-			path = DanjiSort;
+			path = DanjiManage;
 			sourceTree = "<group>";
 		};
 		658B160E27D8C0D900945098 /* Feature */ = {
@@ -604,6 +673,7 @@
 				6594339627D4D5590016EDE7 /* JobService.swift */,
 				6594339827D4D59D0016EDE7 /* LocalEnvironment.swift */,
 				658B160B27D88E3800945098 /* JobClient.swift */,
+				65FD39CA2870726B00B2B5A7 /* OriginEnvironment.swift */,
 			);
 			path = Job;
 			sourceTree = "<group>";
@@ -611,23 +681,24 @@
 		659625E4262BF52500277B80 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6521BF822838FD19004BB4CB /* Root */,
 				6520138C276A6393006F3DC1 /* Guide */,
 				655C2E682768FBE8006542EA /* Login */,
-				6586A630271EAF4C00AEFC7C /* Home */,
 				655C2E6D2768FC4F006542EA /* LicenseDetail */,
 				655C2E6C2768FC3D006542EA /* LicenseList */,
 				655C2E6B2768FC30006542EA /* PrivacyPolicy */,
+				650B75862732F170000D2B79 /* Alert */,
+				6586A630271EAF4C00AEFC7C /* Home */,
 				655C2E6A2768FC22006542EA /* MemoList */,
 				655C2E692768FC18006542EA /* Memo */,
-				655C2E672768FBDC006542EA /* DanjiSetting */,
-				655C2E662768FBB3006542EA /* DanjiPlant */,
-				6586A632271EAF5B00AEFC7C /* AddMemo */,
+				655C2E672768FBDC006542EA /* Setting */,
+				655C2E662768FBB3006542EA /* DanjiAdd */,
+				6586A632271EAF5B00AEFC7C /* MemoAdd */,
 				6586A631271EAF5300AEFC7C /* Menu */,
-				650B75862732F170000D2B79 /* Alert */,
 				65D2D49F2731A658007D9D8C /* MemoEdit */,
-				6586A633271EAF6400AEFC7C /* DanjiSort */,
-				6586A62B271EAF1100AEFC7C /* EditPopup */,
-				65D6A43027772A0F009A3A6E /* Search */,
+				6586A633271EAF6400AEFC7C /* DanjiManage */,
+				6586A62B271EAF1100AEFC7C /* MemoMenu */,
+				65D6A43027772A0F009A3A6E /* StockSearch */,
 				65CA5536268A13940006FCDB /* LottieTestViewController.swift */,
 			);
 			path = ViewController;
@@ -663,11 +734,13 @@
 		659625F2262BF8DF00277B80 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65709B5F287177A2005E8973 /* Error */,
 				65429F8A2660CDA2000819BE /* NetworkResult.swift */,
 				6594337A27D4C9C90016EDE7 /* Job */,
 				65B9D01527B96F1200053545 /* Danji */,
 				65B9D01627B96F2C00053545 /* Memo */,
 				65B9D01427B96F0800053545 /* Stock */,
+				65709B6A28717E02005E8973 /* BDResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -675,6 +748,7 @@
 		659625FA262BFA3E00277B80 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				650E82FF28AA67B000B4739C /* Test */,
 				65CB2A7426B1BD8300C61E50 /* Auth */,
 				6557AD0C265D630400F80A53 /* Danji */,
 				6557AD0D265D630C00F80A53 /* Memo */,
@@ -718,7 +792,6 @@
 				65B377A5262AE513000D03E7 /* AppDelegate.swift */,
 				65B377B0262AE514000D03E7 /* LaunchScreen.storyboard */,
 				65B377B3262AE514000D03E7 /* Info.plist */,
-				65FA36F8271ABA5700131FAA /* UserHabit-Bridging-Header.h */,
 			);
 			path = BMDJ;
 			sourceTree = "<group>";
@@ -726,7 +799,6 @@
 		65B377BA262AE598000D03E7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				65FA36FB271ABDC900131FAA /* UserHabit.framework */,
 				65CA5538268A14970006FCDB /* danji.json */,
 				65048A812656B74800B275D0 /* data.json */,
 				650219A726AB0D06000A1CF1 /* Rec.json */,
@@ -765,7 +837,8 @@
 			isa = PBXGroup;
 			children = (
 				6594338327D4CD270016EDE7 /* Job */,
-				659625F3262BFA1300277B80 /* Danji.swift */,
+				659625F3262BFA1300277B80 /* DanjiLite.swift */,
+				65FD39D02870795600B2B5A7 /* Danji.swift */,
 				6580837E265C09980071EED7 /* DanjiBase.swift */,
 				65D985312675F86C00D3F467 /* DanjiCreate.swift */,
 				659EF7F22677A4D9003006F4 /* DanjiDregs.swift */,
@@ -779,6 +852,7 @@
 				6594338C27D4CE8B0016EDE7 /* Job */,
 				659625F7262BFA2B00277B80 /* Memo.swift */,
 				65261A7D2693616A005E877C /* MemoCreate.swift */,
+				650E82FD28AA652500B4739C /* MemoUpdate.swift */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -809,13 +883,13 @@
 			path = MemoEdit;
 			sourceTree = "<group>";
 		};
-		65D6A43027772A0F009A3A6E /* Search */ = {
+		65D6A43027772A0F009A3A6E /* StockSearch */ = {
 			isa = PBXGroup;
 			children = (
 				65D6A43327772A6F009A3A6E /* StockSearchViewController.swift */,
 				65D6A43527772A7C009A3A6E /* StockSearchViewReactor.swift */,
 			);
-			path = Search;
+			path = StockSearch;
 			sourceTree = "<group>";
 		};
 		65D6A43727773120009A3A6E /* Stock */ = {
@@ -834,6 +908,33 @@
 				65D6A441277737E1009A3A6E /* DanjiEmptyCellReactor.swift */,
 			);
 			path = DanjiEmpty;
+			sourceTree = "<group>";
+		};
+		65FD39C92870565000B2B5A7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				65455216285F0B0300963B06 /* LoginService.swift */,
+				65598058283D30BD00731E43 /* AppleLoginService.swift */,
+				6559805A283D30E900731E43 /* GoogleLoginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		65FD39CC2870733400B2B5A7 /* Danji */ = {
+			isa = PBXGroup;
+			children = (
+				65FD39CD2870734200B2B5A7 /* DanjiService.swift */,
+				657EC22B265823D100D343DF /* DanjiRepository.swift */,
+			);
+			path = Danji;
+			sourceTree = "<group>";
+		};
+		65FD39D2287082CE00B2B5A7 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				65FD39D3287082DB00B2B5A7 /* MemoService.swift */,
+			);
+			path = Memo;
 			sourceTree = "<group>";
 		};
 		65FF1E0B2658E48B00F65164 /* BMDJ */ = {
@@ -922,6 +1023,7 @@
 				655AB69F26E2AC9000A7D9BC /* FirebaseStorage */,
 				655AB6A126E2AC9000A7D9BC /* FirebaseRemoteConfig */,
 				653970E22799B8730006E2A9 /* FirebaseDatabase */,
+				65C878E22802C32E0079D1FF /* Pure */,
 			);
 			productName = BMDJ;
 			productReference = 65B377A2262AE513000D03E7 /* BMDJ.app */;
@@ -960,6 +1062,7 @@
 				655DC07F267DFF1E000A44A0 /* XCRemoteSwiftPackageReference "RxOptional" */,
 				65FD602126B070430049023F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				655AB69626E2AC9000A7D9BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				65C878E12802C32E0079D1FF /* XCRemoteSwiftPackageReference "Pure" */,
 			);
 			productRefGroup = 65B377A3262AE513000D03E7 /* Products */;
 			projectDirPath = "";
@@ -1015,10 +1118,13 @@
 				652A4E30277DA2BB00F7D54A /* StockService.swift in Sources */,
 				657CF802267F369A00A4CD57 /* MemoListViewReactor.swift in Sources */,
 				651BAC2C265A503D0090D6A7 /* SettingTableCell.swift in Sources */,
+				6559805B283D30E900731E43 /* GoogleLoginService.swift in Sources */,
 				6577641A2637184A001947CF /* CGFloat.swift in Sources */,
 				65776412263713DB001947CF /* DanjiCollectionCell.swift in Sources */,
+				65FD39D12870795600B2B5A7 /* Danji.swift in Sources */,
 				65D6A43627772A7C009A3A6E /* StockSearchViewReactor.swift in Sources */,
 				65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */,
+				65709B67287178B8005E8973 /* BDErrorProtocol.swift in Sources */,
 				65D2D49E2731A655007D9D8C /* MemoEditViewController.swift in Sources */,
 				6594339027D4D1470016EDE7 /* MemoDeleteJob.swift in Sources */,
 				6594339227D4D2C00016EDE7 /* MemoUpdateJob.swift in Sources */,
@@ -1031,27 +1137,34 @@
 				65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */,
 				65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */,
 				6594338E27D4CE9C0016EDE7 /* MemoAddJob.swift in Sources */,
+				65709B6328717818005E8973 /* BDErrorType.swift in Sources */,
 				658B160C27D88E3800945098 /* JobClient.swift in Sources */,
 				65D7D29226849BDF00D69C7C /* Array.swift in Sources */,
+				650E830128AA67CE00B4739C /* SessionProtocol.swift in Sources */,
+				650E82FE28AA652500B4739C /* MemoUpdate.swift in Sources */,
 				65CB2A7626B1BD8E00C61E50 /* AuthRouter.swift in Sources */,
 				65C152DD2659789400418EBE /* DanjiSortTableCell.swift in Sources */,
-				6586FF42264ACDDC00BF4CD5 /* DanjiSortViewReactor.swift in Sources */,
+				6586FF42264ACDDC00BF4CD5 /* DanjiManageViewReactor.swift in Sources */,
 				658CC9F2263D38E9000286D3 /* MemoCollectionCell.swift in Sources */,
+				65FD39CB2870726B00B2B5A7 /* OriginEnvironment.swift in Sources */,
+				650E82FC28AA5F3100B4739C /* MemoAPI.swift in Sources */,
 				65300B08278DD86D007FA1FD /* BMDJGuideImageView.swift in Sources */,
 				65FF1E1C2658FF5C00F65164 /* DayCollectionCell.swift in Sources */,
-				6519946E26498AE80067A29D /* DanjiSortViewController.swift in Sources */,
+				6519946E26498AE80067A29D /* DanjiManageViewController.swift in Sources */,
 				65739EA6263E96C0009AA160 /* Date.swift in Sources */,
 				65110674269F44B0009AB050 /* Int.swift in Sources */,
+				6521BF862838FD42004BB4CB /* RootViewReactor.swift in Sources */,
 				658B161027D8C0E200945098 /* DatabaseService.swift in Sources */,
-				6586FF48264AE0D000BF4CD5 /* DanjiPlantViewReactor.swift in Sources */,
+				6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */,
 				6585A982265D69D7008D6858 /* MemoClient.swift in Sources */,
 				65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */,
 				65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */,
 				65440B5A26B67C1100186E7B /* PrivacyPolicyReactor.swift in Sources */,
-				6586A62D271EAF2500AEFC7C /* EditPopupViewController.swift in Sources */,
+				65FD39CE2870734200B2B5A7 /* DanjiService.swift in Sources */,
+				6586A62D271EAF2500AEFC7C /* MemoMenuViewController.swift in Sources */,
 				65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */,
 				65261A7E2693616A005E877C /* MemoCreate.swift in Sources */,
-				6586FF45264AD3B800BF4CD5 /* DanjiPlantViewController.swift in Sources */,
+				6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */,
 				65C152E2265978C500418EBE /* DanjiSortTableCellReactor.swift in Sources */,
 				65091C4126C97775000F698A /* UserDefaultService.swift in Sources */,
 				65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */,
@@ -1060,62 +1173,71 @@
 				6594338027D4CA240016EDE7 /* JobEvent.swift in Sources */,
 				65A8997A27F4BE1E0021DD29 /* HomeViewReactor.swift in Sources */,
 				65620A06266E84E30041C780 /* MemoViewController.swift in Sources */,
-				65B02E7B2651109A00A61D17 /* DanjiSettingViewController.swift in Sources */,
+				65B02E7B2651109A00A61D17 /* SettingViewController.swift in Sources */,
 				6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */,
+				65709B6B28717E02005E8973 /* BDResponse.swift in Sources */,
 				6575A016267E64990004ACEF /* File+Utility.swift in Sources */,
+				6521BF842838FD27004BB4CB /* RootViewController.swift in Sources */,
 				6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */,
 				6546D65527897C8800C39D5C /* BMDJIconTextField.swift in Sources */,
 				65D6A43D2777313E009A3A6E /* StockCellReactor.swift in Sources */,
 				65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */,
 				6594338B27D4CE510016EDE7 /* DanjiUpdateJob.swift in Sources */,
 				656574CA27946600008B56D5 /* BMDJIconButton.swift in Sources */,
-				65D6A442277737E1009A3A6E /* DanjiEmptyCellReactor.swift in Sources */,
 				6594338227D4CA770016EDE7 /* DanjiAddJob.swift in Sources */,
-				659625F4262BFA1300277B80 /* Danji.swift in Sources */,
+				659625F4262BFA1300277B80 /* DanjiLite.swift in Sources */,
 				6575A00C267E60DA0004ACEF /* DataBaseService.swift in Sources */,
-				65D6A42F2776E610009A3A6E /* EditPopupViewReactor.swift in Sources */,
+				65D6A42F2776E610009A3A6E /* MemoMenuViewReactor.swift in Sources */,
 				658B161227D8C47000945098 /* Repository.swift in Sources */,
 				65B893FF268A3C18001BB6D9 /* BaseService.swift in Sources */,
 				659625E9262BF60D00277B80 /* HomeViewController.swift in Sources */,
 				6594337C27D4C9DB0016EDE7 /* Job.swift in Sources */,
 				65FC091A26639359001E70FC /* BMDJWeatherView.swift in Sources */,
-				65B02E7E2651177200A61D17 /* DanjiSettingViewReactor.swift in Sources */,
+				65B02E7E2651177200A61D17 /* SettingViewReactor.swift in Sources */,
+				65455217285F0B0300963B06 /* LoginService.swift in Sources */,
+				65FD39D4287082DB00B2B5A7 /* MemoService.swift in Sources */,
 				652A4E2C277D97D300F7D54A /* BMDJSearchBar.swift in Sources */,
 				6594338527D4CD390016EDE7 /* DanjiDeleteJob.swift in Sources */,
 				65201390276A63AC006F3DC1 /* GuideViewReactor.swift in Sources */,
 				659625F8262BFA2B00277B80 /* Memo.swift in Sources */,
 				65B893FD268A3362001BB6D9 /* ServiceProvider.swift in Sources */,
 				658CC9F5263D440F000286D3 /* DanjiCollectionCellReactor.swift in Sources */,
+				65709B6528717864005E8973 /* BDErrorTarget.swift in Sources */,
+				65709B692871795D005E8973 /* BDErrorScenario.swift in Sources */,
 				65FF1E122658F44E00F65164 /* ColorCollectionCell.swift in Sources */,
 				65DB9A6B26E3DC8500643D71 /* LicenseListViewReactor.swift in Sources */,
 				6585A97E265D69CD008D6858 /* MemoRouter.swift in Sources */,
 				65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */,
 				6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */,
+				6559805F283D324900731E43 /* LoginServiceProtocol.swift in Sources */,
 				65D6A440277737DB009A3A6E /* DanjiEmptyCell.swift in Sources */,
-				65B02E8426511E9D00A61D17 /* DanjiLoginViewReactor.swift in Sources */,
+				658965E42802EDB3005253C2 /* SettingTitleHeaderReactor.swift in Sources */,
+				65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */,
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
 				6559820C264416720011D5BC /* MenuViewController.swift in Sources */,
 				651A3B3727FDFDCB00361140 /* UIImage.swift in Sources */,
-				657EC22C265823D100D343DF /* DanjiRepository.swift in Sources */,
 				6594338927D4CD7B0016EDE7 /* DanjiSortJob.swift in Sources */,
 				653970DF2799B6C70006E2A9 /* FIBDatabaseService.swift in Sources */,
 				657CF7FF267F330200A4CD57 /* MemoListViewController.swift in Sources */,
 				65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */,
+				65598059283D30BD00731E43 /* AppleLoginService.swift in Sources */,
 				65B377BC262AE5A3000D03E7 /* BMDJTypography.swift in Sources */,
 				65D6A43427772A6F009A3A6E /* StockSearchViewController.swift in Sources */,
 				65457B93265AD3C800F7F8F3 /* URLRequest.swift in Sources */,
 				6554B36B2691BAC90080D3C5 /* MemoDatabaseService.swift in Sources */,
 				65261A7C269359B5005E877C /* MemoRepository.swift in Sources */,
-				65EF92B726484AC200EB6315 /* AddMemoViewReactor.swift in Sources */,
+				65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */,
+				658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */,
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
 				6505390F2795BC67003651BA /* StockInfo.swift in Sources */,
 				6520138E276A639C006F3DC1 /* GuideViewController.swift in Sources */,
 				65FF1E0D2658E49D00F65164 /* BMDJMoodSwitch.swift in Sources */,
+				65FD39CF2870746000B2B5A7 /* DanjiRepository.swift in Sources */,
 				65E2140A26E3D61600136D18 /* LicenseDetailViewController.swift in Sources */,
 				6580837F265C09980071EED7 /* DanjiBase.swift in Sources */,
-				65EF92B4264839D300EB6315 /* AddMemoViewController.swift in Sources */,
+				65EF92B4264839D300EB6315 /* MemoAddViewController.swift in Sources */,
 				650B758C2732F19F000D2B79 /* AlertViewReactor.swift in Sources */,
 				6594339727D4D5590016EDE7 /* JobService.swift in Sources */,
 				6503613A26713279006CEBC1 /* MemoViewReactor.swift in Sources */,
@@ -1125,10 +1247,10 @@
 				659EF7F32677A4D9003006F4 /* DanjiDregs.swift in Sources */,
 				6582DAC3278AC0D600B104EA /* BMDJGradientView.swift in Sources */,
 				651BAC2F265A50450090D6A7 /* SettingTableCellReactor.swift in Sources */,
+				65709B61287177D7005E8973 /* BDError.swift in Sources */,
 				6594339927D4D59D0016EDE7 /* LocalEnvironment.swift in Sources */,
 				65429F8B2660CDA2000819BE /* NetworkResult.swift in Sources */,
 				6587E2FC264E59FF00654178 /* DanjiClient.swift in Sources */,
-				6560409E2680F50D00F9A725 /* SettingTitleHeaderReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1283,11 +1405,11 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BMDJ/UserHabit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1314,11 +1436,11 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BMDJ/UserHabit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1412,6 +1534,14 @@
 				minimumVersion = 6.1.1;
 			};
 		};
+		65C878E12802C32E0079D1FF /* XCRemoteSwiftPackageReference "Pure" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Pure";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		65FD602126B070430049023F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
@@ -1492,6 +1622,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 65B377DB262AE729000D03E7 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
 			productName = RxAlamofire;
+		};
+		65C878E22802C32E0079D1FF /* Pure */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65C878E12802C32E0079D1FF /* XCRemoteSwiftPackageReference "Pure" */;
+			productName = Pure;
 		};
 		65FD602226B070430049023F /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

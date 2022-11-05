@@ -11,7 +11,7 @@ import Alamofire
 enum MemoRouter: URLRequestConvertible {
     case all(danjiID: String)
     case add
-    case update(id: String, text: String)
+    case update(id: String)
     case delete(id: String)
     
     private var baseURL: String {
@@ -41,7 +41,7 @@ enum MemoRouter: URLRequestConvertible {
             return "/memos?danjiId=\(id)"
         case .add:
             return "/memo"
-        case .update(let id, _):
+        case .update(let id):
             return "/memo/\(id)"
         case .delete(let id):
             return "/memo/\(id)"

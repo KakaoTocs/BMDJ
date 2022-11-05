@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Pure
 import ReactorKit
 import RxDataSources
 import RxOptional
@@ -14,7 +15,20 @@ import RxOptional
 typealias DanjiSection = SectionModel<Void, DanjiCollectionCellReactor>
 typealias MemoSection = SectionModel<Void, MemoCollectionCellReactor>
 
-final class HomeViewReactor: Reactor {
+final class HomeViewReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+        let menuViewReactorFactory: MenuViewReactor.Factory
+        let memoViewReactorFactory: MemoViewReactor.Factory
+        let memoListReatorFactory: MemoListViewReactor.Factory
+        let memoAddReactorFactory: MemoAddViewReactor.Factory
+        
+        let repository: Repository
+    }
+    
+    struct Payload {
+    }
     
     enum Action {
         case refresh
@@ -25,7 +39,7 @@ final class HomeViewReactor: Reactor {
     enum Mutation {
         case fetchDanjiSections([DanjiSection])
         case fetchMemoSections([MemoSection])
-        case activeDanjiIndex(Int, Danji, [MemoSection])
+        case activeDanjiIndex(Int, DanjiLite, [MemoSection])
         case insertDanjiSectionItem(IndexPath, DanjiSection.Item)
         case updateDanjiSectionItem(IndexPath, DanjiSection.Item)
         case insertMemoSectionItem(IndexPath, MemoSection.Item)
@@ -39,7 +53,7 @@ final class HomeViewReactor: Reactor {
         var backgroundGradients: [UIColor] = [.background3Gradarion1, .background3Gradarion2]
         var danjiSections: [DanjiSection]
         var memoSections: [MemoSection]
-        var activeDanji: Danji?
+        var activeDanji: DanjiLite?
         var activeIndex: Int?
         var isPreviousActive: Bool = false
         var isNextActive: Bool = false
@@ -47,19 +61,24 @@ final class HomeViewReactor: Reactor {
         var isRunningBackgroundSync = false
     }
     
-    let provider: ServiceProviderType
+    // MARK: - Property
     let initialState: State
     let disposedBag = DisposeBag()
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(provider: ServiceProviderType) {
-        self.provider = provider
+    // MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
         initialState = .init(danjiSections: [.init(model: (), items: [])], memoSections: [])
     }
     
+    // MARK: - Method
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .refresh:
-            let danjis = provider.repository.danjiFetch()
+            let danjis = dependency.repository.danjiFetch()
             let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
             var section: [DanjiSection] = []
             if sectionItems.isEmpty {
@@ -70,7 +89,7 @@ final class HomeViewReactor: Reactor {
             return .just(.fetchDanjiSections(section))
         case .activeDanjiIndex(let index):
             if let danji = currentState.danjiSections.first?.items[index].currentState {
-                let memos = provider.repository.memoFetch(danji.id)
+                let memos = dependency.repository.memoFetch(danji.id)
                 let sectionItems = memos.map { MemoCollectionCellReactor(memo: $0, isGradient: false) }
                 var section: [MemoSection] = []
                 if sectionItems.isEmpty {
@@ -84,7 +103,7 @@ final class HomeViewReactor: Reactor {
             return .empty()
         case .refreshMemo:
             if let danji = currentState.activeDanji {
-                let memos = provider.repository.memoFetch(danji.id)
+                let memos = dependency.repository.memoFetch(danji.id)
                 var sectionItems: [MemoCollectionCellReactor] = []
                 if memos.isEmpty {
                     let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
@@ -100,16 +119,16 @@ final class HomeViewReactor: Reactor {
     }
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
-        let danjiEventMutation = provider.repository.danjiEvent
+        let danjiEventMutation = dependency.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 self?.mutate(danjiEvent: event) ?? .empty()
             }
         
-        let memoEventMutation = provider.repository.memoEvent
+        let memoEventMutation = dependency.repository.memoEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 self?.mutate(memoEvent: event) ?? .empty()
             }
-        let memoEvent2Mutation = provider.repository.danjiEvent
+        let memoEvent2Mutation = dependency.repository.danjiEvent
             .flatMap { [weak self] event -> Observable<Mutation> in
                 switch event {
                 case .add, .create, .move, .refresh:
@@ -139,12 +158,12 @@ final class HomeViewReactor: Reactor {
 //            let reactor = DanjiCollectionCellReactor(danji: danji)
 //          return .just(.updateDanjiSectionItem(indexPath, reactor))
         case .move:
-            let danjis = provider.repository.danjiFetch()
+            let danjis = dependency.repository.danjiFetch()
             let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
             let section = DanjiSection(model: (), items: sectionItems)
             return .just(.fetchDanjiSections([section]))
         case .refresh, .update:
-            let danjis = provider.repository.danjiFetch()
+            let danjis = dependency.repository.danjiFetch()
             let sectionItems = danjis.map(DanjiCollectionCellReactor.init)
             var section: [DanjiSection] = []
             if sectionItems.isEmpty {
@@ -181,7 +200,7 @@ final class HomeViewReactor: Reactor {
 //                }
         case .refresh:
             if let danji = currentState.activeDanji {
-                let memos = provider.repository.memoFetch(danji.id)
+                let memos = dependency.repository.memoFetch(danji.id)
                 var sectionItems: [MemoCollectionCellReactor] = []
                 if memos.isEmpty {
                     let mockMemo = Memo.empty(danjiID: self.currentState.activeDanji?.id ?? "nil")
@@ -230,7 +249,6 @@ final class HomeViewReactor: Reactor {
             state.memoSections = sections
             state.scrollToFirst = nil
         case .fetchDanjiSections(let sections):
-            print("fetch")
             state.danjiSections = sections
             let index = (sections.first?.items.count ?? 0) > 0 ? 0 : nil
             if let section = sections.first,
@@ -321,15 +339,27 @@ final class HomeViewReactor: Reactor {
     }
     
     func reactorForMenu() -> MenuViewReactor {
-        var danjis: [Danji] = []
+        var danjis: [DanjiLite] = []
         if let danjiReactors = currentState.danjiSections.first?.items {
             danjis = danjiReactors.map { $0.currentState.danji }.filter { $0.color != .gray }
         }
-        return MenuViewReactor(provider: provider, danjis: danjis, activeDanji: currentState.activeDanji)
+        return dependency.menuViewReactorFactory.create(payload: .init(danjis: danjis, activeDanji: currentState.activeDanji))
+    }
+    
+    func reactorForDanjiAdd() -> DanjiAddViewReactor {
+        return .init(dependency: .init(repository: dependency.repository), payload: .init())
     }
     
     func reactorForMemoView(_ reactor: MemoCollectionCellReactor) -> MemoViewReactor {
-        return MemoViewReactor(memo: reactor.currentState.memoe)
+        return dependency.memoViewReactorFactory.create(payload: .init(memo: reactor.currentState.memoe))
+    }
+    
+    func reactorForMemoAdd() -> MemoAddViewReactor? {
+        if let activeDanji = currentState.activeDanji {
+            return .init(dependency: .init(repository: dependency.repository), payload: .init(activeDanji: activeDanji))
+        } else {
+            return nil
+        }
     }
     
     func reactorForMemoListView() -> MemoListViewReactor {
@@ -337,6 +367,6 @@ final class HomeViewReactor: Reactor {
         if let memoReactors = currentState.memoSections.first?.items {
             memos = memoReactors.map { $0.initialState.memoe }
         }
-        return MemoListViewReactor(memos: memos, provider: provider)
+        return dependency.memoListReatorFactory.create(payload: .init(memos: memos))
     }
 }

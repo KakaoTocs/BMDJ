@@ -5,32 +5,39 @@
 //  Created by 김진우 on 2021/05/01.
 //
 
+import UIKit
+
 import ReactorKit
 import RxCocoa
+import Pure
 
 final class DanjiCollectionCellReactor: Reactor {
+    
+//    static let configurator: () -> (DanjiCollectionCellReactor, Danji) -> Void = {
+//        
+//    }
     
     let initialState: State
     var provider: ServiceProviderType?
     
-    init(danji: Danji) {
+    init(danji: DanjiLite) {
         let name = StockService.shared.getName(form: danji.stock.name) ?? danji.stock.name
         initialState = .init(danji: danji, id: danji.id, isHappy: danji.isHappy, mood: danji.mood, dDayString: danji.dDayString, nickName: danji.name, stockName: danji.stock.name, volume: danji.volume, danjiImage: danji.danjiImage, landImage: danji.landImage, moodColor: danji.mood == .happy ? .font1 : .white)
     }
     
     enum Action {
-        case setMood(Danji.Mood)
+        case setMood(DanjiLite.Mood)
     }
     
     enum Mutation {
-        case update(Danji.Mood)
+        case update(DanjiLite.Mood)
     }
     
     struct State {
-        let danji: Danji
+        let danji: DanjiLite
         let id: String
         let isHappy: Bool
-        let mood: Danji.Mood
+        let mood: DanjiLite.Mood
         let dDayString: String
         let nickName: String?
         let stockName: String?
@@ -52,7 +59,7 @@ final class DanjiCollectionCellReactor: Reactor {
         }
     }
     
-    func reduce(state: Danji, mutation: Mutation) -> Danji {
+    func reduce(state: DanjiLite, mutation: Mutation) -> DanjiLite {
         var state = state
         
         switch mutation {

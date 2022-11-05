@@ -14,7 +14,7 @@ extension UIView {
         endEditing(true)
     }
     
-    func toImage(layerSize: CGSize, danji: Danji) -> URL? {
+    func toImage(layerSize: CGSize, danji: DanjiLite) -> URL? {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = .init(origin: .zero, size: layerSize)
         gradientLayer.colors = danji.mood.gradient.map { $0.cgColor }

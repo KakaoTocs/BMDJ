@@ -7,10 +7,21 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 import RxDataSources
 
-final class MemoEditViewReactor: Reactor {
+final class MemoEditViewReactor: Reactor, FactoryModule {
+    
+    // MARK: - Define
+    struct Dependency {
+        let repository: Repository
+    }
+    
+    struct Payload {
+        let memo: Memo
+    }
+    
     enum Action {
         case edit(String)
     }
@@ -24,20 +35,25 @@ final class MemoEditViewReactor: Reactor {
         var isDismiss: Bool = false
     }
     
+    // MARK: - Property
     let initialState: State
-    let provider: ServiceProviderType
+    private let dependency: Dependency
+    private let payload: Payload
     
-    init(memo: Memo, provider: ServiceProviderType) {
-        self.provider = provider
-        initialState = .init(memo: memo)
+    // MARK: - Init
+    init(dependency: Dependency, payload: Payload) {
+        self.dependency = dependency
+        self.payload = payload
+        initialState = .init(memo: payload.memo)
     }
     
+    // MARK: - Method
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .edit(let text):
             let memo = currentState.memo
             let newMemo = Memo(id: memo.id, danjiID: memo.danjiID, mood: memo.mood, imageURLString: memo.imageURLString, text: text, createDate: memo.createDate, updateDate: Int(Date().timeIntervalSince1970 * 1000))
-            let result = provider.repository.memoUpdate(id: newMemo.id, text: newMemo.text)
+            let result = dependency.repository.memoUpdate(id: newMemo.id, text: newMemo.text)
             if result {
                 return .just(.dismiss)
             } else {

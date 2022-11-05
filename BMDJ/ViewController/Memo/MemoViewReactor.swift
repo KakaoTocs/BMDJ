@@ -7,14 +7,24 @@
 
 import Foundation
 
+import Pure
 import ReactorKit
 
-final class MemoViewReactor: Reactor {
+final class MemoViewReactor: Reactor, FactoryModule {
+    
+    struct Dependency {
+        
+    }
+    
+    struct Payload {
+        let memo: Memo
+    }
+    
     typealias Action = NoAction
     
     let initialState: Memo
     
-    init(memo: Memo) {
-        initialState = memo
+    init(dependency: Dependency, payload: Payload) {
+        initialState = payload.memo
     }
 }

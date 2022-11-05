@@ -13,7 +13,7 @@ enum DanjiRouter: URLRequestConvertible {
     case plant(danji: DanjiCreate)
     case sort(ids: [String])
     case delete(id: String)
-    case mood(id: String, mood: Danji.Mood)
+    case mood(id: String, mood: DanjiLite.Mood)
     
     private var baseURL: String {
         #if DEBUG

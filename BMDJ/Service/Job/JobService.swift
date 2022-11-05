@@ -25,7 +25,6 @@ final class JobService {
     private let danjiClient = DanjiClient.shared
     private let memoClient = MemoClient.shared
     private let localEnvironment = LocalEnvironment()
-    private let provider = ServiceProvider.shared
     
     private var executeTimer: Timer?
     private let disposeBag = DisposeBag()
@@ -114,7 +113,7 @@ final class JobService {
         }
     }
     
-    private func getMemoAll(danjis: [Danji]) -> [Memo]? {
+    private func getMemoAll(danjis: [DanjiLite]) -> [Memo]? {
         let group = DispatchGroup()
         let queue = DispatchQueue(label: "LocalEnvironment", qos: .utility, attributes: .concurrent)
         let resultQueue = DispatchQueue(label: "ResultQueue")

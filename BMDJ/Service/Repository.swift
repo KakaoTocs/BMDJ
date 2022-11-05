@@ -13,7 +13,7 @@ final class Repository {
     
     static let shared: Repository = .init()
     
-    private(set) var danjis: [Danji] = []
+    private(set) var danjis: [DanjiLite] = []
     private(set) var memos: [Memo] = []
     
     private let databaseService = DatabaseService.shared
@@ -27,11 +27,11 @@ final class Repository {
         self.memos = memoFetch()
     }
     
-    func danjiFetch() -> [Danji] {
+    func danjiFetch() -> [DanjiLite] {
         return databaseService.danjis
     }
     
-    private func danjiSave(_ danjis: [Danji]) -> Bool {
+    private func danjiSave(_ danjis: [DanjiLite]) -> Bool {
         let result = databaseService.danjiWrite(danjis: danjis)
         if result {
             self.danjis = danjiFetch()
@@ -39,7 +39,7 @@ final class Repository {
         return result
     }
     
-    func danjiOverWrite(danjis: [Danji]) -> Bool {
+    func danjiOverWrite(danjis: [DanjiLite]) -> Bool {
         let result = danjiSave(danjis)
         if result {
             jobService.isNeedCheck = true
@@ -75,7 +75,7 @@ final class Repository {
         return false
     }
     
-    func danjiUpdate(id: String, mood: Danji.Mood) -> Bool {
+    func danjiUpdate(id: String, mood: DanjiLite.Mood) -> Bool {
         var danjis = danjis
         if let index = danjis.firstIndex(where: { $0.id == id }) {
             danjis[index].mood = mood

@@ -16,7 +16,7 @@ final class ColorCollectionCellReactor: Reactor {
     let initialState: State
     
     struct State {
-        let color: Danji.Color
+        let color: DanjiLite.Color
     }
     
     init(state: State) {
