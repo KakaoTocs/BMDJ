@@ -5,7 +5,7 @@
 //  Created by 김진우 on 2021/05/16.
 //
 
-import Foundation
+import UIKit
 
 import Pure
 import ReactorKit
