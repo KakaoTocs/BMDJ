@@ -158,7 +158,6 @@
 		65FA36F3271AB9BD00131FAA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F2271AB9BD00131FAA /* CFNetwork.framework */; };
 		65FA36F5271AB9C400131FAA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F4271AB9C400131FAA /* WebKit.framework */; };
 		65FA36F7271AB9E800131FAA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36F6271AB9D600131FAA /* libz.tbd */; };
-		65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FA36FB271ABDC900131FAA /* UserHabit.framework */; };
 		65FC091A26639359001E70FC /* BMDJWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC091926639359001E70FC /* BMDJWeatherView.swift */; };
 		65FD39CB2870726B00B2B5A7 /* OriginEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD39CA2870726B00B2B5A7 /* OriginEnvironment.swift */; };
 		65FD39CE2870734200B2B5A7 /* DanjiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD39CD2870734200B2B5A7 /* DanjiService.swift */; };
@@ -316,8 +315,6 @@
 		65FA36F2271AB9BD00131FAA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		65FA36F4271AB9C400131FAA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		65FA36F6271AB9D600131FAA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		65FA36F8271ABA5700131FAA /* UserHabit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserHabit-Bridging-Header.h"; sourceTree = "<group>"; };
-		65FA36FB271ABDC900131FAA /* UserHabit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UserHabit.framework; sourceTree = "<group>"; };
 		65FC091926639359001E70FC /* BMDJWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMDJWeatherView.swift; sourceTree = "<group>"; };
 		65FD39CA2870726B00B2B5A7 /* OriginEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginEnvironment.swift; sourceTree = "<group>"; };
 		65FD39CD2870734200B2B5A7 /* DanjiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiService.swift; sourceTree = "<group>"; };
@@ -355,7 +352,6 @@
 				655AB69A26E2AC9000A7D9BC /* FirebaseCrashlytics in Frameworks */,
 				659625E2262BF51D00277B80 /* ReactorKit in Frameworks */,
 				65FA36F1271AB9AC00131FAA /* MobileCoreServices.framework in Frameworks */,
-				65FA36FC271ABDC900131FAA /* UserHabit.framework in Frameworks */,
 				65B377C9262AE687000D03E7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,7 +792,6 @@
 				65B377A5262AE513000D03E7 /* AppDelegate.swift */,
 				65B377B0262AE514000D03E7 /* LaunchScreen.storyboard */,
 				65B377B3262AE514000D03E7 /* Info.plist */,
-				65FA36F8271ABA5700131FAA /* UserHabit-Bridging-Header.h */,
 			);
 			path = BMDJ;
 			sourceTree = "<group>";
@@ -804,7 +799,6 @@
 		65B377BA262AE598000D03E7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				65FA36FB271ABDC900131FAA /* UserHabit.framework */,
 				65CA5538268A14970006FCDB /* danji.json */,
 				65048A812656B74800B275D0 /* data.json */,
 				650219A726AB0D06000A1CF1 /* Rec.json */,
@@ -1415,7 +1409,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BMDJ/UserHabit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1446,7 +1440,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakaotocs.danji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BMDJ/UserHabit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
