@@ -568,6 +568,7 @@
 		6577641426371777001947CF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BA284E3F295833E600CDEC6E /* Deprecated */,
 				65FD39D2287082CE00B2B5A7 /* Memo */,
 				65FD39CC2870733400B2B5A7 /* Danji */,
 				65FD39C92870565000B2B5A7 /* Login */,
@@ -994,6 +995,14 @@
 				65FF1E1E2658FF7A00F65164 /* DayCollectionCellReactor.swift */,
 			);
 			path = Day;
+			sourceTree = "<group>";
+		};
+		BA284E3F295833E600CDEC6E /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				6538437826C9184200910A27 /* KeychainService.swift */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
