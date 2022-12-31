@@ -20,16 +20,16 @@ final class MemoRxService {
     }
     
     // MARK: - Interface
-    public func all(_ danjiID: String) -> Observable<MemoAllResult> {
-        return memoAPI.all(danjiID)
+    public func all(_ danjiID: String) -> Observable<MemoReadResult> {
+        return memoAPI.read(danjiID)
     }
     
-    public func remove(_ danjiID: String) -> Observable<MemoRemoveResult> {
-        return memoAPI.remove(danjiID)
+    public func remove(_ danjiID: String) -> Observable<MemoDeleteResult> {
+        return memoAPI.delete(danjiID)
     }
     
-    public func add(_ memoCreate: MemoCreate) -> Observable<MemoAddResult> {
-        return memoAPI.add(memoCreate)
+    public func add(_ memoCreate: MemoCreate) -> Observable<MemoCreateResult> {
+        return memoAPI.create(memoCreate)
     }
     
     public func update(_ danjiID: String, memoUpdate: MemoUpdate) -> Observable<MemoUpdateResult> {

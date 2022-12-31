@@ -7,14 +7,14 @@
 
 import RxSwift
 
-typealias MemoAllResult = Result<[Memo], BDError>
-typealias MemoRemoveResult = Result<Bool, BDError>
-typealias MemoAddResult = Result<Memo, BDError>
-typealias MemoUpdateResult = Result<Bool, BDError>
+typealias MemoCreateResult = Result<Memo, BDError>
+typealias MemoReadResult = Result<[Memo], BDError>
+typealias MemoUpdateResult = Result<EmptyEntity, BDError>
+typealias MemoDeleteResult = Result<EmptyEntity, BDError>
 
 protocol MemoAPI {
-    func all(_ danjiID: String) -> Observable<MemoAllResult>
-    func remove(_ danjiID: String) -> Observable<MemoRemoveResult>
-    func add(_ memoCreate: MemoCreate) -> Observable<MemoAddResult>
-    func update(_ danjiID: String, memoUpdate: MemoUpdate) -> Observable<MemoUpdateResult>
+    func create(_ memoCreate: MemoCreate) -> Observable<MemoCreateResult>
+    func read(_ danjiID: String) -> Observable<MemoReadResult>
+    func update(_ id: String, memoUpdate: MemoUpdate) -> Observable<MemoUpdateResult>
+    func delete(_ id: String) -> Observable<MemoDeleteResult>
 }

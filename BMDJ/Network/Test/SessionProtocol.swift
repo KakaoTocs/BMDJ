@@ -5,17 +5,23 @@
 //  Created by 김진우 on 2022/08/15.
 //
 
+import Foundation
+
 import Alamofire
-import RxSwift
-import RxAlamofire
 
 protocol SessionProtocol {
-    func request(_ urlRequest: URLRequestConvertible) -> Observable<DataRequest>
+    func request(_ urlRequest: URLRequestConvertible) -> DataRequest
+    func upload(multipartFormData: @escaping (MultipartFormData) -> Void,
+                with request: URLRequestConvertible) -> UploadRequest
 }
 
 extension Session: SessionProtocol {
-    func request(_ urlRequest: URLRequestConvertible) -> Observable<DataRequest> {
-        return RxAlamofire.request(urlRequest, interceptor: nil)
+    func request(_ urlRequest: URLRequestConvertible) -> DataRequest {
+        return AF.request(urlRequest, interceptor: nil)
     }
     
+    func upload(multipartFormData: @escaping (MultipartFormData) -> Void,
+                with request: URLRequestConvertible) -> UploadRequest {
+        return AF.upload(multipartFormData: multipartFormData, with: request, fileManager: .default)
+    }
 }

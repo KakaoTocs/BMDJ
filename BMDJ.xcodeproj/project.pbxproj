@@ -172,6 +172,7 @@
 		65FF1E152658F45700F65164 /* ColorCollectionCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E142658F45700F65164 /* ColorCollectionCellReactor.swift */; };
 		65FF1E1C2658FF5C00F65164 /* DayCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E1B2658FF5C00F65164 /* DayCollectionCell.swift */; };
 		65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E1E2658FF7A00F65164 /* DayCollectionCellReactor.swift */; };
+		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -330,6 +331,7 @@
 		65FF1E142658F45700F65164 /* ColorCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionCellReactor.swift; sourceTree = "<group>"; };
 		65FF1E1B2658FF5C00F65164 /* DayCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionCell.swift; sourceTree = "<group>"; };
 		65FF1E1E2658FF7A00F65164 /* DayCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionCellReactor.swift; sourceTree = "<group>"; };
+		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,7 +581,6 @@
 				65B893FE268A3C18001BB6D9 /* BaseService.swift */,
 				6554B36A2691BAC90080D3C5 /* MemoDatabaseService.swift */,
 				65261A7B269359B5005E877C /* MemoRepository.swift */,
-				6538437826C9184200910A27 /* KeychainService.swift */,
 				65091C4026C97775000F698A /* UserDefaultService.swift */,
 				652A4E2F277DA2BB00F7D54A /* StockService.swift */,
 				653970DE2799B6C70006E2A9 /* FIBDatabaseService.swift */,
@@ -742,6 +743,7 @@
 			children = (
 				65709B5F287177A2005E8973 /* Error */,
 				65429F8A2660CDA2000819BE /* NetworkResult.swift */,
+				BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */,
 				6594337A27D4C9C90016EDE7 /* Job */,
 				65B9D01527B96F1200053545 /* Danji */,
 				65B9D01627B96F2C00053545 /* Memo */,
@@ -1145,6 +1147,7 @@
 				6594339227D4D2C00016EDE7 /* MemoUpdateJob.swift in Sources */,
 				65B377C0262AE5B0000D03E7 /* BMDJColor.swift in Sources */,
 				650B758A2732F18D000D2B79 /* AlertViewController.swift in Sources */,
+				BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */,
 				65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */,
 				6594337E27D4CA0D0016EDE7 /* JobTarget.swift in Sources */,
 				658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */,

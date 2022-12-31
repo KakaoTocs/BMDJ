@@ -11,6 +11,7 @@ import ReactorKit
 import RxCocoa
 import RxDataSources
 import SnapKit
+import Alamofire
 
 final class HomeViewController: UIViewController, View {
     
@@ -226,6 +227,16 @@ final class HomeViewController: UIViewController, View {
             DispatchQueue.main.async {
                 self.present(guideVC, animated: true)
             }
+        }
+        
+        let disposeBag = DisposeBag()
+        let client = MemoRxClient(session: Alamofire.Session.default)
+        Task {
+            client.create(MemoCreate(mood: .happy, text: "Hello", danjiId: "", image: nil))
+                .bind { result in
+                    dump(result)
+                }
+                .disposed(by: disposeBag)
         }
     }
     override func viewWillLayoutSubviews() {
