@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MemoService {
+final class MemoService: MemoServiceProtocol {
     
     private let memoClient: MemoClient
     
@@ -59,5 +59,26 @@ final class MemoService {
         } else {
             return false
         }
+    }
+    
+    
+    func memoListRead() -> Observable<MemoListReadResult> {
+        return .empty()
+    }
+    
+    func memoiCreate() -> Observable<MemoCreateResult> {
+        return .empty()
+    }
+    
+    func memoRead() -> Observable<MemoReadResult> {
+        return .empty()
+    }
+    
+    func memoDelete() -> Observable<MemoDeleteResult> {
+        return .empty()
+    }
+    
+    func memoUpdate() -> Observable<MemoUpdateResult> {
+        return .empty()
     }
 }
