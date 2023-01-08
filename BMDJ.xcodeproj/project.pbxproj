@@ -177,6 +177,11 @@
 		BA15FA17296AB47300987322 /* DanjiDeleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA16296AB47300987322 /* DanjiDeleteResult.swift */; };
 		BA15FA19296AB47B00987322 /* DanjiUpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA18296AB47B00987322 /* DanjiUpdateResult.swift */; };
 		BA15FA1B296AB48D00987322 /* DanjiListReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA1A296AB48D00987322 /* DanjiListReadResult.swift */; };
+		BA15FA1F296AB7FD00987322 /* MemoCreateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA1E296AB7FD00987322 /* MemoCreateResult.swift */; };
+		BA15FA21296AB80C00987322 /* MemoReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA20296AB80C00987322 /* MemoReadResult.swift */; };
+		BA15FA23296AB83400987322 /* MemoListReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA22296AB83400987322 /* MemoListReadResult.swift */; };
+		BA15FA25296AB84600987322 /* MemoDeleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA24296AB84600987322 /* MemoDeleteResult.swift */; };
+		BA15FA27296AB85E00987322 /* MemoUpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */; };
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 /* End PBXBuildFile section */
 
@@ -341,6 +346,11 @@
 		BA15FA16296AB47300987322 /* DanjiDeleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiDeleteResult.swift; sourceTree = "<group>"; };
 		BA15FA18296AB47B00987322 /* DanjiUpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiUpdateResult.swift; sourceTree = "<group>"; };
 		BA15FA1A296AB48D00987322 /* DanjiListReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiListReadResult.swift; sourceTree = "<group>"; };
+		BA15FA1E296AB7FD00987322 /* MemoCreateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCreateResult.swift; sourceTree = "<group>"; };
+		BA15FA20296AB80C00987322 /* MemoReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadResult.swift; sourceTree = "<group>"; };
+		BA15FA22296AB83400987322 /* MemoListReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListReadResult.swift; sourceTree = "<group>"; };
+		BA15FA24296AB84600987322 /* MemoDeleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDeleteResult.swift; sourceTree = "<group>"; };
+		BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdateResult.swift; sourceTree = "<group>"; };
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1022,6 +1032,18 @@
 			path = Danji;
 			sourceTree = "<group>";
 		};
+		BA15FA1D296AB7F500987322 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA1E296AB7FD00987322 /* MemoCreateResult.swift */,
+				BA15FA20296AB80C00987322 /* MemoReadResult.swift */,
+				BA15FA22296AB83400987322 /* MemoListReadResult.swift */,
+				BA15FA24296AB84600987322 /* MemoDeleteResult.swift */,
+				BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
 		BA284E3F295833E600CDEC6E /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,6 +1063,7 @@
 		BA6705C6296048F400985E6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA15FA1D296AB7F500987322 /* Memo */,
 				BA15FA1C296AB7E600987322 /* Danji */,
 			);
 			path = Model;
@@ -1222,6 +1245,7 @@
 				65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */,
 				65440B5A26B67C1100186E7B /* PrivacyPolicyReactor.swift in Sources */,
 				65FD39CE2870734200B2B5A7 /* DanjiService.swift in Sources */,
+				BA15FA27296AB85E00987322 /* MemoUpdateResult.swift in Sources */,
 				6586A62D271EAF2500AEFC7C /* MemoMenuViewController.swift in Sources */,
 				65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */,
 				65261A7E2693616A005E877C /* MemoCreate.swift in Sources */,
@@ -1258,16 +1282,19 @@
 				65B02E7E2651177200A61D17 /* SettingViewReactor.swift in Sources */,
 				65455217285F0B0300963B06 /* LoginService.swift in Sources */,
 				65FD39D4287082DB00B2B5A7 /* MemoService.swift in Sources */,
+				BA15FA21296AB80C00987322 /* MemoReadResult.swift in Sources */,
 				652A4E2C277D97D300F7D54A /* BMDJSearchBar.swift in Sources */,
 				6594338527D4CD390016EDE7 /* DanjiDeleteJob.swift in Sources */,
 				65201390276A63AC006F3DC1 /* GuideViewReactor.swift in Sources */,
 				659625F8262BFA2B00277B80 /* Memo.swift in Sources */,
 				65B893FD268A3362001BB6D9 /* ServiceProvider.swift in Sources */,
 				658CC9F5263D440F000286D3 /* DanjiCollectionCellReactor.swift in Sources */,
+				BA15FA25296AB84600987322 /* MemoDeleteResult.swift in Sources */,
 				65709B6528717864005E8973 /* BDErrorTarget.swift in Sources */,
 				65709B692871795D005E8973 /* BDErrorScenario.swift in Sources */,
 				65FF1E122658F44E00F65164 /* ColorCollectionCell.swift in Sources */,
 				65DB9A6B26E3DC8500643D71 /* LicenseListViewReactor.swift in Sources */,
+				BA15FA1F296AB7FD00987322 /* MemoCreateResult.swift in Sources */,
 				6585A97E265D69CD008D6858 /* MemoRouter.swift in Sources */,
 				65DB9A6D26E3DCC700643D71 /* LicenseDetailViewReactor.swift in Sources */,
 				6587E2F9264E4C5D00654178 /* DanjiRouter.swift in Sources */,
@@ -1293,6 +1320,7 @@
 				65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */,
 				658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */,
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
+				BA15FA23296AB83400987322 /* MemoListReadResult.swift in Sources */,
 				BA15FA17296AB47300987322 /* DanjiDeleteResult.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
 				6505390F2795BC67003651BA /* StockInfo.swift in Sources */,
