@@ -182,6 +182,7 @@
 		BA15FA23296AB83400987322 /* MemoListReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA22296AB83400987322 /* MemoListReadResult.swift */; };
 		BA15FA25296AB84600987322 /* MemoDeleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA24296AB84600987322 /* MemoDeleteResult.swift */; };
 		BA15FA27296AB85E00987322 /* MemoUpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */; };
+		BA6705C8296048FD00985E6E /* DataSyncEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6705C7296048FD00985E6E /* DataSyncEvent.swift */; };
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 /* End PBXBuildFile section */
 
@@ -351,6 +352,7 @@
 		BA15FA22296AB83400987322 /* MemoListReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListReadResult.swift; sourceTree = "<group>"; };
 		BA15FA24296AB84600987322 /* MemoDeleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDeleteResult.swift; sourceTree = "<group>"; };
 		BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdateResult.swift; sourceTree = "<group>"; };
+		BA6705C7296048FD00985E6E /* DataSyncEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncEvent.swift; sourceTree = "<group>"; };
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1065,6 +1067,7 @@
 			children = (
 				BA15FA1D296AB7F500987322 /* Memo */,
 				BA15FA1C296AB7E600987322 /* Danji */,
+				BA6705C7296048FD00985E6E /* DataSyncEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1322,6 +1325,7 @@
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
 				BA15FA23296AB83400987322 /* MemoListReadResult.swift in Sources */,
 				BA15FA17296AB47300987322 /* DanjiDeleteResult.swift in Sources */,
+				BA6705C8296048FD00985E6E /* DataSyncEvent.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
 				6505390F2795BC67003651BA /* StockInfo.swift in Sources */,
 				6520138E276A639C006F3DC1 /* GuideViewController.swift in Sources */,
