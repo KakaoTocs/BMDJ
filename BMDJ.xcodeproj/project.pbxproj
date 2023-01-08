@@ -172,6 +172,11 @@
 		65FF1E152658F45700F65164 /* ColorCollectionCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E142658F45700F65164 /* ColorCollectionCellReactor.swift */; };
 		65FF1E1C2658FF5C00F65164 /* DayCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E1B2658FF5C00F65164 /* DayCollectionCell.swift */; };
 		65FF1E1F2658FF7A00F65164 /* DayCollectionCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF1E1E2658FF7A00F65164 /* DayCollectionCellReactor.swift */; };
+		BA15FA13296AB46300987322 /* DanjiCreateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA12296AB46300987322 /* DanjiCreateResult.swift */; };
+		BA15FA15296AB46C00987322 /* DanjiReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA14296AB46C00987322 /* DanjiReadResult.swift */; };
+		BA15FA17296AB47300987322 /* DanjiDeleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA16296AB47300987322 /* DanjiDeleteResult.swift */; };
+		BA15FA19296AB47B00987322 /* DanjiUpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA18296AB47B00987322 /* DanjiUpdateResult.swift */; };
+		BA15FA1B296AB48D00987322 /* DanjiListReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA1A296AB48D00987322 /* DanjiListReadResult.swift */; };
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 /* End PBXBuildFile section */
 
@@ -331,6 +336,11 @@
 		65FF1E142658F45700F65164 /* ColorCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionCellReactor.swift; sourceTree = "<group>"; };
 		65FF1E1B2658FF5C00F65164 /* DayCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionCell.swift; sourceTree = "<group>"; };
 		65FF1E1E2658FF7A00F65164 /* DayCollectionCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionCellReactor.swift; sourceTree = "<group>"; };
+		BA15FA12296AB46300987322 /* DanjiCreateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiCreateResult.swift; sourceTree = "<group>"; };
+		BA15FA14296AB46C00987322 /* DanjiReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiReadResult.swift; sourceTree = "<group>"; };
+		BA15FA16296AB47300987322 /* DanjiDeleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiDeleteResult.swift; sourceTree = "<group>"; };
+		BA15FA18296AB47B00987322 /* DanjiUpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiUpdateResult.swift; sourceTree = "<group>"; };
+		BA15FA1A296AB48D00987322 /* DanjiListReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiListReadResult.swift; sourceTree = "<group>"; };
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -570,6 +580,7 @@
 		6577641426371777001947CF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BA6705BF2960480800985E6E /* Feature */,
 				BA284E3F295833E600CDEC6E /* Deprecated */,
 				65FD39D2287082CE00B2B5A7 /* Memo */,
 				65FD39CC2870733400B2B5A7 /* Danji */,
@@ -999,12 +1010,40 @@
 			path = Day;
 			sourceTree = "<group>";
 		};
+		BA15FA1C296AB7E600987322 /* Danji */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA12296AB46300987322 /* DanjiCreateResult.swift */,
+				BA15FA14296AB46C00987322 /* DanjiReadResult.swift */,
+				BA15FA1A296AB48D00987322 /* DanjiListReadResult.swift */,
+				BA15FA16296AB47300987322 /* DanjiDeleteResult.swift */,
+				BA15FA18296AB47B00987322 /* DanjiUpdateResult.swift */,
+			);
+			path = Danji;
+			sourceTree = "<group>";
+		};
 		BA284E3F295833E600CDEC6E /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
 				6538437826C9184200910A27 /* KeychainService.swift */,
 			);
 			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		BA6705BF2960480800985E6E /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				BA6705C6296048F400985E6E /* Model */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		BA6705C6296048F400985E6E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA1C296AB7E600987322 /* Danji */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1136,6 +1175,7 @@
 				657CF802267F369A00A4CD57 /* MemoListViewReactor.swift in Sources */,
 				651BAC2C265A503D0090D6A7 /* SettingTableCell.swift in Sources */,
 				6559805B283D30E900731E43 /* GoogleLoginService.swift in Sources */,
+				BA15FA19296AB47B00987322 /* DanjiUpdateResult.swift in Sources */,
 				6577641A2637184A001947CF /* CGFloat.swift in Sources */,
 				65776412263713DB001947CF /* DanjiCollectionCell.swift in Sources */,
 				65FD39D12870795600B2B5A7 /* Danji.swift in Sources */,
@@ -1175,6 +1215,7 @@
 				65110674269F44B0009AB050 /* Int.swift in Sources */,
 				6521BF862838FD42004BB4CB /* RootViewReactor.swift in Sources */,
 				658B161027D8C0E200945098 /* DatabaseService.swift in Sources */,
+				BA15FA1B296AB48D00987322 /* DanjiListReadResult.swift in Sources */,
 				6586FF48264AE0D000BF4CD5 /* DanjiAddViewReactor.swift in Sources */,
 				6585A982265D69D7008D6858 /* MemoClient.swift in Sources */,
 				65898D7726CC180400DAD62C /* IndicatorViewController.swift in Sources */,
@@ -1185,6 +1226,7 @@
 				65B02E8126511B3200A61D17 /* LoginViewController.swift in Sources */,
 				65261A7E2693616A005E877C /* MemoCreate.swift in Sources */,
 				6586FF45264AD3B800BF4CD5 /* DanjiAddViewController.swift in Sources */,
+				BA15FA13296AB46300987322 /* DanjiCreateResult.swift in Sources */,
 				65C152E2265978C500418EBE /* DanjiSortTableCellReactor.swift in Sources */,
 				65091C4126C97775000F698A /* UserDefaultService.swift in Sources */,
 				65E2140826E3D60C00136D18 /* LicenseListViewController.swift in Sources */,
@@ -1235,6 +1277,7 @@
 				65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */,
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
+				BA15FA15296AB46C00987322 /* DanjiReadResult.swift in Sources */,
 				6559820C264416720011D5BC /* MenuViewController.swift in Sources */,
 				651A3B3727FDFDCB00361140 /* UIImage.swift in Sources */,
 				6594338927D4CD7B0016EDE7 /* DanjiSortJob.swift in Sources */,
@@ -1250,6 +1293,7 @@
 				65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */,
 				658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */,
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
+				BA15FA17296AB47300987322 /* DanjiDeleteResult.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
 				6505390F2795BC67003651BA /* StockInfo.swift in Sources */,
 				6520138E276A639C006F3DC1 /* GuideViewController.swift in Sources */,
