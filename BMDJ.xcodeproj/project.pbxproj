@@ -180,6 +180,8 @@
 		BA15FA31296AC3D700987322 /* DanjiStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA30296AC3D700987322 /* DanjiStoreProtocol.swift */; };
 		BA15FA34296AC4A300987322 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA33296AC4A300987322 /* MemoStore.swift */; };
 		BA15FA36296AC4A700987322 /* MemoStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA35296AC4A700987322 /* MemoStoreProtocol.swift */; };
+		BA15FA39296ACBF600987322 /* DanjiStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA38296ACBF600987322 /* DanjiStoreService.swift */; };
+		BA15FA3B296ACBFA00987322 /* DanjiStoreServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA3A296ACBFA00987322 /* DanjiStoreServiceProtocol.swift */; };
 		BA15FA40296AD4AA00987322 /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA3F296AD4AA00987322 /* MemoAPI.swift */; };
 		BA15FA42296AD4B800987322 /* MemoAPIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA41296AD4B800987322 /* MemoAPIResource.swift */; };
 		BA15FA44296AD4C600987322 /* MemoAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA43296AD4C600987322 /* MemoAPIProtocol.swift */; };
@@ -364,6 +366,8 @@
 		BA15FA30296AC3D700987322 /* DanjiStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiStoreProtocol.swift; sourceTree = "<group>"; };
 		BA15FA33296AC4A300987322 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
 		BA15FA35296AC4A700987322 /* MemoStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStoreProtocol.swift; sourceTree = "<group>"; };
+		BA15FA38296ACBF600987322 /* DanjiStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiStoreService.swift; sourceTree = "<group>"; };
+		BA15FA3A296ACBFA00987322 /* DanjiStoreServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiStoreServiceProtocol.swift; sourceTree = "<group>"; };
 		BA15FA3F296AD4AA00987322 /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
 		BA15FA41296AD4B800987322 /* MemoAPIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPIResource.swift; sourceTree = "<group>"; };
 		BA15FA43296AD4C600987322 /* MemoAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPIProtocol.swift; sourceTree = "<group>"; };
@@ -1094,6 +1098,15 @@
 			path = MemoStore;
 			sourceTree = "<group>";
 		};
+		BA15FA37296ACBEC00987322 /* DanjiStoreService */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA38296ACBF600987322 /* DanjiStoreService.swift */,
+				BA15FA3A296ACBFA00987322 /* DanjiStoreServiceProtocol.swift */,
+			);
+			path = DanjiStoreService;
+			sourceTree = "<group>";
+		};
 		BA15FA3C296AD2FB00987322 /* DanjiAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1147,6 +1160,7 @@
 				BA15FA3D296AD30400987322 /* DanjiAPIService */,
 				BA15FA3C296AD2FB00987322 /* DanjiAPI */,
 				BA15FA3E296AD30A00987322 /* MemoAPI */,
+				BA15FA37296ACBEC00987322 /* DanjiStoreService */,
 				BA15FA2D296AC36600987322 /* DanjiStore */,
 				BA15FA32296AC49A00987322 /* MemoStore */,
 			);
@@ -1309,6 +1323,7 @@
 				65201393276A65B7006F3DC1 /* PagePointView.swift in Sources */,
 				6594337E27D4CA0D0016EDE7 /* JobTarget.swift in Sources */,
 				658CC9FC263DB89B000286D3 /* MemoCollectionCellReactor.swift in Sources */,
+				BA15FA39296ACBF600987322 /* DanjiStoreService.swift in Sources */,
 				65B377A6262AE513000D03E7 /* AppDelegate.swift in Sources */,
 				65440B5826B6757500186E7B /* PrivacyPolicyViewController.swift in Sources */,
 				65CA5537268A13940006FCDB /* LottieTestViewController.swift in Sources */,
@@ -1420,6 +1435,7 @@
 				65261A7C269359B5005E877C /* MemoRepository.swift in Sources */,
 				BA15FA36296AC4A700987322 /* MemoStoreProtocol.swift in Sources */,
 				65EF92B726484AC200EB6315 /* MemoAddViewReactor.swift in Sources */,
+				BA15FA3B296ACBFA00987322 /* DanjiStoreServiceProtocol.swift in Sources */,
 				658965E52802EFAD005253C2 /* DanjiEmptyCellReactor.swift in Sources */,
 				659E542B265510AC00C6378A /* BMDJTextField.swift in Sources */,
 				BA15FA23296AB83400987322 /* MemoListReadResult.swift in Sources */,
