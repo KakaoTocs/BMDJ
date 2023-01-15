@@ -176,6 +176,9 @@
 		BA15FA23296AB83400987322 /* MemoListReadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA22296AB83400987322 /* MemoListReadResult.swift */; };
 		BA15FA25296AB84600987322 /* MemoDeleteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA24296AB84600987322 /* MemoDeleteResult.swift */; };
 		BA15FA27296AB85E00987322 /* MemoUpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */; };
+		BA15FA40296AD4AA00987322 /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA3F296AD4AA00987322 /* MemoAPI.swift */; };
+		BA15FA42296AD4B800987322 /* MemoAPIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA41296AD4B800987322 /* MemoAPIResource.swift */; };
+		BA15FA44296AD4C600987322 /* MemoAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA43296AD4C600987322 /* MemoAPIProtocol.swift */; };
 		BA15FA46296AD4D400987322 /* DanjiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA45296AD4D400987322 /* DanjiAPI.swift */; };
 		BA15FA48296AD4DB00987322 /* DanjiAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA47296AD4DB00987322 /* DanjiAPIProtocol.swift */; };
 		BA15FA4A296AD4E300987322 /* DanjiAPIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA49296AD4E300987322 /* DanjiAPIResource.swift */; };
@@ -351,6 +354,9 @@
 		BA15FA22296AB83400987322 /* MemoListReadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListReadResult.swift; sourceTree = "<group>"; };
 		BA15FA24296AB84600987322 /* MemoDeleteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDeleteResult.swift; sourceTree = "<group>"; };
 		BA15FA26296AB85E00987322 /* MemoUpdateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUpdateResult.swift; sourceTree = "<group>"; };
+		BA15FA3F296AD4AA00987322 /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
+		BA15FA41296AD4B800987322 /* MemoAPIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPIResource.swift; sourceTree = "<group>"; };
+		BA15FA43296AD4C600987322 /* MemoAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPIProtocol.swift; sourceTree = "<group>"; };
 		BA15FA45296AD4D400987322 /* DanjiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPI.swift; sourceTree = "<group>"; };
 		BA15FA47296AD4DB00987322 /* DanjiAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPIProtocol.swift; sourceTree = "<group>"; };
 		BA15FA49296AD4E300987322 /* DanjiAPIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPIResource.swift; sourceTree = "<group>"; };
@@ -1068,6 +1074,16 @@
 			path = DanjiAPI;
 			sourceTree = "<group>";
 		};
+		BA15FA3E296AD30A00987322 /* MemoAPI */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA3F296AD4AA00987322 /* MemoAPI.swift */,
+				BA15FA43296AD4C600987322 /* MemoAPIProtocol.swift */,
+				BA15FA41296AD4B800987322 /* MemoAPIResource.swift */,
+			);
+			path = MemoAPI;
+			sourceTree = "<group>";
+		};
 		BA284E3F295833E600CDEC6E /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,6 +1107,7 @@
 				BA15FA4F296AD82700987322 /* Deprecated */,
 				BA15FA3D296AD30400987322 /* DanjiAPIService */,
 				BA15FA3C296AD2FB00987322 /* DanjiAPI */,
+				BA15FA3E296AD30A00987322 /* MemoAPI */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1236,6 +1253,7 @@
 				6559805B283D30E900731E43 /* GoogleLoginService.swift in Sources */,
 				6577641A2637184A001947CF /* CGFloat.swift in Sources */,
 				65776412263713DB001947CF /* DanjiCollectionCell.swift in Sources */,
+				BA15FA42296AD4B800987322 /* MemoAPIResource.swift in Sources */,
 				65FD39D12870795600B2B5A7 /* Danji.swift in Sources */,
 				65D6A43627772A7C009A3A6E /* StockSearchViewReactor.swift in Sources */,
 				65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */,
@@ -1319,6 +1337,7 @@
 				652A4E2C277D97D300F7D54A /* BMDJSearchBar.swift in Sources */,
 				6594338527D4CD390016EDE7 /* DanjiDeleteJob.swift in Sources */,
 				65201390276A63AC006F3DC1 /* GuideViewReactor.swift in Sources */,
+				BA15FA40296AD4AA00987322 /* MemoAPI.swift in Sources */,
 				659625F8262BFA2B00277B80 /* Memo.swift in Sources */,
 				65B893FD268A3362001BB6D9 /* ServiceProvider.swift in Sources */,
 				658CC9F5263D440F000286D3 /* DanjiCollectionCellReactor.swift in Sources */,
@@ -1348,6 +1367,7 @@
 				65739EA3263E9661009AA160 /* Date+Utility.swift in Sources */,
 				65598059283D30BD00731E43 /* AppleLoginService.swift in Sources */,
 				65B377BC262AE5A3000D03E7 /* BMDJTypography.swift in Sources */,
+				BA15FA44296AD4C600987322 /* MemoAPIProtocol.swift in Sources */,
 				65D6A43427772A6F009A3A6E /* StockSearchViewController.swift in Sources */,
 				65457B93265AD3C800F7F8F3 /* URLRequest.swift in Sources */,
 				6554B36B2691BAC90080D3C5 /* MemoDatabaseService.swift in Sources */,
