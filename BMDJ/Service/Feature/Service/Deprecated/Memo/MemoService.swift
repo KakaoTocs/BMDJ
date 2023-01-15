@@ -5,7 +5,7 @@
 //  Created by 김진우 on 2022/07/02.
 //
 
-import Foundation
+import RxSwift
 
 final class MemoService: MemoServiceProtocol {
     
