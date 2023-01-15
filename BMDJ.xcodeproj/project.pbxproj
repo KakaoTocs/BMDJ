@@ -182,6 +182,8 @@
 		BA15FA46296AD4D400987322 /* DanjiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA45296AD4D400987322 /* DanjiAPI.swift */; };
 		BA15FA48296AD4DB00987322 /* DanjiAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA47296AD4DB00987322 /* DanjiAPIProtocol.swift */; };
 		BA15FA4A296AD4E300987322 /* DanjiAPIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA49296AD4E300987322 /* DanjiAPIResource.swift */; };
+		BA15FA4C296AD7BF00987322 /* DanjiAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA4B296AD7BF00987322 /* DanjiAPIService.swift */; };
+		BA15FA4E296AD7C800987322 /* DanjiAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15FA4D296AD7C800987322 /* DanjiAPIServiceProtocol.swift */; };
 		BA1D4E482973F727006DC92E /* DanjiMoodResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D4E472973F727006DC92E /* DanjiMoodResult.swift */; };
 		BA1D4E4A2973F753006DC92E /* DanjiSortResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D4E492973F753006DC92E /* DanjiSortResult.swift */; };
 		BA6705C8296048FD00985E6E /* DataSyncEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6705C7296048FD00985E6E /* DataSyncEvent.swift */; };
@@ -360,6 +362,8 @@
 		BA15FA45296AD4D400987322 /* DanjiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPI.swift; sourceTree = "<group>"; };
 		BA15FA47296AD4DB00987322 /* DanjiAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPIProtocol.swift; sourceTree = "<group>"; };
 		BA15FA49296AD4E300987322 /* DanjiAPIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPIResource.swift; sourceTree = "<group>"; };
+		BA15FA4B296AD7BF00987322 /* DanjiAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPIService.swift; sourceTree = "<group>"; };
+		BA15FA4D296AD7C800987322 /* DanjiAPIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiAPIServiceProtocol.swift; sourceTree = "<group>"; };
 		BA1D4E472973F727006DC92E /* DanjiMoodResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiMoodResult.swift; sourceTree = "<group>"; };
 		BA1D4E492973F753006DC92E /* DanjiSortResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortResult.swift; sourceTree = "<group>"; };
 		BA6705C7296048FD00985E6E /* DataSyncEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncEvent.swift; sourceTree = "<group>"; };
@@ -1074,6 +1078,15 @@
 			path = DanjiAPI;
 			sourceTree = "<group>";
 		};
+		BA15FA3D296AD30400987322 /* DanjiAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA4B296AD7BF00987322 /* DanjiAPIService.swift */,
+				BA15FA4D296AD7C800987322 /* DanjiAPIServiceProtocol.swift */,
+			);
+			path = DanjiAPIService;
+			sourceTree = "<group>";
+		};
 		BA15FA3E296AD30A00987322 /* MemoAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B377C4262AE5C5000D03E7 /* UIColor.swift in Sources */,
+				BA15FA4C296AD7BF00987322 /* DanjiAPIService.swift in Sources */,
 				652A4E30277DA2BB00F7D54A /* StockService.swift in Sources */,
 				657CF802267F369A00A4CD57 /* MemoListViewReactor.swift in Sources */,
 				651BAC2C265A503D0090D6A7 /* SettingTableCell.swift in Sources */,
@@ -1314,6 +1328,7 @@
 				65B02E7B2651109A00A61D17 /* SettingViewController.swift in Sources */,
 				6560409A2680F4FF00F9A725 /* SettingTItleHeader.swift in Sources */,
 				65709B6B28717E02005E8973 /* BDResponse.swift in Sources */,
+				BA15FA4E296AD7C800987322 /* DanjiAPIServiceProtocol.swift in Sources */,
 				6575A016267E64990004ACEF /* File+Utility.swift in Sources */,
 				6521BF842838FD27004BB4CB /* RootViewController.swift in Sources */,
 				6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */,
