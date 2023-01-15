@@ -1136,6 +1136,15 @@
 			path = MemoAPI;
 			sourceTree = "<group>";
 		};
+		BA15FA4F296AD82700987322 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				BA15FA0A296AB35900987322 /* Memo */,
+				BA15FA09296AB35500987322 /* Danji */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
 		BA284E3F295833E600CDEC6E /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
