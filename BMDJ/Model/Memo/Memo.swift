@@ -15,6 +15,7 @@ struct Memo: Codable, Equatable {
     var imageBase64: String?
     var text: String
     let createDate: Int
+    var uploadDate: Int
     var updateDate: Int
     
     var imageURL: URL? {
