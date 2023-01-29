@@ -1101,6 +1101,8 @@
 		BA15FA37296ACBEC00987322 /* DanjiStoreService */ = {
 			isa = PBXGroup;
 			children = (
+				BA15FA2D296AC36600987322 /* DanjiStore */,
+				BA15FA32296AC49A00987322 /* MemoStore */,
 				BA15FA38296ACBF600987322 /* DanjiStoreService.swift */,
 				BA15FA3A296ACBFA00987322 /* DanjiStoreServiceProtocol.swift */,
 			);
@@ -1170,8 +1172,6 @@
 				BA15FA3C296AD2FB00987322 /* DanjiAPI */,
 				BA15FA3E296AD30A00987322 /* MemoAPI */,
 				BA15FA37296ACBEC00987322 /* DanjiStoreService */,
-				BA15FA2D296AC36600987322 /* DanjiStore */,
-				BA15FA32296AC49A00987322 /* MemoStore */,
 			);
 			path = Service;
 			sourceTree = "<group>";
