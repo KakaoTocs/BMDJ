@@ -5,7 +5,7 @@
 //  Created by 김진우 on 2022/03/06.
 //
 
-enum JobEvent {
+enum JobEvent: String {
     case delete
     case add
     case sort
