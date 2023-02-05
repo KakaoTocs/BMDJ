@@ -196,6 +196,7 @@
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 		BAE3454829854250001FCF3D /* MemoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3454729854250001FCF3D /* MemoFetcher.swift */; };
 		BAE3454A29854255001FCF3D /* MemoFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3454929854255001FCF3D /* MemoFetcherProtocol.swift */; };
+		BAEBEB33298FA4D200993C81 /* DateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEBEB32298FA4D200993C81 /* DateResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -384,6 +385,7 @@
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 		BAE3454729854250001FCF3D /* MemoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFetcher.swift; sourceTree = "<group>"; };
 		BAE3454929854255001FCF3D /* MemoFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFetcherProtocol.swift; sourceTree = "<group>"; };
+		BAEBEB32298FA4D200993C81 /* DateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1184,6 +1186,7 @@
 		BA6705C6296048F400985E6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAEBEB31298FA4CC00993C81 /* Result */,
 				BA15FA1D296AB7F500987322 /* Memo */,
 				BA15FA1C296AB7E600987322 /* Danji */,
 				BA6705C7296048FD00985E6E /* DataSyncEvent.swift */,
@@ -1206,6 +1209,14 @@
 				BAE34544298541FA001FCF3D /* MemoFetcher */,
 			);
 			path = DanjiFetcherService;
+			sourceTree = "<group>";
+		};
+		BAEBEB31298FA4CC00993C81 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				BAEBEB32298FA4D200993C81 /* DateResult.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1475,6 +1486,7 @@
 				BA15FA17296AB47300987322 /* DanjiDeleteResult.swift in Sources */,
 				BA6705C8296048FD00985E6E /* DataSyncEvent.swift in Sources */,
 				657ED691263093C6008823BC /* Stock.swift in Sources */,
+				BAEBEB33298FA4D200993C81 /* DateResult.swift in Sources */,
 				6505390F2795BC67003651BA /* StockInfo.swift in Sources */,
 				6520138E276A639C006F3DC1 /* GuideViewController.swift in Sources */,
 				65FF1E0D2658E49D00F65164 /* BMDJMoodSwitch.swift in Sources */,
