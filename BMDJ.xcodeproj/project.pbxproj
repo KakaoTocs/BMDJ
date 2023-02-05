@@ -196,6 +196,7 @@
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 		BAE3454829854250001FCF3D /* MemoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3454729854250001FCF3D /* MemoFetcher.swift */; };
 		BAE3454A29854255001FCF3D /* MemoFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3454929854255001FCF3D /* MemoFetcherProtocol.swift */; };
+		BAEBEB2E298FA1D000993C81 /* DanjiFetchMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEBEB2D298FA1D000993C81 /* DanjiFetchMetaInfo.swift */; };
 		BAEBEB33298FA4D200993C81 /* DateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEBEB32298FA4D200993C81 /* DateResult.swift */; };
 /* End PBXBuildFile section */
 
@@ -385,6 +386,7 @@
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 		BAE3454729854250001FCF3D /* MemoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFetcher.swift; sourceTree = "<group>"; };
 		BAE3454929854255001FCF3D /* MemoFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFetcherProtocol.swift; sourceTree = "<group>"; };
+		BAEBEB2D298FA1D000993C81 /* DanjiFetchMetaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiFetchMetaInfo.swift; sourceTree = "<group>"; };
 		BAEBEB32298FA4D200993C81 /* DateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1070,6 +1072,7 @@
 				BA15FA16296AB47300987322 /* DanjiDeleteResult.swift */,
 				BA1D4E472973F727006DC92E /* DanjiMoodResult.swift */,
 				BA1D4E492973F753006DC92E /* DanjiSortResult.swift */,
+				BAEBEB2D298FA1D000993C81 /* DanjiFetchMetaInfo.swift */,
 			);
 			path = Danji;
 			sourceTree = "<group>";
@@ -1459,6 +1462,7 @@
 				658965E42802EDB3005253C2 /* SettingTitleHeaderReactor.swift in Sources */,
 				BA1D4E482973F727006DC92E /* DanjiMoodResult.swift in Sources */,
 				65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */,
+				BAEBEB2E298FA1D000993C81 /* DanjiFetchMetaInfo.swift in Sources */,
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				BA15FA31296AC3D700987322 /* DanjiStoreProtocol.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
