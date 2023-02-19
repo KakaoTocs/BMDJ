@@ -1,11 +1,11 @@
 //
-//  MemoSyncService.swift
+//  MemoSyncer.swift
 //  BMDJ
 //
 //  Created by 김진우 on 2023/02/19.
 //
 
-final class MemoSyncService {
+final class MemoSyncer {
     // MARK: = Property
     private let dataSyncEnvironment: DataSyncEnvironment
     
@@ -15,7 +15,8 @@ final class MemoSyncService {
     }
     
     // MARK: - Interface
-    func check(local localMemos: [Memo], remote remoteMemos: [Memo]) {
+    func check(local localMemos: [Memo], remote remoteMemos: [Memo]) -> [BDJob] {
+        let lastSyncDate = dataSyncEnvironment.lastSyncDate
         var jobs: [BDJob] = []
         
         remoteMemos.forEach { remoteMemo in
@@ -47,8 +48,6 @@ final class MemoSyncService {
         
         let restLocalMemos = localMemos.filter { !remoteMemos.contains($0) }
         restLocalMemos.forEach { localMemo in
-            let lastSyncDate = dataSyncEnvironment.lastSyncDate
-            
             if localMemo.updateDate > lastSyncDate {
                 /// Remote Memo 추가
                 let job: BDJob = .init(target: .memo(localMemo), event: .add, location: .remote)
