@@ -7,11 +7,11 @@
 
 final class MemoSyncService {
     // MARK: = Property
-    private let memoSyncEnvironment: MemoSyncEnvironment
+    private let dataSyncEnvironment: DataSyncEnvironment
     
     // MARK: - Initializer
-    init(memoSyncEnvironment: MemoSyncEnvironment) {
-        self.memoSyncEnvironment = memoSyncEnvironment
+    init(dataSyncEnvironment: DataSyncEnvironment) {
+        self.dataSyncEnvironment = dataSyncEnvironment
     }
     
     // MARK: - Interface
@@ -31,7 +31,7 @@ final class MemoSyncService {
                     jobs.append(job)
                 }
             } else {
-                let lastSyncDate = memoSyncEnvironment.lastSyncDate
+                let lastSyncDate = dataSyncEnvironment.lastSyncDate
                 
                 if remoteMemo.updateDate > lastSyncDate {
                     /// Local Memo 추가
@@ -47,7 +47,7 @@ final class MemoSyncService {
         
         let restLocalMemos = localMemos.filter { !remoteMemos.contains($0) }
         restLocalMemos.forEach { localMemo in
-            let lastSyncDate = memoSyncEnvironment.lastSyncDate
+            let lastSyncDate = dataSyncEnvironment.lastSyncDate
             
             if localMemo.updateDate > lastSyncDate {
                 /// Remote Memo 추가
