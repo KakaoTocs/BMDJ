@@ -193,6 +193,10 @@
 		BA1D4E482973F727006DC92E /* DanjiMoodResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D4E472973F727006DC92E /* DanjiMoodResult.swift */; };
 		BA1D4E4A2973F753006DC92E /* DanjiSortResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D4E492973F753006DC92E /* DanjiSortResult.swift */; };
 		BA6705C8296048FD00985E6E /* DataSyncEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6705C7296048FD00985E6E /* DataSyncEvent.swift */; };
+		BAC40FEA29A20956006C6D06 /* BDJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FE929A20956006C6D06 /* BDJob.swift */; };
+		BAC40FEC29A2099A006C6D06 /* BDJobTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FEB29A2099A006C6D06 /* BDJobTarget.swift */; };
+		BAC40FEE29A209C7006C6D06 /* BDJobEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FED29A209C7006C6D06 /* BDJobEvent.swift */; };
+		BAC40FF029A20A14006C6D06 /* BDJobLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FEF29A20A14006C6D06 /* BDJobLocation.swift */; };
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
 		BAE3454829854250001FCF3D /* MemoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3454729854250001FCF3D /* MemoFetcher.swift */; };
 		BAE3454A29854255001FCF3D /* MemoFetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3454929854255001FCF3D /* MemoFetcherProtocol.swift */; };
@@ -385,6 +389,10 @@
 		BA1D4E472973F727006DC92E /* DanjiMoodResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiMoodResult.swift; sourceTree = "<group>"; };
 		BA1D4E492973F753006DC92E /* DanjiSortResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSortResult.swift; sourceTree = "<group>"; };
 		BA6705C7296048FD00985E6E /* DataSyncEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncEvent.swift; sourceTree = "<group>"; };
+		BAC40FE929A20956006C6D06 /* BDJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDJob.swift; sourceTree = "<group>"; };
+		BAC40FEB29A2099A006C6D06 /* BDJobTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDJobTarget.swift; sourceTree = "<group>"; };
+		BAC40FED29A209C7006C6D06 /* BDJobEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDJobEvent.swift; sourceTree = "<group>"; };
+		BAC40FEF29A20A14006C6D06 /* BDJobLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDJobLocation.swift; sourceTree = "<group>"; };
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 		BAE3454729854250001FCF3D /* MemoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFetcher.swift; sourceTree = "<group>"; };
 		BAE3454929854255001FCF3D /* MemoFetcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFetcherProtocol.swift; sourceTree = "<group>"; };
@@ -1193,12 +1201,24 @@
 		BA6705C6296048F400985E6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAC40FE829A2094D006C6D06 /* Job */,
 				BAEBEB31298FA4CC00993C81 /* Result */,
 				BA15FA1D296AB7F500987322 /* Memo */,
 				BA15FA1C296AB7E600987322 /* Danji */,
 				BA6705C7296048FD00985E6E /* DataSyncEvent.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BAC40FE829A2094D006C6D06 /* Job */ = {
+			isa = PBXGroup;
+			children = (
+				BAC40FE929A20956006C6D06 /* BDJob.swift */,
+				BAC40FEB29A2099A006C6D06 /* BDJobTarget.swift */,
+				BAC40FED29A209C7006C6D06 /* BDJobEvent.swift */,
+				BAC40FEF29A20A14006C6D06 /* BDJobLocation.swift */,
+			);
+			path = Job;
 			sourceTree = "<group>";
 		};
 		BAE34544298541FA001FCF3D /* MemoFetcher */ = {
@@ -1370,6 +1390,7 @@
 				65776412263713DB001947CF /* DanjiCollectionCell.swift in Sources */,
 				BA15FA42296AD4B800987322 /* MemoAPIResource.swift in Sources */,
 				65FD39D12870795600B2B5A7 /* Danji.swift in Sources */,
+				BAC40FF029A20A14006C6D06 /* BDJobLocation.swift in Sources */,
 				65D6A43627772A7C009A3A6E /* StockSearchViewReactor.swift in Sources */,
 				65D985322675F86C00D3F467 /* DanjiCreate.swift in Sources */,
 				65709B67287178B8005E8973 /* BDErrorProtocol.swift in Sources */,
@@ -1440,6 +1461,7 @@
 				6546D65527897C8800C39D5C /* BMDJIconTextField.swift in Sources */,
 				65D6A43D2777313E009A3A6E /* StockCellReactor.swift in Sources */,
 				65724E52273ACFEC00C84E91 /* MemoEditViewReactor.swift in Sources */,
+				BAC40FEE29A209C7006C6D06 /* BDJobEvent.swift in Sources */,
 				6594338B27D4CE510016EDE7 /* DanjiUpdateJob.swift in Sources */,
 				656574CA27946600008B56D5 /* BMDJIconButton.swift in Sources */,
 				6594338227D4CA770016EDE7 /* DanjiAddJob.swift in Sources */,
@@ -1476,6 +1498,7 @@
 				6559805F283D324900731E43 /* LoginServiceProtocol.swift in Sources */,
 				65D6A440277737DB009A3A6E /* DanjiEmptyCell.swift in Sources */,
 				658965E42802EDB3005253C2 /* SettingTitleHeaderReactor.swift in Sources */,
+				BAC40FEA29A20956006C6D06 /* BDJob.swift in Sources */,
 				BA1D4E482973F727006DC92E /* DanjiMoodResult.swift in Sources */,
 				65B02E8426511E9D00A61D17 /* LoginViewReactor.swift in Sources */,
 				BAEBEB2E298FA1D000993C81 /* DanjiFetchMetaInfo.swift in Sources */,
@@ -1495,6 +1518,7 @@
 				BA15FA44296AD4C600987322 /* MemoAPIProtocol.swift in Sources */,
 				65D6A43427772A6F009A3A6E /* StockSearchViewController.swift in Sources */,
 				65457B93265AD3C800F7F8F3 /* URLRequest.swift in Sources */,
+				BAC40FEC29A2099A006C6D06 /* BDJobTarget.swift in Sources */,
 				6554B36B2691BAC90080D3C5 /* MemoDatabaseService.swift in Sources */,
 				65261A7C269359B5005E877C /* MemoRepository.swift in Sources */,
 				BA15FA36296AC4A700987322 /* MemoStoreProtocol.swift in Sources */,
