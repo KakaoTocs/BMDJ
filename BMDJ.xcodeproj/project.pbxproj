@@ -198,6 +198,7 @@
 		BAC40FEE29A209C7006C6D06 /* BDJobEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FED29A209C7006C6D06 /* BDJobEvent.swift */; };
 		BAC40FF029A20A14006C6D06 /* BDJobLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FEF29A20A14006C6D06 /* BDJobLocation.swift */; };
 		BAC40FF829A220FF006C6D06 /* DataSyncEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FF729A220FF006C6D06 /* DataSyncEnvironment.swift */; };
+		BAC40FFB29A22A42006C6D06 /* DanjiSyncerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FFA29A22A42006C6D06 /* DanjiSyncerService.swift */; };
 		BAC40FFD29A22A4D006C6D06 /* MemoSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FFC29A22A4D006C6D06 /* MemoSyncer.swift */; };
 		BAC40FFF29A22A6F006C6D06 /* DanjiSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC40FFE29A22A6F006C6D06 /* DanjiSyncer.swift */; };
 		BAD75BD7293CBC2E0046FC38 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */; };
@@ -397,6 +398,7 @@
 		BAC40FED29A209C7006C6D06 /* BDJobEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDJobEvent.swift; sourceTree = "<group>"; };
 		BAC40FEF29A20A14006C6D06 /* BDJobLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDJobLocation.swift; sourceTree = "<group>"; };
 		BAC40FF729A220FF006C6D06 /* DataSyncEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncEnvironment.swift; sourceTree = "<group>"; };
+		BAC40FFA29A22A42006C6D06 /* DanjiSyncerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSyncerService.swift; sourceTree = "<group>"; };
 		BAC40FFC29A22A4D006C6D06 /* MemoSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoSyncer.swift; sourceTree = "<group>"; };
 		BAC40FFE29A22A6F006C6D06 /* DanjiSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanjiSyncer.swift; sourceTree = "<group>"; };
 		BAD75BD6293CBC2E0046FC38 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
@@ -1245,6 +1247,7 @@
 		BAC40FF929A22A34006C6D06 /* DanjiSyncerService */ = {
 			isa = PBXGroup;
 			children = (
+				BAC40FFA29A22A42006C6D06 /* DanjiSyncerService.swift */,
 				BAC40FFE29A22A6F006C6D06 /* DanjiSyncer.swift */,
 				BAC40FFC29A22A4D006C6D06 /* MemoSyncer.swift */,
 			);
@@ -1487,6 +1490,7 @@
 				65709B6B28717E02005E8973 /* BDResponse.swift in Sources */,
 				BA15FA4E296AD7C800987322 /* DanjiAPIServiceProtocol.swift in Sources */,
 				6575A016267E64990004ACEF /* File+Utility.swift in Sources */,
+				BAC40FFB29A22A42006C6D06 /* DanjiSyncerService.swift in Sources */,
 				6521BF842838FD27004BB4CB /* RootViewController.swift in Sources */,
 				6528EA1B2635219400D06F17 /* BMDJImage.swift in Sources */,
 				6546D65527897C8800C39D5C /* BMDJIconTextField.swift in Sources */,
@@ -1537,6 +1541,7 @@
 				65D6A43B27773138009A3A6E /* StockCell.swift in Sources */,
 				BA15FA31296AC3D700987322 /* DanjiStoreProtocol.swift in Sources */,
 				BAC40FE729A2053F006C6D06 /* MemoSyncService.swift in Sources */,
+				BA6705C22960481D00985E6E /* DataSyncService.swift in Sources */,
 				651BAC23265A31090090D6A7 /* UIView.swift in Sources */,
 				BA15FA15296AB46C00987322 /* DanjiReadResult.swift in Sources */,
 				6559820C264416720011D5BC /* MenuViewController.swift in Sources */,
