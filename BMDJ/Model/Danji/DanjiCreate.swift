@@ -21,4 +21,14 @@ extension DanjiCreate {
     var danji: DanjiLite {
         return .init(id: "Danji-\(UUID().uuidString)", userID: "User", color: color, name: name, stock: .init(id: "Stock-\(UUID().uuidString)", name: stockName), volume: volume, mood: mood, createDate: Int(Date().timeIntervalSince1970 * 1000), endDate: endDate, updateDate: Int(Date().timeIntervalSince1970 * 1000), dDay: dDay)
     }
+    
+    init(danji: Danji) {
+        self.color = danji.color
+        self.name = danji.name
+        self.stockName = danji.stock.name
+        self.volume = danji.volume
+        self.mood = danji.mood
+        self.endDate = danji.endDate
+        self.dDay = danji.dDay
+    }
 }
